@@ -144,7 +144,7 @@ DEPENDENCIES
   capistrano
   coffee-rails (~> 3.2.1)
   jquery-rails
-  mysql2 (< 0.3)
+  mysql2
   rails (= 3.2.0)
   ruby-debug19
   sass-rails (~> 3.2.3)

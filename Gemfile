@@ -21,7 +21,7 @@ group :assets do
   gem 'therubyracer'
 end
 
-gem 'mysql2', '< 0.3'
+gem 'mysql2' #, '< 0.3'
 gem 'jquery-rails'
 
 # To use ActiveModel has_secure_password
