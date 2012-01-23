@@ -1,4 +1,5 @@
 Manosalaobra::Application.routes.draw do
+   resources :posts, path: 'entradas'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
