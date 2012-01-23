@@ -3,3 +3,4 @@
   <%= @post.body %>
 </div>
 <%= link_to 'Editar', edit_post_path(@path) %>
+<%= link_to 'Borrar', @post, confirm: '¿Estás seguro?', method: :delete %>

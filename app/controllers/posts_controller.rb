@@ -34,5 +34,10 @@ class PostsController < ApplicationController
     @post.update_attributes params[:post]
     respond_with(@post)
   end
-
+  
+  def destroy
+    @post = Post.find params[:id]
+    @post.destroy
+    respond_with @post, location: posts_path
+  end
 end
