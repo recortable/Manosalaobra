@@ -17,3 +17,4 @@ lng
 log
 .eclipse
 .project
+config/database.yml
