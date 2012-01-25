@@ -11,23 +11,11 @@
   </div>
   <% end %>
  
-  <div class="field">
-    <%= f.label :name, "Enter your name" %><br />
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :mail %><br />
-    <%= f.text_field :mail %>
-  </div>
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password %>
-  </div>
-  <div class="field">
-    <%= f.label :password_confirmation, "Confirm password" %><br />
-    <%= f.password_field :password_confirmation %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <% simple_form_for @user do |form| %>
+    <%= form.input :name %>
+    <%= form.input :mail %>
+    <%= form.input :password %>
+    <%= form.input :password_confirmation %>
+    <%= form.submit %>
   </div>
 <% end %>
