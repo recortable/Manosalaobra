@@ -3,6 +3,7 @@ class PostsController < ApplicationController
   respond_to :html, :json, :xml
   expose(:posts) { Post.all }
   expose(:post)
+  expose(:comment) { Comment.new(post_id: post) }
 
   def index
     respond_with posts

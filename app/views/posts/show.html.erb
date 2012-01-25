@@ -2,5 +2,17 @@
 <div class="body">
   <%= post.body %>
 </div>
+<div id="comments">
+  <% post.comments.each do |comment| %>
+    <div class="comment">
+      <%= comment.body %>
+    </div>
+  <% end %>
+</div>
+<%= simple_form_for comment do |form| %>
+  <%= form.input :post_id, as: :hidden %>
+  <%= form.input :body %>
+  <%= form.submit %>
+<% end %>
 <%= link_to 'Editar', edit_post_path(post) %>
 <%= link_to 'Borrar', post, confirm: '¿Estás seguro?', method: :delete %>
