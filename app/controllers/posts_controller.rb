@@ -1,43 +1,37 @@
+# encoding: utf-8
 class PostsController < ApplicationController
-
   respond_to :html, :json, :xml
+  expose(:posts) { Post.all }
+  expose(:post)
+
   def index
-    @posts = Post.all
-    respond_with @posts
+    respond_with posts
   end
 
   def show
-    @post = Post.find params[:id]
-    respond_with @post
+    respond_with post
   end
 
   def new
-    @post = Post.new
-    respond_with @post
+    respond_with post
   end
 
   def create
-    @post = Post.new(params[:post])
-    if @post.save
-      flash[:notice] = "Se ha guardado! Bien!"
-    end
-    respond_with @post
+      flash[:notice] = "Se ha guardado! Bien!" if post.save
+    respond_with post
   end
-  
+
   def edit
-    @post = Post.find params[:id]
-    respond_with @post
+    respond_with post
   end
-  
+
   def update
-    @post = Post.find params[:id]
-    @post.update_attributes params[:post]
-    respond_with(@post)
+    flash[:notice] = 'Actualizado, ¡gracias!' if post.update_attributes params[:post]
+    respond_with post
   end
-  
+
   def destroy
-    @post = Post.find params[:id]
-    @post.destroy
-    respond_with @post, location: posts_path
+    flash[:notice] = 'Borrado' if post.destroy
+    respond_with post, location: posts_path
   end
 end
