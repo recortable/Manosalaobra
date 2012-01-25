@@ -1,0 +1,10 @@
+<h1><%= @user.name %></h1>
+<dl>
+  <dt>Name:</dt>
+  <dd><%= @user.name %></dd>
+  
+  <dt>e-mail:</dt>
+  <dd><%= @user.mail %></dd>
+</dl>
+<%= link_to 'Editar', edit_user_path %>
+<%= link_to 'Borrar', @user, confirm: '¿Estás seguro?', method: :delete %>
