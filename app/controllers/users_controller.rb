@@ -21,7 +21,7 @@ class UsersController < ApplicationController
     if @user.save
       flash[:notice] = "Se ha guardado! Bien!"
     end
-    respond_with @user
+    respond_with @user, location: users_path, 
   end
   
   def edit
@@ -38,6 +38,6 @@ class UsersController < ApplicationController
   def destroy
     @user = User.find params[:id]
     @user.destroy
-    respond_with @user, location: posts_path
+    respond_with @user, location: users_path
   end
 end
