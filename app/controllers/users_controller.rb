@@ -21,7 +21,7 @@ class UsersController < ApplicationController
     if @user.save
       flash[:notice] = "Se ha guardado! Bien!"
     end
-    respond_with @user, location: users_path, 
+    respond_with @user, location: users_path
   end
   
   def edit
