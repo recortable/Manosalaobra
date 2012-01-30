@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
   
   has_many :comments
+  has_many :rates
+  
   
   validates :name, presence: true,
                    length: {minimum: 3, maximum: 50}

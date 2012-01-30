@@ -1,21 +1,19 @@
-<%= form_for(user) do |f| %>
+ 
+<%= simple_form_for user do |form| %>
   <% if user.errors.any? %>
   <div id="errorExplanation">
     <h2><%= pluralize(user.errors.count, "error") %> prohibited
         this post from being saved:</h2>
     <ul>
-    <% @user.errors.full_messages.each do |msg| %>
+    <% user.errors.full_messages.each do |msg| %>
       <li><%= msg %></li>
     <% end %>
     </ul>
   </div>
   <% end %>
- 
-  <% simple_form_for user do |form| %>
-    <%= form.input :name %>
-    <%= form.input :mail %>
-    <%= form.input :password %>
-    <%= form.input :password_confirmation %>
-    <%= form.submit %>
-  </div>
+  <%= form.input :name %>
+  <%= form.input :mail %>
+  <%= form.input :password %>
+  <%= form.input :password_confirmation %>
+  <%= form.submit %>
 <% end %>

@@ -1,43 +1,37 @@
+# encoding: utf-8
 class UsersController < ApplicationController
   respond_to :html, :json, :xml
+  expose(:users) { User.all }
+  expose(:user)
   
   def index
-    @users = User.all
-    respond_with @users
+    respond_with users
   end
   
   def show
-    @user = User.find params[:id]
-    respond_with @user
+    respond_with user
   end
 
   def new
-    @user = User.new
-    respond_with @user
+    respond_with user
   end
 
   def create
-    @user = User.new(params[:user])
-    if @user.save
-      flash[:notice] = "Se ha guardado! Bien!"
-    end
-    respond_with @user, location: users_path
+    flash[:notice] = "Se ha guardado! Bien!" if user.save
+    respond_with user, location: users_path
   end
   
   def edit
-    @user = User.find params[:id]
-    respond_with @user
+    respond_with user
   end
   
   def update
-    @user = User.find params[:id]
-    @user.update_attributes params[:user]
-    respond_with(@user)
+    flash[:notice] = 'Actualizado, ¡gracias!' if user.update_attributes params[:user]
+    respond_with user
   end
   
   def destroy
-    @user = User.find params[:id]
-    @user.destroy
-    respond_with @user, location: users_path
+    flash[:notice] = 'Borrado' if user.destroy
+    respond_with user, location: users_path
   end
 end

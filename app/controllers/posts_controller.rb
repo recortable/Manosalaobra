@@ -3,6 +3,7 @@ class PostsController < ApplicationController
   respond_to :html, :json, :xml
   expose(:posts) { Post.all }
   expose(:post)
+  expose(:rate) { Rate.new(post_id: post) }
   expose(:comment) { Comment.new(post_id: post) }
 
   def index
@@ -18,7 +19,7 @@ class PostsController < ApplicationController
   end
 
   def create
-      flash[:notice] = "Se ha guardado! Bien!" if post.save
+    flash[:notice] = "Se ha guardado! Bien!" if post.save
     respond_with post
   end
 
