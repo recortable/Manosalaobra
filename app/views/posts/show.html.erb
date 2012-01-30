@@ -2,6 +2,14 @@
 <div class="body">
   <%= post.body %>
 </div>
+<div id="post-rating">
+  Rated <%= pluralize(post.rates.count, "time") %>, average <%= post.rates.average('rating') %>
+</div>
+<%= simple_form_for rate do |form| %>
+  <%= form.input :post_id, as: :hidden %>
+  <%= form.input :rating, collection: 1..5, as: :radio %>
+  <%= form.submit 'Rate'%>
+<% end %>
 <div id="comments">
   <% post.comments.each do |comment| %>
     <div class="comment">
@@ -9,11 +17,6 @@
     </div>
   <% end %>
 </div>
-<%= simple_form_for rate do |form| %>
-  <%= form.input :post_id, as: :hidden %>
-  <%= form.input :rating, collection: 1..5, as: :radio %>
-  <%= form.submit 'Rate'%>
-<% end %>
 <%= simple_form_for comment do |form| %>
   <%= form.input :post_id, as: :hidden %>
   <%= form.input :body %>
