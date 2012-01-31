@@ -1,14 +1,20 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Manosalaobra</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-
-<%= yield %>
-
-</body>
+  <head>
+    <title>Manosalaobra</title>
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <div class="container">
+      <div id="top" class="row">
+        <%= link_to 'Blog', posts_path %> |
+        <%= link_to 'Users', users_path %>
+      </div>
+      <div id="main" class="row">
+        <%= yield %>
+      </div>
+    </div>
+  </body>
 </html>

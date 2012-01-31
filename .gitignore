@@ -18,3 +18,10 @@ log
 .eclipse
 .project
 config/database.yml
+
+# Cache de compilación de sass
+.sass-cache
+
+# Mac OSX rubish
+.DS_Store
+
