@@ -4,4 +4,7 @@ Manosalaobra::Application.routes.draw do
   resources :users, path: 'usuarios'
   resources :comments, only: :create
   resources :rates, only: :create
+
+  # Simula un login
+  match '/entrar/:id' => 'users#enter'
 end
