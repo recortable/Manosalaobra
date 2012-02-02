@@ -3,7 +3,6 @@ class PostsController < ApplicationController
   respond_to :html, :json, :xml
   expose(:posts) { Post.all }
   expose(:post)
-  expose(:rate) { Rate.new(post_id: post.id) }
   expose(:comment) { Comment.new(post_id: post.id) }
 
   def index
