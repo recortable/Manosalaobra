@@ -10,7 +10,9 @@
     <div class="container">
       <div id="flash" class="row">
         <% if flash[:notice] %>
-          <div class="flash"><%= flash[:notice] %></div>
+          <div class="flash">
+            <%= flash[:notice] %>
+          </div>
         <% end %>
         <div id="top" class="row">
           <% if current_user %>
@@ -25,5 +27,6 @@
           <%= yield %>
         </div>
       </div>
-    </body>
-  </html>
+    </div>
+  </body>
+</html>

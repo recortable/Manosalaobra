@@ -3,7 +3,7 @@ Manosalaobra::Application.routes.draw do
   resources :posts, path: 'entradas'
   resources :users, path: 'usuarios'
   resources :comments, only: :create
-  resources :rates, only: :create
+  resources :names, path: 'propuestas_nombre', except: :show
 
   # Simula un login
   match '/entrar/:id' => 'users#enter'
