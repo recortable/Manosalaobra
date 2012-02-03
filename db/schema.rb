@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(:version => 20120203011313) do
 
   create_table "names", :force => true do |t|
     t.string   "proposed_name", :limit => 50
-    t.integer  "votes",                       :default => 0
+    t.integer  "votes_sum",                   :default => 1
     t.datetime "created_at",                                 :null => false
     t.datetime "updated_at",                                 :null => false
   end
