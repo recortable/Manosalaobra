@@ -21,7 +21,7 @@ class ApplicationController < ActionController::Base
   # Si el parámetro user es nulo (nil) entonces se elimina el usuario de la sesión
   def current_user=(user)
     if user.present?
-    session[:user_id] = user.id
+      session[:user_id] = user.id
     else
       session[:user_id] = nil
     end

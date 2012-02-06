@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class RateTest < ActiveSupport::TestCase
+class NamesControllerTest < ActionController::TestCase
   # test "the truth" do
   #   assert true
   # end

@@ -1,0 +1,8 @@
+<h1>Proponer nombre</h1>
+ 
+<%= simple_form_for name do |form| %>
+  <%= form.input :proposed_name, label: "nombre:" %>
+  <%= form.submit "Enviar" %>
+<% end %>
+ 
+<%= link_to 'Cancelar', names_path %>
