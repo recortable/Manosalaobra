@@ -3,6 +3,10 @@ body {
   font-family: 'Signika', sans-serif;
 }
 
+[class^="icon-"] {
+  background-image: image_url('glyphicons-halflings.png')
+}
+
 div#top {
   color: gray;
   border-bottom: 1px solid gray;
