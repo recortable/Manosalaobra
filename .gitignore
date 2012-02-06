@@ -17,6 +17,7 @@ lng
 log
 .eclipse
 .project
+.idea
 config/database.yml
 
 # Cache de compilación de sass
