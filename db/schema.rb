@@ -21,18 +21,19 @@ ActiveRecord::Schema.define(:version => 20120203011313) do
     t.datetime "updated_at",                :null => false
   end
 
-  create_table "names", :force => true do |t|
-    t.string   "proposed_name", :limit => 50
-    t.integer  "votes",                       :default => 0
-    t.datetime "created_at",                                 :null => false
-    t.datetime "updated_at",                                 :null => false
-  end
-
   create_table "posts", :force => true do |t|
     t.string   "title",      :limit => 300
     t.text     "body"
     t.datetime "created_at",                :null => false
     t.datetime "updated_at",                :null => false
+  end
+
+  create_table "proposed_names", :force => true do |t|
+    t.string   "value",      :limit => 50
+    t.string   "request_ip", :limit => 20
+    t.integer  "votes",                    :default => 0
+    t.datetime "created_at",                              :null => false
+    t.datetime "updated_at",                              :null => false
   end
 
   create_table "users", :force => true do |t|

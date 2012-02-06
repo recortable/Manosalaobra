@@ -1,9 +1,0 @@
-<h1>Nombres propuestos</h1>
-<ul>
-   <% names.each do |name| %>
-     <li>
-       <%= name.proposed_name %> - (<%= name.votes %>)
-     </li>
-   <%end %>  
-</ul>
-<%= link_to '+ Proponer un nuevo nombre', new_name_path %>
