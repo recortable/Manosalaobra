@@ -25,6 +25,7 @@ gem 'mysql2' #, '< 0.3'
 gem 'jquery-rails'
 gem 'simple_form'
 gem 'decent_exposure'
+gem 'cancan'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

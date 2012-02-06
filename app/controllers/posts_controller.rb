@@ -17,6 +17,7 @@ class PostsController < ApplicationController
   end
 
   def create
+    authorize! :create, Post
     flash[:notice] = "Se ha guardado! Bien!" if post.save
     respond_with post
   end
