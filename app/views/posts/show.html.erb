@@ -9,8 +9,7 @@
     </div>
   <% end %>
 </div>
-<%= simple_form_for comment do |form| %>
-  <%= form.input :post_id, as: :hidden %>
+<%= simple_form_for [post, Comment.new] do |form| %>
   <%= form.input :body %>
   <%= form.submit %>
 <% end %>
