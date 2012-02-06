@@ -13,6 +13,7 @@ class ProposedNamesController < ApplicationController
   end
 
   def create
+    proposed_name.request_ip = request.remote_ip
     flash[:notice] = "Se ha guardado ¡Bien!" if proposed_name.save
     respond_with proposed_name, location: proposed_names_path
   end
