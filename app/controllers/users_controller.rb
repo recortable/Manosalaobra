@@ -43,4 +43,10 @@ class UsersController < ApplicationController
     flash[:notice] = "Hola #{current_user.name}"
     redirect_to root_path
   end
+
+  def logout
+    self.current_user = nil
+    flash[:notice] = "Adiós"
+    redirect_to root_path
+  end
 end

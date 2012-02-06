@@ -10,4 +10,6 @@ Manosalaobra::Application.routes.draw do
 
   # Simula un login
   match '/entrar/:id' => 'users#enter'
+  # Simula el logout
+  match '/salir' => 'users#logout'
 end
