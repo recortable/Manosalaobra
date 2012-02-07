@@ -25,6 +25,19 @@ class Ability
     #
     # See the wiki for details: https://github.com/ryanb/cancan/wiki/Defining-Abilities
     
-    can :create, Post if user.role == "admin"
+    # Posts permissions
+    can :create, Post if user.present? and user.role == 'admin'
+    can :edit, Post if user.present? and user.role == 'admin'
+    can :delete, Post if user.present? and user.role == 'admin'
+    
+    # Users permissions
+    can :view, User if user.present? and user.role == 'admin'
+    can :create, User if user.present? and user.role == 'admin'
+    can :edit, User if user.present? and user.role == 'admin'
+    can :delete, User if user.present? and user.role == 'admin'
+    
+    # Comments permissions
+    can :edit, Comment if user.present? and user.role == 'admin'
+    can :delete, Comment if user.present? and user.role == 'admin'
   end
 end

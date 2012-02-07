@@ -1,7 +1,7 @@
 Manosalaobra::Application.routes.draw do
   root to: 'posts#index'
   resources :posts, path: 'entradas' do
-    resources :comments, only: :create
+    resources :comments
   end
   resources :users, path: 'usuarios'
   resources :proposed_names, path: 'nombres', except: :show do

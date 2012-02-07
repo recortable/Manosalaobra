@@ -5,32 +5,43 @@ class UsersController < ApplicationController
   expose(:user)
 
   def index
+    authorize! :view, User
     respond_with users
   end
 
   def show
+    authorize! :view, User
     respond_with user
   end
 
   def new
+    authorize! :create, User
     respond_with user
   end
 
   def create
+    authorize! :create, User
     flash[:notice] = "Se ha guardado! Bien!" if user.save
     respond_with user, location: users_path
   end
 
   def edit
+    authorize! :edit, User
     respond_with user
   end
 
   def update
-    flash[:notice] = 'Actualizado, ¡gracias!' if user.update_attributes params[:user]
+    authorize! :edit, User
+    if params[:user][:role]
+      user.update_attribute(:role, params[:user][:role])
+    else
+      flash[:notice] = 'Actualizado, ¡gracias!' if user.update_attributes params[:user]
+    end    
     respond_with user
   end
 
   def destroy
+    authorize! :delete, User
     flash[:notice] = 'Borrado' if user.destroy
     respond_with user, location: users_path
   end

@@ -26,5 +26,10 @@ class ApplicationController < ActionController::Base
       session[:user_id] = nil
     end
   end
+  
+  rescue_from CanCan::AccessDenied do |exception|
+    flash[:notice] = "Acceso denegado"
+    redirect_to root_url
+  end
 
 end

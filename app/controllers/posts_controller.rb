@@ -13,6 +13,7 @@ class PostsController < ApplicationController
   end
 
   def new
+    authorize! :create, Post
     respond_with post
   end
 
@@ -23,15 +24,18 @@ class PostsController < ApplicationController
   end
 
   def edit
+    authorize! :edit, Post
     respond_with post
   end
 
   def update
+    authorize! :edit, Post
     flash[:notice] = 'Actualizado, ¡gracias!' if post.update_attributes params[:post]
     respond_with post
   end
 
   def destroy
+    authorize! :delete, Post
     flash[:notice] = 'Borrado' if post.destroy
     respond_with post, location: posts_path
   end
