@@ -2,6 +2,8 @@
 <div class="body">
   <%= post.body %>
 </div>
+<%= link_to icon(:edit, ' Editar entrada'), edit_post_path(post), class: :btn if can? :edit, Post %>
+<%= link_to icon(:trash, ' Borrar entrada'), post, confirm: '¿Estás seguro?', class: :btn, method: :delete if can? :delete, Post %>
 <div id="comments">
   <%= render post.comments %>
 </div>
@@ -9,5 +11,3 @@
   <%= form.input :body, label: 'Comentario' %>
   <%= form.submit %>
 <% end %>
-<%= link_to 'Editar', edit_post_path(post) if can? :edit, Post %>
-<%= link_to 'Borrar', post, confirm: '¿Estás seguro?', method: :delete if can? :delete, Post %>

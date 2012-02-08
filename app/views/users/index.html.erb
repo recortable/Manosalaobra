@@ -1,16 +1,16 @@
+<%= link_to icon(:add, 'Añadir usuario'), new_user_path, class: :btn %>
 <ul>
   <% users.each do |user| %>
     <li>
       <%= link_to user.name, user %>
-      <%= link_to 'Editar', edit_user_path(user) %>
-      <%= link_to 'Borrar', user, confirm: '¿Estás seguro?', method: :delete %>
+      <%= link_to icon(:edit, 'Editar'), edit_user_path(user), class: :btn %>
+      <%= link_to icon(:trash, 'Borrar'), user, confirm: '¿Estás seguro?', method: :delete, class: :btn %>
       <% if user.role.blank? and can? :edit, User %>
-        <%= link_to 'Hacer administrador', user_path(user, user: {role: "admin"}), method: :put  %>
+        <%= link_to 'Hacer administrador', user_path(user, user: {role: "admin"}), method: :put, class: :btn %>
       <% end %>
       <% if user.role == 'admin' and can? :edit, User %>
-        <%= link_to 'Hacer NO administrador', user_path(user, user: {role: nil}), method: :put  %>
+        <%= link_to 'Hacer NO administrador', user_path(user, user: {role: nil}), method: :put, class: :btn %>
       <% end %>
    </li>
  <%end %>  
 </ul>
-<%= link_to 'Añadir usuario', new_user_path %>
