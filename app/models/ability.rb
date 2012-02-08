@@ -39,5 +39,9 @@ class Ability
     # Comments permissions
     can :edit, Comment if user.present? and user.role == 'admin'
     can :delete, Comment if user.present? and user.role == 'admin'
+    
+    # Proposed names permissions
+    #can :create, ProposedName if user.present?
+    can :delete, ProposedName if user.present? and user.role == 'admin'
   end
 end

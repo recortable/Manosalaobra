@@ -19,6 +19,7 @@ class ProposedNamesController < ApplicationController
   end
   
   def destroy
+    authorize! :delete, ProposedName
     flash[:notice] = 'Borrado' if proposed_name.destroy
     respond_with proposed_name, location: proposed_names_path
   end
