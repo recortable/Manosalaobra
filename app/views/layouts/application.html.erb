@@ -8,17 +8,13 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<div id="page" class="container">
+<div id="top" class="container">
   <div id="flash" class="row">
-    <% if flash[:notice] %>
-        <div class="flash">
-          <%= flash[:notice] %>
-        </div>
-    <% end %>
+      <% flash[:notice] if flash[:notice] %>&nbsp;
   </div>
-  <div id="top" class="row">
+  <div id="links" class="row">
     <div class="span3">
-      <%= link_to '¿Qué? / ¿Quienes? / ¿Cómo?', root_path %>
+      &nbsp;
     </div>
     <div class="span6">
       <%= link_to 'Blog', posts_path %> |
@@ -33,6 +29,13 @@
       <% else %>
           <%= link_to 'Entrar', login_path %>
       <% end %>
+    </div>
+  </div>
+</div>
+<div id="page" class="container">
+  <div class="row">
+    <div class="span12">
+      <%= link_to image_tag('blog-participas.png', width: 944, height: 189), root_path %>
     </div>
   </div>
   <div id="main" class="row">
