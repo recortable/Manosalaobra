@@ -1,12 +1,13 @@
 module ContentsHelper
   def render_body(content)
-    if content.body.blank?
+    rendered = if content.body.blank?
       ''
     elsif content.content_type == 'markdown'
       markdown.render(content.body).html_safe
     else
       content.body
     end
+    content_tag(:div, rendered, class: "body #{content.content_type}")
   end
 
 
