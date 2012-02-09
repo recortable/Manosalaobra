@@ -1,5 +1,5 @@
 Manosalaobra::Application.routes.draw do
-  root to: 'posts#index'
+  root to: 'dashboards#show'
   resources :posts, path: 'entradas' do
     resources :comments
   end
