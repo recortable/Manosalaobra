@@ -2,5 +2,5 @@
 <%= link_to icon(:edit, ' Editar'), [:edit, content], class: :btn if can? :edit, content %>
 <%= link_to icon(:trash, ' Borrar'), content, confirm: '¿Estás seguro?', class: :btn, method: :delete if can? :delete, content %>
 <div class="body">
-  <%= content.body %>
+  <%= render_body content %>
 </div>
