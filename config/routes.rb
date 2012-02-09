@@ -8,8 +8,11 @@ Manosalaobra::Application.routes.draw do
     resources :votes, path: 'votos'
   end
 
+  resources :user_sessions, only: :create
+  # Utilizamos match para que las rutas sean más bonitas
+  match '/entrar' => 'user_sessions#new', as: :login
+  match '/salir' => 'user_sessions#destroy', as: :logout
+
   # Simula un login
   match '/entrar/:id' => 'users#enter'
-  # Simula el logout
-  match '/salir' => 'users#logout'
 end

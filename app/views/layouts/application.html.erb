@@ -8,29 +8,37 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div class="container">
-    <div id="flash" class="row">
-      <% if flash[:notice] %>
-          <div class="flash">
-            <%= flash[:notice] %>
-          </div>
-      <% end %>
+<div class="container">
+  <div id="flash" class="row">
+    <% if flash[:notice] %>
+        <div class="flash">
+          <%= flash[:notice] %>
+        </div>
+    <% end %>
+  </div>
+  <div id="top" class="row">
+    <div class="span3">
+      <%= link_to '¿Qué? / ¿Quienes? / ¿Cómo?', root_path %>
     </div>
-    <div id="top" class="row">
-      <% if current_user %>
-          <%= link_to "Eres #{current_user.name}", current_user %>
-      <% else %>
-          <%= link_to 'Entrar', '#', confirm: 'No implementado aún' %>
-      <% end %> |
+    <div class="span6">
       <%= link_to 'Blog', posts_path %> |
       <% if can? :view, User %>
-        <%= link_to 'Users', users_path %> | 
+          <%= link_to 'Users', users_path %> |
       <% end %>
       <%= link_to 'Nombres', proposed_names_path %>
     </div>
-    <div id="main" class="row">
-      <%= yield %>
+    <div class="span3">
+      <% if current_user %>
+          <%= link_to "Eres #{current_user.name}", current_user %> >
+          <%= link_to 'Salir', logout_path %>
+      <% else %>
+          <%= link_to 'Entrar', login_path %>
+      <% end %>
     </div>
   </div>
+  <div id="main" class="row">
+    <%= yield %>
+  </div>
+</div>
 </body>
 </html>

@@ -1,0 +1,12 @@
+<div class="span3">&nbsp;</div>
+
+<div class="span6">
+  <%=  title 'Entrar' %>
+  <%= simple_form_for user_session do |form| %>
+      <%= form.input :email %>
+      <%= form.input :password %>
+      <%= form.submit 'Entrar' %>
+  <% end %>
+</div>
+
+<div class="span3">&nbsp;</div>

@@ -30,6 +30,7 @@ GEM
       multi_json (~> 1.0)
     archive-tar-minitar (0.5.2)
     arel (3.0.0)
+    bcrypt-ruby (3.0.1)
     builder (3.0.0)
     cancan (1.6.7)
     capistrano (2.9.0)
@@ -146,6 +147,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bcrypt-ruby (~> 3.0.0)
   cancan
   capistrano
   coffee-rails (~> 3.2.1)

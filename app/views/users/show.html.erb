@@ -4,7 +4,7 @@
   <dd><%= user.name %></dd>
   
   <dt>e-mail:</dt>
-  <dd><%= user.mail %></dd>
+  <dd><%= user.email %></dd>
 </dl>
-<%= link_to 'Editar', edit_user_path %>
-<%= link_to 'Borrar', user, confirm: '¿Estás seguro?', method: :delete %>
+<%= link_to 'Editar', edit_user_path if can? :edit, user %>
+<%= link_to 'Borrar', user, confirm: '¿Estás seguro?', method: :delete if can? :destroy, :user %>
