@@ -1,13 +1,10 @@
-<%= title post.title %>
-<div class="body">
-  <%= post.body %>
-</div>
-<%= link_to icon(:edit, ' Editar entrada'), edit_post_path(post), class: :btn if can? :edit, Post %>
-<%= link_to icon(:trash, ' Borrar entrada'), post, confirm: '¿Estás seguro?', class: :btn, method: :delete if can? :delete, Post %>
+
+<%= render 'show' %>
 <div id="comments">
-  <%= render post.comments %>
+  <%= render content.comments %>
 </div>
-<%= simple_form_for [post, Comment.new] do |form| %>
-  <%= form.input :body, label: 'Comentario' %>
-  <%= form.submit %>
+
+<%= simple_form_for [content, Comment.new] do |form| %>
+    <%= form.input :body, label: 'Comentario' %>
+    <%= form.submit %>
 <% end %>

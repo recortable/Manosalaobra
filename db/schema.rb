@@ -21,11 +21,13 @@ ActiveRecord::Schema.define(:version => 20120203023938) do
     t.datetime "updated_at",                :null => false
   end
 
-  create_table "posts", :force => true do |t|
-    t.string   "title",      :limit => 300
+  create_table "contents", :force => true do |t|
+    t.string   "title",        :limit => 300
+    t.string   "type",         :limit => 20
     t.text     "body"
-    t.datetime "created_at",                :null => false
-    t.datetime "updated_at",                :null => false
+    t.string   "content_type", :limit => 16
+    t.datetime "created_at",                  :null => false
+    t.datetime "updated_at",                  :null => false
   end
 
   create_table "proposed_names", :force => true do |t|

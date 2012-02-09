@@ -22,10 +22,9 @@
     </div>
     <div class="span6">
       <%= link_to 'Blog', posts_path %> |
-      <% if can? :view, User %>
-          <%= link_to 'Users', users_path %> |
-      <% end %>
-      <%= link_to 'Nombres', proposed_names_path %>
+      <%= link_to 'Nombres', proposed_names_path %> |
+      <%= link_to 'Páginas', pages_path if can? :manage, Page %> |
+      <%= link_to 'Usuarios', users_path if can? :view, User %>
     </div>
     <div class="span3">
       <% if current_user %>

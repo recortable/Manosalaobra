@@ -3,6 +3,7 @@ Manosalaobra::Application.routes.draw do
   resources :posts, path: 'entradas' do
     resources :comments
   end
+  resources :pages, path: 'paginas'
   resources :users, path: 'usuarios'
   resources :proposed_names, path: 'nombres', except: :show do
     resources :votes, path: 'votos'

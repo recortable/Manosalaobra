@@ -1,0 +1,23 @@
+<div class="span3">&nbsp;</div>
+<div class="span6">
+  <%= title 'Páginas' %>
+
+  <%= link_to icon(:plus, 'Añadir página'), new_page_path, class: :btn if can? :create, Post %>
+
+
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <% pages.each do |page| %>
+        <tr>
+          <td><%= link_to page.title, page %></td>
+        </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>
+<div class="span3">&nbsp;</div>

@@ -1,8 +1,8 @@
 # encoding: utf-8
-class PostsController < ApplicationController
-  respond_to :html, :json, :xml
+class PostsController < ContentsController
   expose(:posts) { Post.all }
   expose(:post)
+  expose(:content) { post }
 
   def index
     respond_with posts
@@ -17,26 +17,26 @@ class PostsController < ApplicationController
     respond_with post
   end
 
+  def edit
+    authorize! :edit, post
+    respond_with post
+  end
+
   def create
-    authorize! :create, Post
+    authorize! :create, post
     flash[:notice] = "Se ha guardado! Bien!" if post.save
     respond_with post
   end
 
-  def edit
-    authorize! :edit, Post
-    respond_with post
-  end
-
   def update
-    authorize! :edit, Post
-    flash[:notice] = 'Actualizado, ¡gracias!' if post.update_attributes params[:post]
+    authorize! :edit, content
+    flash[:notice] = 'Actualizado, ¡gracias!' if content.update_attributes params[:post]
     respond_with post
   end
 
   def destroy
-    authorize! :delete, Post
-    flash[:notice] = 'Borrado' if post.destroy
+    authorize! :delete, content
+    flash[:notice] = 'Borrado' if content.destroy
     respond_with post, location: posts_path
   end
 end

@@ -8,6 +8,7 @@ class Ability
     # Admin permissions
     if user.present? and user.admin?
       can :manage, Post
+      can :manage, Page
       can :manage, User
       can :manage, Comment
       can :manage, ProposedName
