@@ -27,6 +27,7 @@ gem 'simple_form'
 gem 'decent_exposure'
 gem 'cancan'
 gem 'redcarpet'
+gem 'friendly_id'
 
 # To use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.0'

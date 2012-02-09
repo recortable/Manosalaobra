@@ -3,6 +3,8 @@ class User < ActiveRecord::Base
   has_many :comments
 
   # EXTENSIONS
+  extend FriendlyId
+  friendly_id :name, use: :slugged
   has_secure_password
 
   # VALIDATIONS

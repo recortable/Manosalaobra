@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(:version => 20120203023938) do
 
   create_table "contents", :force => true do |t|
     t.string   "title",        :limit => 300
+    t.string   "slug",         :limit => 300
     t.string   "type",         :limit => 20
     t.text     "body"
     t.string   "content_type", :limit => 16
@@ -41,6 +42,7 @@ ActiveRecord::Schema.define(:version => 20120203023938) do
 
   create_table "users", :force => true do |t|
     t.string   "name",            :limit => 50
+    t.string   "slug",            :limit => 50
     t.string   "email",           :limit => 60
     t.string   "password_digest", :limit => 300
     t.string   "role",            :limit => 10
