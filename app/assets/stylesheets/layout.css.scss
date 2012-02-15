@@ -2,6 +2,7 @@
 html, body {
   background-image: image_url('fondo.png');
 }
+h1, h2, h3, h4, h5, h6 {color: #484848;}
 
 body {
   color: #484848;
@@ -21,6 +22,6 @@ div#top {
 
 #page {
   background-color: #f8f9ef;
-  margin: 10px auto;
-  border: 9px solid #f8f9ef;
+  margin: 0px auto;
+  border: 20px solid #f8f9ef;
 }

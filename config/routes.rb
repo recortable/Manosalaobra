@@ -1,7 +1,7 @@
 Manosalaobra::Application.routes.draw do
   root to: 'dashboards#wip'
   match '/inicio' => 'dashboards#show'
-  resources :posts, path: 'entradas' do
+  resources :posts, path: 'blog' do
     resources :comments
   end
   resources :pages, path: 'paginas'
@@ -16,5 +16,5 @@ Manosalaobra::Application.routes.draw do
   match '/salir' => 'user_sessions#destroy', as: :logout
 
   # Simula un login
-  match '/entrar/:id' => 'users#enter'
+  match '/entrar/:id' => 'users#enter' unless Rails.env.production?
 end

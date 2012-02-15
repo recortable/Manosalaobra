@@ -1,10 +1,24 @@
-<%= link_to icon(:add, 'Añadir usuario'), new_user_path, class: :btn %>
-<ul class="unstyled">
-  <% users.each do |user| %>
-    <li>
-      <%= link_to user.name, user %>
-      <%= link_to icon(:edit, 'Editar'), edit_user_path(user) %>
-      <%= link_to icon(:trash, 'Borrar'), user, confirm: '¿Estás seguro?', method: :delete %>
-   </li>
- <%end %>  
-</ul>
+<div class="row">
+  <div class="span12">
+    <%= title 'Participantes' %>
+    <div class="btn-bar btn-group">
+      <%= link_to icon(:plus, 'Añadir participante'), new_user_path %>
+    </div>
+    <table class="table table-striped">
+      <tbody>
+
+      <% users.each do |user| %>
+          <tr>
+            <td><%= link_to user.name, user %></td>
+            <td><%= user.email %></td>
+            <td><%= user.role %></td>
+            <td class="btn-group">
+              <%= link_to icon(:edit, 'Editar'), edit_user_path(user) %> |
+              <%= link_to icon(:trash, 'Borrar'), user, confirm: '¿Estás seguro?', method: :delete %>
+            </td>
+          </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

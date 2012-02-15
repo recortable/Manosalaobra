@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 if User.count == 0
 # Create admin user (change password!)
   User.create(name: 'Admin', email: "admin@casamasomenos.net", password: 'secret',

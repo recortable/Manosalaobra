@@ -13,6 +13,7 @@
   <% end %>
   <%= form.input :name %>
   <%= form.input :email %>
+  <%= form.input :role if current_user.admin? %>
   <%= form.input :password %>
   <%= form.input :password_confirmation %>
   <%= form.submit %>
