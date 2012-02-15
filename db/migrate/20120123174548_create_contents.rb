@@ -10,7 +10,5 @@ class CreateContents < ActiveRecord::Migration
       table.timestamps
     end
 
-    Page.create(title: '¿Qué? / ¿Quienes? / ¿Cómo?', content_type: 'markdown')
-    Page.create(title: '¿Por qué la participación?', content_type: 'markdown')
   end
 end

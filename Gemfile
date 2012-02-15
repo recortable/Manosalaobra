@@ -21,6 +21,7 @@ group :assets do
   gem 'therubyracer'
 end
 
+
 gem 'mysql2' #, '< 0.3'
 gem 'jquery-rails'
 gem 'simple_form'
@@ -28,6 +29,8 @@ gem 'decent_exposure'
 gem 'cancan'
 gem 'redcarpet'
 gem 'friendly_id'
+
+gem 'hoptoad_notifier'
 
 # To use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.0'

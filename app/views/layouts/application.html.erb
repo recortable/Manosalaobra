@@ -17,17 +17,18 @@
       &nbsp;
     </div>
     <div class="span6">
-      <%= link_to 'Blog', posts_path %>
-      <%= link_to 'Nombres', proposed_names_path %>
+      <%= link_to 'Blog', posts_path if can? :manage, Post %>
+      <%= link_to 'Nombres', proposed_names_path if can? :manage, ProposedName %>
       <%= link_to 'Páginas', pages_path if can? :manage, Page %>
       <%= link_to 'Usuarios', users_path if can? :view, User %>
+      &nbsp;
     </div>
     <div class="span3">
       <% if current_user %>
           <%= link_to "Eres #{current_user.name}", current_user %> >
           <%= link_to 'Salir', logout_path %>
       <% else %>
-          <%= link_to 'Entrar', login_path %>
+          &nbsp;
       <% end %>
     </div>
   </div>
@@ -35,7 +36,7 @@
 <div id="page" class="container">
   <div class="row">
     <div class="span12">
-      <%= link_to image_tag('blog-participas.png', width: 944, height: 189), root_path %>
+      <%= link_to image_tag('cabecera.png', width: 942, height: 195), root_path %>
     </div>
   </div>
   <div id="main" class="row">

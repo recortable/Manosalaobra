@@ -1,5 +1,6 @@
 Manosalaobra::Application.routes.draw do
-  root to: 'dashboards#show'
+  root to: 'dashboards#wip'
+  match '/inicio' => 'dashboards#show'
   resources :posts, path: 'entradas' do
     resources :comments
   end

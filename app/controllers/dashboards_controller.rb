@@ -6,4 +6,8 @@ class DashboardsController < ApplicationController
   def show
 
   end
+
+  # WIP: work in progress
+  def wip
+  end
 end

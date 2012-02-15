@@ -9,8 +9,5 @@ class CreateUsers < ActiveRecord::Migration
       t.timestamps
     end
 
-    # Create admin user (change password!)
-    User.create(name: 'Admin', email: "admin@casamasomenos.net", password: 'secret',
-                password_confirmation: 'secret', role: 'admin')
   end
 end
