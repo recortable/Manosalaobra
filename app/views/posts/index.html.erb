@@ -1,23 +1,15 @@
-<div class="span3">&nbsp;</div>
-<div class="span6">
-  <%= title 'Entradas al blog' %>
-
-  <%= link_to icon(:plus, 'Añadir entrada'), new_post_path, class: :btn if can? :create, Post %>
-
-
-  <table class="table table-striped">
-    <thead>
-    <tr>
-      <th></th>
-    </tr>
-    </thead>
-    <tbody>
-    <% posts.each do |post| %>
-        <tr>
-          <td><%= link_to post.title, post %></td>
-        </tr>
-    <% end %>
-    </tbody>
-  </table>
+<div class="row">
+  <div class="span12">
+    <%= title 'Entradas al blog' %>
+    <%= link_to icon(:plus, 'Añadir entrada'), new_post_path if can? :create, Post %>
+    <table class="table table-striped">
+      <tbody>
+      <% posts.each do |post| %>
+          <tr>
+            <td><%= link_to post.title, post %></td>
+          </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
 </div>
-<div class="span3">&nbsp;</div>

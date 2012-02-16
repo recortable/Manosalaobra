@@ -1,14 +1,26 @@
-<%= title 'Nombres propuestos' %>
-<ul>
-   <% proposed_names.each do |name| %>
-     <li>
-       [<%= name.request_ip %>] <%= name.value %> - (Valor: <%= name.votes_value %> con <%= name.votes_count %> votos)
-       <%= link_to icon(:trash, "Eliminar nombre"), name, method: :delete, class: :btn if can? :delete, ProposedName %>
-       <div class="votes">
-         <%= link_to '+1', proposed_name_votes_path(name, value: 1), method: :post, class: :btn %>
-         <%= link_to '-1', proposed_name_votes_path(name, value: -1), method: :post, class: :btn %>
-       </div>
-     </li>
-   <%end %>  
-</ul>
-<%= link_to '+ Proponer un nuevo nombre', new_proposed_name_path %>
+<div class="row">
+  <div class="span12">
+    <%= title 'Nombres propuestos' %>
+    <%= link_to '+ Proponer un nuevo nombre', new_proposed_name_path %>
+    <table class="table striped">
+      <tbody>
+      <% proposed_names.each do |name| %>
+          <tr>
+            <td>
+              <%= link_to icon('chevron-up'), proposed_name_votes_path(name, value: 1), method: :post %>
+              <%= link_to icon('chevron-down'), proposed_name_votes_path(name, value: -1), method: :post %>
+            </td>
+            <td><%= name.value %></td>
+            <td><%= name.request_ip %></td>
+            <td><%= name.votes_value %></td>
+            <td><%= name.votes_count %> votos</td>
+            <td>
+              <%= link_to icon(:trash, "Eliminar nombre"), name, method: :delete if can? :delete, ProposedName %>
+            </td>
+          </tr>
+      <%end %>
+      </tbody>
+    </table>
+
+  </div>
+</div>

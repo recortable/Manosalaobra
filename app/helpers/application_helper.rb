@@ -5,7 +5,7 @@ module ApplicationHelper
     content_tag(options[:tag], label)
   end
 
-  def icon(symbol, label)
+  def icon(symbol, label = '&nbsp')
     "<i class=\"icon-#{symbol}\"></i>#{label}".html_safe
   end
 end
