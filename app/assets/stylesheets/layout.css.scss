@@ -8,6 +8,13 @@ body {
   color: #484848;
   font-family: 'Signika', sans-serif;
   font-size: 100%;
+  line-height: 1.286em;
+}
+
+body * {
+  font-size: inherit;
+  line-height: inherit;
+  font-family: inherit;
 }
 
 [class^="icon-"] {
@@ -38,13 +45,15 @@ div#top {
 
     #new_proposed_name {
       float: right;
+      background: #484848;
 
       input {
         height: 100%;
         margin: 0;
         border: 2px solid #484848;
-        font-size: 23px;
         border-radius: 0;
+        font-size: 23px;
+        line-height: 1.286em;
       }
 
       #proposed_name_value {
@@ -100,6 +109,22 @@ div#top {
   }
 }
 
+/* Contenido */
+
 #content-region {
   margin-top: 55px;
+
+  h1 {
+    font-size: 18px;
+    margin-bottom: 22px;
+  }
+
+  h1:after {
+    content: "_";
+    display: block;
+  }
+
+  p {
+    margin: 20px 0;
+  }
 }
