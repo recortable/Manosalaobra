@@ -7,6 +7,7 @@ h1, h2, h3, h4, h5, h6 {color: #484848;}
 body {
   color: #484848;
   font-family: 'Signika', sans-serif;
+  font-size: 100%;
 }
 
 [class^="icon-"] {
@@ -23,5 +24,54 @@ div#top {
 #page {
   background-color: #f8f9ef;
   margin: 0px auto;
-  border: 20px solid #f8f9ef;
+}
+
+/* content-top | 8 nombres más votados */
+
+#content-top {
+
+  margin-top: 6px;
+
+  ul.proposed-names{
+    margin: 0;
+    list-style: none;
+    font-weight: 600;
+
+    li {
+      width: 141px;
+      position: relative;
+      display: inline-block;
+      margin-left: 14px;
+      text-align: center;
+
+      .proposed_name-value {
+        width: 100%;
+        position: absolute;
+        font-size: 20px;
+        word-wrap: break-word;
+      }
+
+      .votes {
+        height: 55px;
+        margin-top: 22px;
+        background: url(icono-casa.png);
+        font-size: 36px;
+        padding-top: 66px;
+
+        span {
+          display: block;
+          margin-top: 3px;
+          font-size: 18px;
+        }
+      }
+    }
+
+    li:first-child {
+      margin-left: 2px;
+    }
+  }
+}
+
+#content-region {
+  margin-top: 55px;
 }
