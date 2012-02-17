@@ -1,0 +1,17 @@
+<div class="proposed-names span12">
+  <ul class="proposed-names">
+    <%= content_tag_for :li, names do |name| %>
+      <div class="proposed_name-value">
+        <%= name.value %>
+      </div>
+      <div class="votes">
+        <%= name.votes_value %>
+        <% if name.votes_value == 1 %>
+          <span>voto</span>
+        <% else %>
+          <span>votos</span>
+        <% end %>  
+      </div>
+    <% end %>
+  </ul>
+</div>

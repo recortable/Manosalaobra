@@ -1,25 +1,2 @@
-<% title 'Bienvenidx' %>
-<div class="span3">
-  <h3>Nombres propuestos</h3>
-  <ul class="unstyled">
-    <%= content_tag_for :li, names do |name| %>
-        <%= name.value %>
-    <% end %>
-  </ul>
-  <%= link_to 'Ver mas...', proposed_names_path %>
-</div>
-<div class="span6">
-  <h1><%= page.title %></h1>
-  <%= render_body page %>
-
-</div>
-<div class="span3">
-  <h3>Últimas entradas al blog</h3>
-  <ul class="unstyled">
-    <%= content_tag_for :li, posts, class: 'unstyled' do |post| %>
-        <%= link_to post.title, post %>
-    <% end %>
-  </ul>
-  <%= link_to 'Leer mas...', posts_path %>
-</div>
-
+<h1><%= page.title %></h1>
+<%= render_body page %>

@@ -9,14 +9,7 @@
         <%= link_to image_tag('cabecera.png', width: 942, height: 195), root_path %>
       </div>
     </div>
-    <div id="content-top" class="row">
-      <%= render 'layouts/most_voted_names_top' %>
-    </div>
-    <div id="content-region" class="row">
-      <div class="main span6">
-        <%= yield %>
-      </div>
-    </div>  
+    <%= yield %>
   </div>
 </body>
 </html>

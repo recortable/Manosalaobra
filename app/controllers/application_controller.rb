@@ -1,6 +1,8 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
+  expose(:names) { ProposedName.limit(6).order("votes_value DESC") }
+
   # Esto hace que 'current_user' pueda ser usado desde las vistas
   helper_method :current_user
 
