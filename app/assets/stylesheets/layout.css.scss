@@ -32,42 +32,70 @@ div#top {
 
   margin-top: 6px;
 
-  ul.proposed-names{
-    margin: 0;
-    list-style: none;
+  div.proposed-names {
+    font-size: 18px;
     font-weight: 600;
 
-    li {
-      width: 141px;
-      position: relative;
-      display: inline-block;
-      margin-left: 14px;
-      text-align: center;
+    #new_proposed_name {
+      float: right;
 
-      .proposed_name-value {
-        width: 100%;
-        position: absolute;
-        font-size: 20px;
-        word-wrap: break-word;
+      input {
+        height: 100%;
+        margin: 0;
+        border: 2px solid #484848;
+        font-size: 23px;
+        border-radius: 0;
       }
 
-      .votes {
-        height: 55px;
-        margin-top: 22px;
-        background: url(icono-casa.png);
-        font-size: 36px;
-        padding-top: 66px;
+      #proposed_name_value {
+        width: auto;
+        font-weight: 400;
+      }
 
-        span {
-          display: block;
-          margin-top: 3px;
-          font-size: 18px;
+      input[type="submit"] {
+        padding-right: 5px;
+        background-color: #484848;
+        font-weight: 600;
+        color: #F8F9EF;
+      }
+    } 
+
+    ul.proposed-names{
+      margin: 30px 0 0;
+      list-style: none;
+
+      li {
+        width: 141px;
+        position: relative;
+        display: inline-block;
+        margin-left: 14px;
+        text-align: center;
+
+        .proposed_name-value {
+          width: 100%;
+          position: absolute;
+          font-size: 20px;
+          word-wrap: break-word;
+        }
+
+        .votes {
+          height: 55px;
+          margin-top: 22px;
+          background: url(icono-casa.png);
+          font-size: 36px;
+          padding-top: 66px;
+
+          span {
+            display: block;
+            margin-top: 3px;
+            font-size: 18px;
+          }
         }
       }
-    }
 
-    li:first-child {
-      margin-left: 2px;
+      li:first-child {
+        margin-left: 2px;
+      }
     }
   }
 }

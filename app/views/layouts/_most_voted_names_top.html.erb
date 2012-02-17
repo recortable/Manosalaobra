@@ -1,4 +1,9 @@
 <div class="proposed-names span12">
+  <%= form_for ProposedName.new do |f| %>
+    <%= f.text_field :value, size: 20, maxlength: 20,  placeholder: "¿Se te ocurre alguno mejor?" %><%= f.submit "> Enviar" %>
+  <% end %>
+  Los 6 nombres más votados<br/>
+  _
   <ul class="proposed-names">
     <%= content_tag_for :li, names do |name| %>
       <div class="proposed_name-value">
