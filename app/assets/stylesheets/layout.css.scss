@@ -38,8 +38,9 @@ div#top {
 #content-top {
 
   margin-top: 6px;
+  margin-bottom: 55px;
 
-  div.proposed-names {
+  .proposed-names-block {
     font-size: 18px;
     font-weight: 600;
 
@@ -112,7 +113,6 @@ div#top {
 /* Contenido */
 
 #content-region {
-  margin-top: 55px;
 
   h1 {
     font-size: 18px;
@@ -127,4 +127,51 @@ div#top {
   p {
     margin: 20px 0;
   }
+}
+
+/* Sidebar Right */
+
+.sidebar-right {
+
+  .recent-posts-block {
+
+    ul {
+      list-style: none;
+      margin: 0;
+
+      li {
+        margin-top: 6px;
+
+        .post-title {
+          font-weight: 600;
+        }
+
+        .post-date {
+          text-transform: uppercase;
+          font-weight: 300;
+          line-height: 60%;
+        }
+      }
+    }
+  }
+}
+
+/* Blocks */
+.sidebar .block {
+  margin-bottom: 40px;
+}
+
+.block-title {
+  margin-bottom: 22px;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.block-title:after {
+  content: "_";
+  display: block;
+}
+
+.block-content {
+  font-size: 12px;
 }

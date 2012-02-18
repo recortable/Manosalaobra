@@ -34,4 +34,6 @@ Manosalaobra::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+
+  Time::DATE_FORMATS[:dia_s_fecha] = "%A %d.%m.%Y"
 end

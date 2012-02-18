@@ -3,6 +3,8 @@ class ProposedNamesController < ApplicationController
   respond_to :html, :json, :xml
   expose(:proposed_names) { ProposedName.all }
   expose(:proposed_name)
+
+  layout "without_content_top"
   
   def index
     respond_with proposed_names
