@@ -33,83 +33,6 @@ div#top {
   margin: 0px auto;
 }
 
-/* content-top | 8 nombres más votados */
-
-#content-top {
-
-  margin-top: 6px;
-  margin-bottom: 55px;
-
-  .proposed-names-block {
-    font-size: 18px;
-    font-weight: 600;
-
-    #new_proposed_name {
-      float: right;
-      background: #484848;
-
-      input {
-        height: 100%;
-        margin: 0;
-        border: 2px solid #484848;
-        border-radius: 0;
-        font-size: 23px;
-        line-height: 1.286em;
-      }
-
-      #proposed_name_value {
-        width: auto;
-        font-weight: 400;
-      }
-
-      input[type="submit"] {
-        padding-right: 5px;
-        background-color: #484848;
-        font-weight: 600;
-        color: #F8F9EF;
-      }
-    } 
-
-    ul.proposed-names{
-      margin: 30px 0 0;
-      list-style: none;
-
-      li {
-        width: 141px;
-        position: relative;
-        display: inline-block;
-        margin-left: 14px;
-        text-align: center;
-
-        .proposed_name-value {
-          width: 100%;
-          position: absolute;
-          font-size: 20px;
-          word-wrap: break-word;
-        }
-
-        .votes {
-          height: 55px;
-          margin-top: 22px;
-          background: url(icono-casa.png);
-          font-size: 36px;
-          padding-top: 66px;
-
-          span {
-            display: block;
-            margin-top: 3px;
-            font-size: 18px;
-          }
-        }
-      }
-
-      li:first-child {
-        margin-left: 2px;
-      }
-    }
-  }
-}
-
 /* Contenido */
 
 #content-region {
@@ -156,6 +79,23 @@ div#top {
   }
 }
 
+/* Sidebar Right en index de ProposedNames */
+#content-region .proposed-names-sidebar-right {
+  margin-top: 64px;
+
+  .que-queremos-block {
+
+    .block-title span {
+      font-size: 0.889em;
+      font-weight: 400;
+    }
+
+    p {
+      margin: 0;
+    }
+  }
+}
+
 /* Blocks */
 .sidebar .block {
   margin-bottom: 40px;
@@ -174,4 +114,122 @@ div#top {
 
 .block-content {
   font-size: 12px;
+}
+
+/* Estilos generales para los nombres propuestos */
+ul.proposed-names{
+  margin: 0 0 0 -12px;
+  list-style: none;
+
+  li {
+    width: 141px;
+    position: relative;
+    display: inline-block;
+    margin-left: 14px;
+    text-align: center;
+
+    .proposed_name-value {
+      width: 100%;
+      position: absolute;
+      font-size: 20px;
+      word-wrap: break-word;
+    }
+
+    .votes {
+      height: 55px;
+      margin-top: 22px;
+      background: url(icono-casa.png) no-repeat;
+      font-size: 36px;
+      padding-top: 66px;
+
+      span {
+        display: block;
+        margin-top: 3px;
+        font-size: 18px;
+      }
+    }
+  }
+}
+
+#new_proposed_name {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #484848;
+
+  input {
+    height: 100%;
+    margin: 0;
+    border: 2px solid #484848;
+    border-radius: 0;
+    font-size: 23px;
+    line-height: 1.286em;
+  }
+
+  #proposed_name_value {
+    width: auto;
+    font-weight: 400;
+  }
+
+  input[type="submit"] {
+    padding-right: 5px;
+    background-color: #484848;
+    font-weight: 600;
+    color: #F8F9EF;
+  }
+
+}
+
+/* content-top | 8 nombres más votados */
+
+#content-top {
+  position: relative;
+
+  margin-top: 6px;
+  margin-bottom: 55px;
+
+  .proposed-names-block {
+    font-size: 18px;
+    font-weight: 600;
+
+    ul.proposed-names{
+      margin-top: 30px;
+    }
+  }
+}
+
+/* Contenido -> index de proposed_names */
+#content-region {
+  position: relative;
+
+  ul.proposed-names {
+
+    li {
+      margin-bottom: 30px;
+
+      .vote-plus {
+        width: 36px;
+        height: 36px;
+        float: left;
+        position: relative;
+        bottom: 1px;
+        text-align: left;
+
+        a {
+          display: block;
+          width: 100%;
+          height: 100%;
+          background: url(mas.png) no-repeat;
+        }
+
+        a:hover {
+          background: url(mas.png) no-repeat bottom;
+        }
+      }
+
+      .admin-links {
+        clear: left;
+      }
+    }
+  }
 }

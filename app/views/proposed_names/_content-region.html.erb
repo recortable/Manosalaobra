@@ -1,0 +1,37 @@
+<%= form_for ProposedName.new do |f| %>
+  <%= f.text_field :value, size: 22, maxlength: 30,  placeholder: "¿Se te ocurre alguno mejor?" %><%= f.submit "> Enviar" %>
+<% end %>
+<div class="main span8">
+  <%= yield %>
+</div>
+<div class="sidebar sidebar-right proposed-names-sidebar-right span3 offset1">
+  <div class="block que-queremos-block">
+    <div class="block-title">
+      ¿Qué queremos hacer?
+      <span>
+        (Algunas ideas que te pueden ayudar en la selección)
+      </span>
+    </div>
+    <div class="block-content">
+      <p>
+        (1)Crear una comunidad virtual de práctica i aprendizaje en torno a procesos colectivos de habitar.
+      </p>
+      <p>
+        (2)Fomentar la idea de la vivienda como un proceso y la necesidad que los ciudadanos participemos más en el mismo.
+      </p>
+      <p>
+        (3)La plataforma pretende ser un archivo de experiencias construidas de procesos colectivos y participativos en torno a la vivienda.
+      </p>
+      <p>
+        (4)La plataforma pretende dar herramientas y contenidos teóricos a los ciudadonos (y técnicos) para fomentar la autogestión y el trabajo colaborativo en los procesos de vivienda.
+      </p>
+      <p>
+        (5)Dar herramientas para potenciar la vivienda adaptable que cambia a lo largo del tiempo.
+      </p>
+      <p>
+        (6)Fomentar el diseño colaborativo en el ámbito de la vivienda colectiva.
+      </p>
+    </div>
+  </div>
+  <%= render 'sidebar-right' %>
+</div>

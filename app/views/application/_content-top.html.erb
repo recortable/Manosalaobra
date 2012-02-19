@@ -1,10 +1,10 @@
 <div class="proposed-names-block span12">
-  <%= form_for ProposedName.new do |f| %>
-    <%= f.text_field :value, size: 22, maxlength: 30,  placeholder: "¿Se te ocurre alguno mejor?" %><%= f.submit "> Enviar" %>
-  <% end %>
   <div class="block-title">
     Los 6 nombres más votados
   </div>
+  <%= form_for ProposedName.new do |f| %>
+    <%= f.text_field :value, size: 22, maxlength: 30,  placeholder: "¿Se te ocurre alguno mejor?" %><%= f.submit "> Enviar" %>
+  <% end %>
   <ul class="proposed-names">
     <%= content_tag_for :li, names do |name| %>
       <div class="proposed_name-value">
