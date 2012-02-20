@@ -1,0 +1,6 @@
+$('#proposed_name_<%= vote.proposed_name.id %> span.votes-value').html("<%= vote.proposed_name.votes_value %>")
+if (<%= vote.proposed_name.votes_value %> != 1) {
+  $('#proposed_name_<%= vote.proposed_name.id %> span.votes-label').html("votos")
+} else {
+  $('#proposed_name_<%= vote.proposed_name.id %> span.votes-label').html("voto")
+}

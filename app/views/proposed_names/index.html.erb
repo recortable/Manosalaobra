@@ -5,12 +5,16 @@
       <%= name.value %>
     </div>
     <div class="votes">
-      <%= name.votes_value %>
-      <% if name.votes_value == 1 %>
-        <span>voto</span>
-      <% else %>
-        <span>votos</span>
-      <% end %>
+      <span class="votes-value">
+        <%= name.votes_value %>
+      </span>
+      <span class="votes-label">
+        <% if name.votes_value == 1 %>
+          voto
+        <% else %>
+          votos
+        <% end %>
+      </span>
     </div>
     <div class="vote-plus">
       <%= link_to " ", proposed_name_votes_path(name, value: 1), title: "votar este nombre", method: :post %>

@@ -5,7 +5,7 @@
   <div class="block-content">
     <ul>
       <%= content_tag_for :li, posts do |post| %>
-        <div class="post-title"><%= link_to post.title, post_path %></div>
+        <div class="post-title"><%= link_to post.title, post %></div>
         <div class="post-date"><%= post.created_at.to_s(:dia_s_fecha) %></div>
       <% end %>
     </ul>

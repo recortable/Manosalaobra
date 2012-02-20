@@ -11,13 +11,17 @@
         <%= name.value %>
       </div>
       <div class="votes">
+      <span class="votes-value">
         <%= name.votes_value %>
+      </span>
+      <span class="votes-label">
         <% if name.votes_value == 1 %>
-          <span>voto</span>
+          voto
         <% else %>
-          <span>votos</span>
-        <% end %>  
-      </div>
+          votos
+        <% end %>
+      </span>
+    </div>
     <% end %>
   </ul>
 </div>

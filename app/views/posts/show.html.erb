@@ -1,10 +1,17 @@
-
-<%= render 'show' %>
-<div id="comments">
-  <%= render content.comments %>
+<div class="span3">
+  <%= post.created_at.to_s(:dia_s_fecha) %>
+</div>
+<div class="span6">
+  <%= render 'show' %>
+  <div id="comments">
+    <p id="comments-count">
+      <%= pluralize content.comments.count, "comentario", "comentarios" %>
+    </p>
+    <%= render content.comments %>
+  </div>
+  <%= simple_form_for [content, Comment.new] do |form| %>
+      <%= form.input :body, label: 'Añadir un comentario', as: :text, input_html: { :rows => 3 } %>
+      <%= form.submit "> Comentar" %>
+  <% end %>
 </div>
 
-<%= simple_form_for [content, Comment.new] do |form| %>
-    <%= form.input :body, label: 'Comentario' %>
-    <%= form.submit %>
-<% end %>

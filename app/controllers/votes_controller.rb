@@ -1,5 +1,4 @@
 class VotesController < ApplicationController
-  respond_to :html, :json, :xml
 
   # TODO: quitar este comentario
   # Votes controller es un NESTED RESOURCE (mira routes.rb y la guía de rutas)
@@ -13,6 +12,9 @@ class VotesController < ApplicationController
     vote.value = params[:value] == '-1' ? -1 : 1
     vote.request_ip = request.remote_ip
     vote.save
-    redirect_to proposed_names_path
+    respond_to do |format|
+      format.html { redirect_to proposed_names_path }
+      format.js
+    end
   end
 end

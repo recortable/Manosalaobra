@@ -50,7 +50,13 @@ div#top {
   p {
     margin: 20px 0;
   }
+  
+  #comments-count {
+    position: relative;
+    right: 240px;
+  }
 }
+
 
 /* Sidebar Right */
 
@@ -139,10 +145,13 @@ ul.proposed-names{
       height: 55px;
       margin-top: 22px;
       background: url(icono-casa.png) no-repeat;
-      font-size: 36px;
       padding-top: 66px;
 
-      span {
+      .votes-value {
+        font-size: 36px;        
+      }
+
+      .votes-label {
         display: block;
         margin-top: 3px;
         font-size: 18px;

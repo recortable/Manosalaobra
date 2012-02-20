@@ -7,7 +7,7 @@ class CommentsController < ApplicationController
   expose(:comment)
 
   def create
-    comment.post_id = params[:post_id]
+    comment.post = Content.find(params[:post_id])
     flash[:notice] = "Gracias por tu comentario!" if comment.save
     respond_with comment, location: comment.post
   end
