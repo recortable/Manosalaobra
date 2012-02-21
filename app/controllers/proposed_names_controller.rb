@@ -2,7 +2,9 @@
 class ProposedNamesController < ApplicationController
   before_filter :require_user, except: [:index, :create]
   respond_to :html, :json, :xml
-  expose(:proposed_names) { ProposedName.all }
+
+  expose(:page) { Page.find 2 }
+  expose(:proposed_names) { ProposedName.order('votes_value DESC') }
   expose(:proposed_name)
 
   def index

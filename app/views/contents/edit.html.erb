@@ -1,6 +1,8 @@
-<div class="span3">&nbsp;</div>
-<div class="span6">
+<div class="span9 offset3">
+  <%= title "Editar '#{content.title}'" %>
+  <div class="actions">
+    <%= link_to icon('arrow-left', 'Cancelar'), content %>
+  </div>
   <%= render 'form' %>
 </div>
-<div class="span3">&nbsp;</div>
 

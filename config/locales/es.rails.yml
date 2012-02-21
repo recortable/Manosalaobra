@@ -122,8 +122,8 @@ es:
     template:
       body: ! 'Se encontraron problemas con los siguientes campos:'
       header:
-        one: No se pudo guardar este/a %{model} porque se encontró 1 error
-        other: No se pudo guardar este/a %{model} porque se encontraron %{count} errores
+        one: ! 'No se pudo guardar este/a %{model} porque se encontró 1 error'
+        other: ! 'No se pudo guardar este/a %{model} porque se encontraron %{count} errores'
   helpers:
     select:
       prompt: Por favor seleccione
@@ -186,7 +186,7 @@ es:
   time:
     am: am
     formats:
-      default: ! '%A, %d de %B de %Y %H:%M:%S %z'
+      default: ! '%d/%m/%Y'
       long: ! '%d de %B de %Y %H:%M'
       short: ! '%d de %b %H:%M'
     pm: pm

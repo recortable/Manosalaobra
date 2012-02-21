@@ -144,40 +144,5 @@ div#top {
   }
 }
 
-/* Contenido -> index de proposed_names */
-#content-region {
-  position: relative;
 
-  ul.proposed-names {
-
-    li {
-      margin-bottom: 30px;
-
-      .vote-plus {
-        width: 36px;
-        height: 36px;
-        float: left;
-        position: relative;
-        bottom: 1px;
-        text-align: left;
-
-        a {
-          display: block;
-          width: 100%;
-          height: 100%;
-          background: url(mas.png) no-repeat;
-        }
-
-        a:hover {
-          background: url(mas.png) no-repeat bottom;
-        }
-      }
-
-      .admin-links {
-        text-align: left;
-        clear: left;
-      }
-    }
-  }
-}
                                                   
