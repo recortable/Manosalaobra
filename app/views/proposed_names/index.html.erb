@@ -14,11 +14,7 @@
         <%= name.votes_value %>
       </span>
       <span class="votes-label">
-        <% if name.votes_value == 1 %>
-          voto
-        <% else %>
-          votos
-        <% end %>
+        <%= plural name.votes_value, 'voto' %>
       </span>
           </div>
           <div class="vote-plus">
@@ -26,7 +22,7 @@
           </div>
           <% if can? :delete, ProposedName %>
               <div class="admin-links">
-                <%= link_to icon(:trash, "Eliminar nombre"), name, method: :delete %>
+                <%= link_to icon(:pencil, "Gestionar"), name %>
               </div>
           <% end %>
       <% end %>

@@ -13,11 +13,8 @@ body {
   line-height: 1.286em;
 }
 
-body * {
-  font-size: inherit;
-  line-height: inherit;
-  font-family: inherit;
-}
+a:hover {text-decoration: underline;}
+
 
 [class^="icon-"] {
   background-image: image_url('glyphicons-halflings.png')
@@ -33,6 +30,10 @@ div#top {
 #page {
   background-color: #f8f9ef;
   margin: 0px auto;
+}
+
+.admin {
+  h1 {display: block; margin-bottom: 40px;}
 }
 
 /* Contenido */
@@ -173,8 +174,10 @@ div#top {
       }
 
       .admin-links {
+        text-align: left;
         clear: left;
       }
     }
   }
 }
+                                                  

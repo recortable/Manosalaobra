@@ -4,7 +4,7 @@
   </div>
   <div id="user" class="row">
     <div class="span3">
-      &nbsp;
+      <%= link_to 'Página de inicio', '/inicio' %>
     </div>
     <div class="span6">
       <%= link_to 'Blog', posts_path if can? :manage, Post %>

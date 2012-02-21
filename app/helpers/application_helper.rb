@@ -8,4 +8,8 @@ module ApplicationHelper
   def icon(symbol, label = '&nbsp')
     "<i class=\"icon-#{symbol}\"></i>#{label}".html_safe
   end
+
+  def plural(count, singular, plural = nil)
+    count == 1 ? singular : (plural || singular.pluralize)
+  end
 end

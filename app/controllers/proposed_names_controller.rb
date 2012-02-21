@@ -1,15 +1,16 @@
 # encoding: utf-8
 class ProposedNamesController < ApplicationController
+  before_filter :require_user, except: [:index, :create]
   respond_to :html, :json, :xml
   expose(:proposed_names) { ProposedName.all }
   expose(:proposed_name)
-  
+
   def index
     respond_with proposed_names
   end
-  
-  def new
-    respond_with proposed_names
+
+  def show
+    respond_with proposed_name
   end
 
   def create
@@ -17,14 +18,16 @@ class ProposedNamesController < ApplicationController
     flash[:notice] = "Se ha guardado ¡Bien!" if proposed_name.save
     respond_with proposed_name, location: proposed_names_path
   end
-  
+
   def destroy
     authorize! :delete, ProposedName
     flash[:notice] = 'Borrado' if proposed_name.destroy
     respond_with proposed_name, location: proposed_names_path
   end
-  
+
   def update
+    flash[:notice] = 'Nombre guardado.' if proposed_name.update_attributes(params[:proposed_name])
+    respond_with proposed_name
   end
-  
+
 end

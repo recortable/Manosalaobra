@@ -11,6 +11,19 @@ class ApplicationController < ActionController::Base
   # pero no invocarse utilizando una url (a diferencia de, por ejemplo, index)
   protected
 
+  def require_user
+    unless current_user
+      store_location
+      flash[:notice] = 'Es necesario que te identifiques primero.'
+      redirect_to login_path(from: request.fullpath)
+    end
+  end
+
+  def store_location(location = nil)
+    location ||= request.fullpath
+    session[:return_to] = location
+  end
+
   # Este método devuelve el usuario de la sessión (si existe)
   def current_user
     if session[:user_id].present?

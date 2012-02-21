@@ -1,5 +1,6 @@
 # encoding: utf-8
 class PagesController < ContentsController
+  before_filter :require_user
   expose(:pages) { Page.all }
   expose(:page)
   expose(:content) { page }

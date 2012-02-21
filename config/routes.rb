@@ -6,7 +6,7 @@ Manosalaobra::Application.routes.draw do
   end
   resources :pages, path: 'paginas'
   resources :users, path: 'participantes'
-  resources :proposed_names, path: 'nombres', except: :show do
+  resources :proposed_names, path: 'nombres' do
     resources :votes, path: 'votos'
   end
 

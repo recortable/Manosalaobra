@@ -1,0 +1,30 @@
+<div class="row admin">
+  <div class="span12">
+    <%= link_to icon('arrow-left', 'Volver'), proposed_names_path %>
+    <%= title "Gestionar nombre '#{proposed_name.value}'" %>
+    
+
+    <%= form_for proposed_name, html: {class: 'form-inline'} do |form| %>
+        <%= form.text_field :value %>
+        <%= form.submit 'Renombrar', class: :btn %>
+        <%= link_to icon(:trash, 'Borrar nombre'), proposed_name, class: 'btn btn-danger' %>
+  <% end %>
+
+    <h2>Votos</h2>
+    <table class="table striped">
+      <tbody>
+      <% proposed_name.votes.each do |vote| %>
+          <tr>
+            <td><%= vote.value %></td>
+            <td><%= vote.request_ip %></td>
+            <td>hace <%= time_ago_in_words vote.created_at %></td>
+            <td>
+              <%= link_to icon(:trash, 'Eliminar voto') %>
+            </td>
+          </tr>
+      <% end %>
+      </tbody>
+    </table>
+
+  </div>
+</div>
