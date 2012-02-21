@@ -3,25 +3,23 @@
     Los 6 nombres más votados
   </div>
   <%= form_for ProposedName.new do |f| %>
-    <%= f.text_field :value, size: 22, maxlength: 30,  placeholder: "¿Se te ocurre alguno mejor?" %><%= f.submit "> Enviar" %>
+      <%= f.text_field :value, size: 22, maxlength: 30, placeholder: "¿Se te ocurre alguno mejor?" %><%= f.submit "> Enviar" %>
   <% end %>
   <ul class="proposed-names">
     <%= content_tag_for :li, names do |name| %>
-      <div class="proposed_name-value">
-        <%= name.value %>
-      </div>
-      <div class="votes">
+        <%= link_to proposed_names_path do %>
+            <div class="proposed_name-value">
+              <%= name.value %>
+            </div>
+            <div class="votes">
       <span class="votes-value">
         <%= name.votes_value %>
       </span>
       <span class="votes-label">
-        <% if name.votes_value == 1 %>
-          voto
-        <% else %>
-          votos
-        <% end %>
+        <%= name.votes_value == 1 ? 'voto' : 'votos' %>
       </span>
-    </div>
+            </div>
+        <% end %>
     <% end %>
   </ul>
 </div>
