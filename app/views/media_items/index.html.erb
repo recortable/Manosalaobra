@@ -1,0 +1,16 @@
+<div class="row admin">
+  <div class="span12">
+    <%= title 'Contenido multimedia' %>
+
+    <%= link_to icon(:plus, 'Añadir'), new_media_item_path %>
+    <table class="table stripped">
+      <tbody>
+      <% media_items.each do |media| %>
+          <tr>
+            <td><%= link_to media.title, media %></td>
+          </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

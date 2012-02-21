@@ -7,7 +7,7 @@ html, body {
 h1, h2, h3, h4, h5, h6 {color: $foreground;}
 
 body {
-  color: #484848;
+  color: $foreground;
   font-family: 'Signika', sans-serif;
   font-size: 100%;
   line-height: 1.286em;
@@ -28,7 +28,7 @@ div#top {
 #top {margin-top: 40px;}
 
 #page {
-  background-color: #f8f9ef;
+  background-color: $background;
   margin: 0px auto;
 }
 

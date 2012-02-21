@@ -1,0 +1,8 @@
+<%=  simple_form_for media_item do |form| %>
+    <%= form.input :title %>
+    <%= form.input :position, collection: MediaItem::POSITIONS, include_blank: false %>
+    <%= form.input :width %>
+    <%= form.input :height %>
+    <%= form.input :embed_code %>
+    <%= form.submit  %>
+<% end %>

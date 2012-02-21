@@ -1,0 +1,9 @@
+@import 'variables';
+
+.media_item_example {
+  margin: 10px;
+  padding: 10px;
+  background-color: white;
+
+  div.media_item {background-color: $background;}
+}

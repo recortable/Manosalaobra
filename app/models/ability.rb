@@ -12,6 +12,7 @@ class Ability
       can :manage, User
       can :manage, Comment
       can :manage, ProposedName
+      can :manage, MediaItem
     end
 
     can :create, ProposedName

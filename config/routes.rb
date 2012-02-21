@@ -9,6 +9,7 @@ Manosalaobra::Application.routes.draw do
   resources :proposed_names, path: 'nombres' do
     resources :votes, path: 'votos'
   end
+  resources :media_items, path: 'multimedia'
 
   resources :user_sessions, only: :create
   # Utilizamos match para que las rutas sean más bonitas

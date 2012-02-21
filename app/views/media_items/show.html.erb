@@ -1,0 +1,21 @@
+<div class="row">
+  <div class="span12">
+    <%= title "Multimedia '#{media_item.title}'" %>
+
+    <div class="action">
+      <%= link_to 'Editar', [:edit, media_item] %>
+      <%= link_to 'Borrar' %>
+    </div>
+
+    <dl>
+      <dt>Identificador:</dt><dd><%= media_item.id %></dd>
+      <dt>Posición:</dt><dd><%= media_item.position %></dd>
+      <dt>Ancho:</dt><dd><%= media_item.width %></dd>
+      <dt>Alto:</dt><dd><%= media_item.height %></dd>
+    </dl>
+
+    <div class="media_item_example">
+      <%= render_media media_item %>
+    </div>
+  </div>
+</div>
