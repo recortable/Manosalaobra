@@ -1,2 +1,10 @@
-<h1><%= page.title %></h1>
-<%= render_body page %>
+<%= render 'proposed_names/summary' %>
+<div class="row">
+  <div class="main span6">
+    <h1><%= page.title %></h1>
+    <%= render_body page %>
+  </div>
+  <div class="sidebar sidebar-right span3 offset3">
+    <%= render 'sidebar-right' %>
+  </div>
+</div>
