@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120203023938) do
+ActiveRecord::Schema.define(:version => 20120222105438) do
 
   create_table "comments", :force => true do |t|
     t.integer  "user_id"
@@ -27,6 +27,20 @@ ActiveRecord::Schema.define(:version => 20120203023938) do
     t.string   "type",         :limit => 20
     t.text     "body"
     t.string   "content_type", :limit => 16
+    t.datetime "created_at",                  :null => false
+    t.datetime "updated_at",                  :null => false
+    t.integer  "user_id"
+  end
+
+  create_table "media_items", :force => true do |t|
+    t.string   "title",        :limit => 120
+    t.string   "content_type", :limit => 64
+    t.text     "embed_code"
+    t.string   "file",         :limit => 300
+    t.string   "url",          :limit => 200
+    t.integer  "width"
+    t.integer  "height"
+    t.string   "settings",     :limit => 300
     t.datetime "created_at",                  :null => false
     t.datetime "updated_at",                  :null => false
   end

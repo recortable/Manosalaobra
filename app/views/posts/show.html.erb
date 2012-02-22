@@ -4,6 +4,7 @@
     <div class="post-date">
       <%= l post.created_at %>
     </div>
+    <%= content_tag :div, "Por: " + post.user.name, class: "post-author" if post.user.present? %>
   </div>
   <div class="span6">
     <%= render 'show' %>

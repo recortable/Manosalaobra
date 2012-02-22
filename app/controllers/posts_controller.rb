@@ -25,6 +25,7 @@ class PostsController < ContentsController
 
   def create
     authorize! :create, post
+    post.user_id = current_user.id
     flash[:notice] = "Se ha guardado! Bien!" if post.save
     respond_with post
   end

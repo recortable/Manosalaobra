@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   # RELATIONS
   has_many :comments
+  has_many :posts
 
   # EXTENSIONS
   extend FriendlyId
