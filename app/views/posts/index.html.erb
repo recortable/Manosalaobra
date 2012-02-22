@@ -7,7 +7,7 @@
         <h2 class><%= link_to post.title, post %></h2>
         <%= render_body post %>
         <div class="post-info">
-          <span class="post-date"><%= l post.created_at, format: :date_only %></span>
+          <span class="post-date"><%= l post.created_at %></span>
           - <%= link_to pluralize(post.comments.count, 'comentario', 'comentarios'), post_path(post, anchor: "comments") %>
         </div>
       </div>
