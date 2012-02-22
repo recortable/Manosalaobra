@@ -1,8 +1,6 @@
 <div id="content-top" class="row">
   <div id="new-proposed-name">
-    <%= form_for ProposedName.new do |f| %>
-        <%= f.text_field :value, size: 22, maxlength: 30, placeholder: "¿Se te ocurre alguno mejor?" %><%= f.submit "> Enviar" %>
-    <% end %>
+    <%= render 'proposed_names/form' %>
   </div>
   <div class="proposed-names-block span12">
     <div class="block-title">
