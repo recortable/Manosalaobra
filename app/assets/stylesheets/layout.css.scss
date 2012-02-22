@@ -43,6 +43,7 @@ div#top {
   h1 {
     font-size: 18px;
     margin-bottom: 22px;
+    line-height: 1.286em;
   }
 
   h1:after {
@@ -52,11 +53,6 @@ div#top {
 
   p {
     margin: 20px 0;
-  }
-  
-  #comments-count {
-    position: relative;
-    right: 240px;
   }
 }
 
@@ -76,12 +72,6 @@ div#top {
 
         .post-title {
           font-weight: 600;
-        }
-
-        .post-date {
-          text-transform: uppercase;
-          font-weight: 300;
-          line-height: 60%;
         }
       }
     }

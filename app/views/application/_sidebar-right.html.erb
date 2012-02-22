@@ -6,7 +6,7 @@
     <ul>
       <%= content_tag_for :li, posts do |post| %>
         <div class="post-title"><%= link_to post.title, post %></div>
-        <div class="post-date"><%= l post.created_at %></div>
+        <div class="post-date"><%= l post.created_at, format: :date_only %></div>
       <% end %>
     </ul>
   </div>

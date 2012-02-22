@@ -1,3 +1,33 @@
 // Place all the styles related to the Posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import 'variables';
+
+.posts-index .post {
+  margin: 30px 0;
+}
+
+.blog-post {
+
+  #comments-count {
+    position: relative;
+    right: 240px;
+  }
+
+  .comment {
+    width: 65%;
+    padding: 0.5em 0;
+    border-top: 1px dashed;
+    border-color: lighten($foreground, 30%);
+  }
+}
+
+.post-date {
+  text-transform: uppercase;
+  font-weight: 300;
+}
+
+.recent-posts-block .post-date {
+  line-height: 60%;
+}
