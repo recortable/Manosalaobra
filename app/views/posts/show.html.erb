@@ -8,6 +8,10 @@
   </div>
   <div class="span6">
     <%= render 'show' %>
+
+    <%= link_to icon(:edit, ' Editar'), [:edit, content], class: :dbtn if can? :edit, content %>
+    <%= link_to icon(:trash, ' Borrar'), content, confirm: '¿Estás seguro?', class: :dbtn, method: :delete if can? :delete, content %>
+
     <div id="comments">
       <p id="comments-count">
         <%= pluralize content.comments.count, "comentario", "comentarios" %>

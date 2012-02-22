@@ -30,6 +30,8 @@ ActiveRecord::Schema.define(:version => 20120222105438) do
     t.datetime "created_at",                  :null => false
     t.datetime "updated_at",                  :null => false
     t.integer  "user_id"
+    t.string   "author",       :limit => 100
+    t.date     "published_at"
   end
 
   create_table "media_items", :force => true do |t|

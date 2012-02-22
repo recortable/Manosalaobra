@@ -7,7 +7,12 @@
       <tbody>
       <% media_items.each do |media| %>
           <tr>
+            <td>!!@<%= media.id %></td>
             <td><%= link_to media.title, media %></td>
+            <td class="btn-group">
+              <%= link_to 'Editar', [:edit, media], class: :btn %>
+              <%= link_to 'Borrar', media, class: :btn, method: :delete, confirm: '¿Seguro?' %>
+            </td>
           </tr>
       <% end %>
       </tbody>

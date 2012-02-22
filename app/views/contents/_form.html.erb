@@ -1,5 +1,7 @@
 <%= simple_form_for content do |form| %>
     <%= form.input :title %>
+    <%= form.input :author %>
+    <%= form.input :published_at %>
     <%= form.input :body %>
     <%= form.input :content_type, collection: [:markdown], include_blank: false %>
     <%= form.submit %>
