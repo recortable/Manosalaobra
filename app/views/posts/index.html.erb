@@ -1,15 +1,14 @@
+<%= render 'proposed_names/summary' %>
 <div id="content-region" class="row">
   <div class="span6 posts-index">
     <%= title 'Entradas al blog' %>
     <%= link_to icon(:plus, 'Añadir entrada'), new_post_path if can? :create, Post %>
-    <% posts.each do |post| %>
-      <div class="post">
-        <h2 class><%= link_to post.title, post %></h2>
-        <%= render_body post %>
-        <div class="post-info">
-          <span class="post-date"><%= l post.created_at %></span>
-          - <%= link_to pluralize(post.comments.count, 'comentario', 'comentarios'), post_path(post, anchor: "comments") %>
-        </div>
+    <%= div_for posts do |post| %>
+      <h2 class><%= link_to post.title, post %></h2>
+      <%= render_body post %>
+      <div class="post-info">
+        <span class="post-date"><%= l post.created_at %></span>
+        - <%= link_to pluralize(post.comments.count, 'comentario', 'comentarios'), post_path(post, anchor: "comments") %>
       </div>
     <% end %>
   </div>
