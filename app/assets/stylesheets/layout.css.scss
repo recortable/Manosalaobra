@@ -6,11 +6,19 @@ html, body {
 }
 h1, h2, h3, h4, h5, h6 {color: $foreground;}
 
+h1 {
+  margin-bottom: 15px;
+}
+
 body {
   color: $foreground;
   font-family: 'Signika', sans-serif;
   font-size: 100%;
   line-height: 1.286em;
+}
+
+body * {
+  font-family: 'Signika', sans-serif;
 }
 
 a:hover {text-decoration: underline;}
@@ -46,6 +54,12 @@ div#top {
     line-height: 1.286em;
   }
 
+  h2 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    line-height: 1.286em;
+  }
+
   h1:after {
     content: "_";
     display: block;
@@ -53,6 +67,7 @@ div#top {
 
   p {
     margin: 20px 0;
+    font-size: 14px;
   }
 }
 

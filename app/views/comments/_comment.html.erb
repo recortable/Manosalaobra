@@ -1,7 +1,9 @@
 <div class="comment">
   <%= comment.body %>
-  <div class="admin-links">
-    <%= link_to icon(:edit, 'Editar comentario'), edit_post_comment_path(post, comment), class: :btn if can? :edit, Comment %>
-    <%= link_to icon(:trash, 'Borrar comentario'), [post, comment], method: :delete, class: :btn if can? :delete, Comment %>
-  </div>
+  <% if can? :manage, Comment %>
+    <%= content_tag :div, class: "admin-links" do  %>
+      <%= link_to icon(:edit, 'Editar comentario'), edit_post_comment_path(post, comment), class: :btn if can? :edit, Comment %>
+      <%= link_to icon(:trash, 'Borrar comentario'), [post, comment], method: :delete, class: :btn if can? :delete, Comment %>
+    <% end %>
+  <% end %>
 </div>

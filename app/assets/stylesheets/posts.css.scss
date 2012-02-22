@@ -8,11 +8,33 @@
   margin: 30px 0;
 }
 
-.blog-post {
+.post-info {
+  font-size: 12px;
+}
+
+#content-region.blog-post {
+
+  h1 {
+    font-size: 24px;
+  }
+
+  .post-info {
+
+    .post-date, .post-author {
+      font-weight: 400;
+    }
+    
+    .post-date:after, .post-author:after {
+      content: "_";
+      display: block;
+    }
+  }
+
 
   #comments-count {
     position: relative;
     right: 240px;
+    font-size: 18px;
   }
 
   .comment {
@@ -20,14 +42,35 @@
     padding: 0.5em 0;
     border-top: 1px dashed;
     border-color: lighten($foreground, 30%);
+    font-size: 14px;
+  }
+
+  #new_comment label, 
+  #new_comment input,
+  #new_comment textarea
+  {
+    font-size: 18px;
   }
 }
 
 .post-date {
-  text-transform: uppercase;
+  text-transform: uppercase;  
+}
+
+.post-date, .post-author {
   font-weight: 300;
 }
 
 .recent-posts-block .post-date {
   line-height: 60%;
+}
+
+#new_post, form[id*="edit_post_"] {
+  * {
+    font-size: 14px;
+  }
+
+  textarea, input.string {
+    width: 90%;
+  }
 }
