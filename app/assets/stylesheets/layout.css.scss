@@ -25,6 +25,7 @@ div#top {
 
 
 
+
 /* Sidebar Right */
 
 .sidebar-right {
@@ -116,3 +117,18 @@ div#logos {
   #sostrecivic:hover {background-position: 0 -121px;}
 }
                                                   
+#flash {
+  background-color: yellow;
+  display: block;
+  width: 80%; margin: 5px auto;
+  border-radius: 3px;
+  text-align: center;
+}
+
+form#subscribe {
+  margin-top: -10px;
+  input[type=text] {
+    border: 1px solid $foreground;
+    border-radius: 0px;
+  }
+}

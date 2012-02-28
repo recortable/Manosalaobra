@@ -4,7 +4,9 @@ Manosalaobra::Application.routes.draw do
     resources :comments
   end
   resources :pages, path: 'paginas'
-  resources :users, path: 'participantes'
+  resources :users, path: 'participantes' do
+    post :subscribe, on: :collection
+  end
   resources :proposed_names, path: 'nombres' do
     resources :votes, path: 'votos'
   end

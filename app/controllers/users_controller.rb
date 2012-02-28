@@ -47,6 +47,15 @@ class UsersController < ApplicationController
     respond_with user, location: users_path
   end
 
+  def subscribe
+    notice = 'Tienes que introducir tu email'
+    if params[:email].present?
+      user = User.new email: params[:email]
+      notice = 'Te mantendremos informadx' if user.save(validate: false)
+    end
+    redirect_to params[:from_url], notice: notice
+  end
+
   # Este método es una puerta de entrada que eliminaremos
   # cuando implementemos el inicio de sesión como dios manda
   # Mira el fichero routes.rb para saber de dónde sale el params[:id]

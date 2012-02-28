@@ -8,6 +8,14 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<% if flash[:notice].present? %>
+    <div class="container">
+      <div id="flash" class="row">
+        <%= flash[:notice] %>
+      </div>
+    </div>
+<% end %>
+
 <%= render 'session_bar' %>
 <div id="page" class="container">
   <div class="row">

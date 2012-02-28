@@ -1,4 +1,3 @@
-<%= title 'Procesos colectivos de vivienda' %>
 <%= render 'proposed_names/summary' %>
 <div id="content-region" class="row blog-post">
   <div class="span3 post-info">
@@ -9,9 +8,6 @@
   </div>
   <div class="span6">
     <%= render 'show' %>
-
-    <%= link_to icon(:edit, ' Editar'), [:edit, content], class: :dbtn if can? :edit, content %>
-    <%= link_to icon(:trash, ' Borrar'), content, confirm: '¿Estás seguro?', class: :dbtn, method: :delete if can? :delete, content %>
 
     <div id="comments">
       <p id="comments-count">
@@ -25,6 +21,7 @@
     <% end %>
   </div>
   <div class="sidebar sidebar-right span3">
+    <%= render 'posts/summary' %>
     <%= render 'contact_social_info' %>
   </div>
 </div>
