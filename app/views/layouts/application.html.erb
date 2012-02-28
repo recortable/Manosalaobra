@@ -12,7 +12,8 @@
 <div id="page" class="container">
   <div class="row">
     <div class="span12">
-      <%= link_to image_tag('cabecera.png', width: 942, height: 195), root_path %>
+      <%= link_to image_tag('cabecera.png', width: 942, height: 195),
+                  current_page?(proposed_names_path) ? root_path : proposed_names_path %>
     </div>
   </div>
   <%= yield %>

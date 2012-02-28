@@ -21,7 +21,8 @@ body * {
   font-family: 'Signika', sans-serif;
 }
 
-a:hover {text-decoration: underline;}
+a {color: $foreground;}
+a:hover {color: black; text-decoration: underline;}
 
 
 [class^="icon-"] {
@@ -30,10 +31,7 @@ a:hover {text-decoration: underline;}
 
 div#top {
   color: gray;
-  margin-bottom: 1em;
 }
-
-#top {margin-top: 40px;}
 
 #page {
   background-color: $background;

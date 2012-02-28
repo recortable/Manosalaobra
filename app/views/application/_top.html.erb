@@ -1,10 +1,10 @@
 <div id="top" class="container">
   <div id="flash" class="row">
-      <% flash[:notice] if flash[:notice] %>&nbsp;
+      <% flash[:notice] if flash[:notice] %>
   </div>
   <div id="user" class="row">
     <div class="span3">
-      <%= link_to 'Página de inicio', '/inicio' if current_user %>
+      &nbsp;
     </div>
     <div class="span6">
       <%= link_to 'Blog', posts_path if can? :manage, Post %>
