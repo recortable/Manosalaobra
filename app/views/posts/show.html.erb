@@ -18,8 +18,8 @@
       </p>
       <%= render content.comments %>
     </div>
-    <%= simple_form_for [content, Comment.new] do |form| %>
-        <%= form.input :body, label: 'Añadir un comentario', as: :text, input_html: { :rows => 3 } %>
+    <%= form_for [content, Comment.new] do |form| %>
+        <%= form.text_area :body %>
         <%= form.submit "> Comentar" %>
     <% end %>
   </div>
