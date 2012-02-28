@@ -16,5 +16,5 @@ Manosalaobra::Application.routes.draw do
   match '/salir' => 'user_sessions#destroy', as: :logout
 
   # Simula un login
-  match '/entrar/:id' => 'users#enter' unless Rails.env.production?
+  match '/enter/:id' => 'users#enter' unless Rails.env.production?
 end

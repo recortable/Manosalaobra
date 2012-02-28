@@ -42,7 +42,12 @@ div#top {
   h1 {display: block; margin-bottom: 40px;}
 }
 
-.actions {width: 100%; overflow: hidden; margin: 10px 0;}
+.actions {
+  width: 100%; overflow: hidden; margin: 10px 0;
+  
+  a {display: block; float: left; border-bottom: 2px solid $foreground; margin-left: 5px;}
+}
+
 .btn-group {margin: 10px auto;}
 /* Contenido */
 

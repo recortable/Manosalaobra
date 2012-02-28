@@ -19,6 +19,8 @@ log
 .project
 .idea
 config/database.yml
+config/amazon_s3.yml
+public/uploads
 
 # Cache de compilación de sass
 .sass-cache

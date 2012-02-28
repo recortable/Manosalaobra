@@ -3,6 +3,8 @@
     <%= form.input :position, collection: MediaItem::POSITIONS, include_blank: false %>
     <%= form.input :width %>
     <%= form.input :height %>
+    <%= form.input :url %>
+    <%= form.input :file %>
     <%= form.input :embed_code %>
     <%= form.submit  %>
 <% end %>

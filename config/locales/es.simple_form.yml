@@ -1,0 +1,24 @@
+es:
+  simple_form:
+    "yes": 'Sí'
+    "no": 'No'
+    required:
+      text: 'requerido'
+      mark: '*'
+      # You can uncomment the line below if you need to overwrite the whole required html.
+      # When using html, text and mark won't be used.
+      # html: '<abbr title="required">*</abbr>'
+    error_notification:
+      default_message: "Some errors were found, please take a look:"
+
+    labels:
+      defaults:
+        title: 'Título'
+        url: 'Enlace'
+
+    hints:
+      defaults:
+        url: 'Si el enlace acaba con .jpg, .png o .gif se tratará como una imágen'
+    #   username: 'User name to sign in.'
+    #   password: 'No special characters, please.'
+

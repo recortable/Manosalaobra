@@ -35,4 +35,10 @@ class MediaItemsController < ApplicationController
     flash[:notice] = 'Guardado' if media_item.update_attributes(params[:media_item])
     respond_with media_item
   end
+
+  def destroy
+    authorize! :destroy, media_item
+    flash[:notice] = 'Borrado' if media_item.destroy
+    respond_with media_item, location: media_items_path
+  end
 end
