@@ -2,8 +2,10 @@
   <div class="span12">
     <%= title 'Páginas' %>
 
-    <%= link_to icon(:plus, 'Añadir página'), new_page_path if can? :create, Post %>
-
+    <div class="btn-group">
+      <%= link_to icon(:plus, 'Añadir página'), new_page_path,
+                  class: 'btn' if can? :create, Post %>
+    </div>
 
     <table class="table table-striped">
       <tbody>
@@ -11,7 +13,7 @@
           <tr>
             <td><%= link_to page.title, page %></td>
             <td>
-              <%= link_to icon(:pencil, 'Editar'), [:edit, page] %>
+              <%= link_to icon(:pencil, 'Editar'), [:edit, page], class: :btn %>
             </td>
           </tr>
       <% end %>

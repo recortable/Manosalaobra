@@ -1,0 +1,59 @@
+/* AQUÍ VA LAS RE-DEFINICIONES DE LOS ELEMENTOS HTML */
+
+@import 'variables';
+
+html, body {
+  background-image: image_url('fondo.png');
+}
+
+body {
+  color: $foreground;
+  font-family: 'Signika', sans-serif;
+  font-size: 100%;
+  line-height: 1.286em;
+}
+
+body * {
+  font-family: 'Signika', sans-serif;
+}
+
+a {color: $foreground;}
+a:hover {color: black; text-decoration: underline;}
+
+[class^="icon-"] {
+  background-image: image_url('glyphicons-halflings.png')
+}
+
+
+h1, h2, h3, h4, h5, h6 {color: $foreground;}
+
+h1 {
+  font-size: 22px;
+  margin-bottom: 15px;
+  line-height: 1.286em;
+}
+
+h2 {
+  font-size: 18px;
+  margin-bottom: 20px;
+  line-height: 1.286em;
+}
+
+h1:after {
+  content: "_";
+  display: block;
+}
+
+p {
+  margin: 20px 0;
+  font-size: 14px;
+}
+
+div.btn-group {margin-left: 10px;}
+
+a.btn {
+  background-image: none;
+  background-color: transparent;
+}
+
+td a.btn {font-size: 60%; }

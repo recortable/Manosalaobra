@@ -1,8 +1,10 @@
-<div class="span10 offset1 admin">
-  <%= title "Editar '#{content.title}'" %>
-  <div class="actions">
-    <%= link_to icon('arrow-left', 'Cancelar'), content %>
+<div class="row">
+  <div class="span10">
+    <%= title "Editar '#{content.title}'" %>
+    <div class="btn-group">
+      <%= link_to icon(:arrow_left, 'Cancelar'), content, class: 'btn' %>
+    </div>
+    <%= render 'form' %>
   </div>
-  <%= render 'form' %>
 </div>
 

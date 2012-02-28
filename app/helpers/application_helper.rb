@@ -6,7 +6,7 @@ module ApplicationHelper
   end
 
   def icon(symbol, label = '&nbsp')
-    "<i class=\"icon-#{symbol.to_s.gsub!(/_/, '-')}\"></i>#{label}".html_safe
+    "<i class=\"icon-#{symbol.to_s.gsub(/_/, '-')}\"></i> #{label}".html_safe
   end
 
   def plural(count, singular, plural = nil)

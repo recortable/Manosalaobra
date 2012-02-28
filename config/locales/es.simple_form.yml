@@ -14,7 +14,18 @@ es:
     labels:
       defaults:
         title: 'Título'
+        name: 'Nombre'
+        author: 'Autorxs'
+        published_at: 'Fecha de publicación'
+        body: 'Texto en castellano'
+        body_cat: 'Texto en catalán'
+        content_type: 'Tipo de texto'
         url: 'Enlace'
+      user:
+        role: 'rol'
+        password: 'contraseña'
+        password_confirmation: 'repite contraseña'
+
 
     hints:
       defaults:

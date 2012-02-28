@@ -2,7 +2,7 @@
 @import 'variables';
 
 .proposed-names-block {
-  a.more {display: block; float: right;}
+  a.more {display: block; float: right; font-size: 14px;}
 }
 
 /* Estilos generales para los nombres propuestos */
@@ -23,7 +23,7 @@ ul.proposed-names{
     .proposed_name-value {
       width: 100%;
       position: absolute;
-      font-size: 20px;
+      font-size: 18px;
       word-wrap: break-word;
     }
 
@@ -34,7 +34,7 @@ ul.proposed-names{
       padding-top: 66px;
 
       .votes-value {
-        font-size: 36px;
+        font-size: 32px;
       }
 
       .votes-label {

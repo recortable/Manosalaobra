@@ -1,13 +1,11 @@
-<div class="block recent-posts-block">
-  <div class="block-title">
+<div class="block post-summary">
+  <h2>
     <%= link_to "Blog", posts_path %>
-  </div>
-  <div class="block-content">
-    <ul>
-      <%= content_tag_for :li, posts do |post| %>
+  </h2>
+  <ul class="post-summary-list">
+    <%= content_tag_for :li, posts do |post| %>
         <div class="post-title"><%= link_to post.title, post %></div>
         <div class="post-date"><%= l post.created_at %></div>
-      <% end %>
-    </ul>
-  </div>
+    <% end %>
+  </ul>
 </div>
