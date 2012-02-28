@@ -2,10 +2,13 @@
 <div class="row">
   <div class="main span6">
     <h1><%= page.title %></h1>
+    <% if can? :edit, page %>
+        <div class="btn-group">
+          <%= link_to 'Editar', edit_page_path(page), class: :btn %>
+        </div>
+    <% end %>
+
     <%= render_body page %>
-    <div class="actions">
-        <%= link_to 'Editar', edit_page_path(page) if can? :edit, page %>
-    </div>
   </div>
   <div class="sidebar sidebar-right span4 offset2">
     <%= render 'posts/summary' %>

@@ -13,8 +13,11 @@
             <td><%= user.email %></td>
             <td><%= user.role %></td>
             <td class="btn-group">
-              <%= link_to icon(:edit, 'Editar'), edit_user_path(user) %> |
-              <%= link_to icon(:trash, 'Borrar'), user, confirm: '¿Estás seguro?', method: :delete %>
+              <%= link_to icon(:edit, 'Editar'), edit_user_path(user),
+                          class: 'btn' if can? :edit, user %>
+              <%= link_to icon(:trash, 'Borrar'), user,
+                          class: 'btn', confirm: '¿Estás seguro?',
+                          method: :delete if can? :destroy, user %>
             </td>
           </tr>
       <% end %>

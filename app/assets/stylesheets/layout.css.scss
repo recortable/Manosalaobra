@@ -102,5 +102,17 @@ div#top {
   }
 }
 
+div#logos {
+  a {
+    display: block; overflow: hidden;
+    text-indent: -1000px;
+    background: image_url('logos.png') no-repeat;
+    width: 180px;
+  }
 
+  #lapanaderia {height: 32px;}
+  #lapanaderia:hover {background-position: 0 -91px;}
+  #sostrecivic {height: 56px; background-position: 0 -30px;}
+  #sostrecivic:hover {background-position: 0 -121px;}
+}
                                                   
