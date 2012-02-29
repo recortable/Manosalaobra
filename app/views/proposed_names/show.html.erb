@@ -5,7 +5,7 @@
 
     <div class="btn-group">
       <%= link_to icon('arrow-left', 'Volver'), proposed_names_path, class: :btn %>
-      <%= link_to icon(:trash, 'Borrar nombre'), proposed_name, class: 'btn' %>
+      <%= link_to icon(:trash, 'Borrar nombre'), proposed_name, method: :delete, confirm: '¿Estás seguro?',class: 'btn' if can? :destroy, proposed_name %>
     </div>
     <%= form_for proposed_name, html: {class: 'form-inline'} do |form| %>
         <%= form.text_field :value %>
@@ -21,7 +21,7 @@
             <td><%= vote.request_ip %></td>
             <td>hace <%= time_ago_in_words vote.created_at %></td>
             <td>
-              <%= link_to icon(:trash, 'Eliminar voto') %>
+              <%= link_to icon(:trash, 'Eliminar voto'), [proposed_name, vote], confirm: 'Estás seguro?', method: :delete if can? :destroy, vote %>
             </td>
           </tr>
       <% end %>

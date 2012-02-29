@@ -4,6 +4,7 @@ class VotesController < ApplicationController
   # Votes controller es un NESTED RESOURCE (mira routes.rb y la guía de rutas)
   # Eso significa que siempre recibirá un parámetro llamado proposed_name_id
   # MIRA LA GUIA Y TRATA DE ENTENDER LO QUE ES UNA NESTED ROUTE
+  respond_to :html, :json, :xml
   expose(:proposed_name) { ProposedName.find params[:proposed_name_id] }
   expose(:votes) { proposed_name.votes }
   expose(:vote)
@@ -16,5 +17,11 @@ class VotesController < ApplicationController
       format.html { redirect_to proposed_names_path }
       format.js
     end
+  end
+
+  def destroy
+    authorize! :delete, Vote
+    flash[:notice] = 'Borrado' if vote.destroy
+    respond_with vote, location: proposed_name_path(vote.proposed_name)
   end
 end

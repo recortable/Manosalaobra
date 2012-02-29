@@ -17,6 +17,7 @@ lng
 log
 .eclipse
 .project
+Manosalaobra.sublime-*
 .idea
 config/database.yml
 config/amazon_s3.yml

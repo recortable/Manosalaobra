@@ -13,6 +13,7 @@ class Ability
       can :manage, Comment
       can :manage, ProposedName
       can :manage, MediaItem
+      can :manage, Vote
     end
 
     can :create, ProposedName
