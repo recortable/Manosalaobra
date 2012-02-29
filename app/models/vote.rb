@@ -8,10 +8,16 @@ class Vote < ActiveRecord::Base
   validates :request_ip, presence: true
 
   after_save :update_votes_value
+  after_destroy :decrement_votes_value
 
   protected
   def update_votes_value
     new_value = self.proposed_name.votes_value + self.value
     self.proposed_name.update_attribute(:votes_value, new_value)
+  end
+
+  def decrement_votes_value
+    new_value = self.proposed_name.votes_value - self.value
+    self.proposed_name.update_attribute(:votes_value, new_value)    
   end
 end
