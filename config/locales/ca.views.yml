@@ -67,3 +67,7 @@ ca:
       title: 'Entrar'
       submit: 'Entrar'
 
+  pages:
+    index:
+      title: "Pàgines"
+      add: 'Afegir'

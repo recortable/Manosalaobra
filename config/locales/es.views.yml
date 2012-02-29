@@ -15,8 +15,8 @@ es:
       email_us: "Puedes escribirnos a enproceso@casamasomenos.net"
       suscribe: "Si quieres recibir más información déjanos tu email:"
       project_initiated_by: "Esto es un proyecto iniciado por:"
-
       send: "> Envía"
+
   contents:
     new:
       title: 'Nueva %{type}'
@@ -67,3 +67,7 @@ es:
       title: 'Entrar'
       submit: 'Entrar'
 
+  pages:
+    index:
+      title: "Páginas"
+      add: 'Añadir página'
