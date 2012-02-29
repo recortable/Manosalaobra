@@ -1,27 +1,26 @@
 <div class="row admin">
   <div class="span12">
-    <%= title "Gestionar nombre '#{proposed_name.value}'" %>
-
+    <%= title t('.title', name: proposed_name.value) %>
 
     <div class="btn-group">
-      <%= link_to icon('arrow-left', 'Volver'), proposed_names_path, class: :btn %>
-      <%= link_to icon(:trash, 'Borrar nombre'), proposed_name, method: :delete, confirm: '¿Estás seguro?',class: 'btn' if can? :destroy, proposed_name %>
+      <%= link_to icon(:arrow_left, :cancel), proposed_names_path, class: :btn %>
+      <%= link_to icon(:trash, :destroy), proposed_name, class: 'btn' %>
     </div>
     <%= form_for proposed_name, html: {class: 'form-inline'} do |form| %>
         <%= form.text_field :value %>
-        <%= form.submit 'Renombrar', class: :btn %>
+        <%= form.submit t('.rename'), class: :btn %>
     <% end %>
 
-    <h2>Votos</h2>
+    <h2><%= Vote.model_name.human.pluralize.camelcase %></h2>
     <table class="table striped">
       <tbody>
       <% proposed_name.votes.each do |vote| %>
           <tr>
             <td><%= vote.value %></td>
             <td><%= vote.request_ip %></td>
-            <td>hace <%= time_ago_in_words vote.created_at %></td>
+            <td><%= time_ago_in_words vote.created_at %></td>
             <td>
-              <%= link_to icon(:trash, 'Eliminar voto'), [proposed_name, vote], confirm: 'Estás seguro?', method: :delete if can? :destroy, vote %>
+              <%= link_to icon(:trash, :destroy) %>
             </td>
           </tr>
       <% end %>

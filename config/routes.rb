@@ -1,8 +1,9 @@
 Manosalaobra::Application.routes.draw do
   root to: 'dashboards#show'
   resources :posts, path: 'blog' do
-    resources :comments
+    resources :comments, only: :create
   end
+  resources :comments, path: 'comentarios'
   resources :pages, path: 'paginas'
   resources :users, path: 'participantes' do
     post :subscribe, on: :collection

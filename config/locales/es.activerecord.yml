@@ -5,3 +5,10 @@ es:
       page: 'página'
       post: 'entrada'
       user: 'participante'
+      comment: 'comentario'
+      vote: 'voto'
+
+    attributes:
+      user:
+        name: 'Nombre'
+        email: 'Correo'

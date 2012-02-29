@@ -3,8 +3,12 @@ class CommentsController < ApplicationController
   respond_to :html, :json, :xml
 
   # Hay que poner el prural para que funcione el singular
-  expose(:comments)
+  expose(:comments) { Comment.all }
   expose(:comment)
+
+  def index
+    authorize! :show, Comment
+  end
 
   def create
     comment.post = Content.find(params[:post_id])
