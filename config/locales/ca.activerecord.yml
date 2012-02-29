@@ -1,14 +1,14 @@
-es:
+ca:
   activerecord:
     models:
-      media_item: 'multimedia'
-      page: 'página'
+      media_item: 'multimèdia'
+      page: 'pàgina'
       post: 'entrada'
-      user: 'participante'
-      comment: 'comentario'
-      vote: 'voto'
+      user: 'participant'
+      comment: 'comentari'
+      vote: 'vot'
 
     attributes:
       user:
-        name: 'Nombre'
-        email: 'Correo'
+        name: 'Nom'
+        email: 'Correu'

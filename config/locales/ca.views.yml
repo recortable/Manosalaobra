@@ -1,25 +1,31 @@
-es:
+ca:
   application:
     session_bar:
-      current_user: 'Eres %{name}'
-      logout: 'Salir'
+      current_user: 'Ets en/la %{name}'
+      logout: 'Sortir'
       posts: 'Blog'
-      media_items: 'Multimedia'
-      proposed_names: 'Nombres'
-      pages: 'Páginas'
-      users: 'Participantes'
-      comments: 'Comentarios'
+      media_items: 'Multimèdia'
+      proposed_names: 'Noms'
+      pages: 'Pàgines'
+      users: 'Participants'
+      comments: 'Comentaris'
+
+    contact_social_info:
+      contact: Contacte
+      email_us: Pots escriure'ns a xxx@casamasomenos.net
+      suscribe: "Si vols rebre més informació deixa'ns el teu correu electrònic:"
+      project_initiated_by: "Això és un projecte iniciat per:"
 
   contents:
     new:
-      title: 'Nueva %{type}'
+      title: 'Nova %{type}'
 
   posts:
     index:
-      title: 'Entradas al blog'
-      add: 'Añadir entrada'
+      title: 'Entrades al blog'
+      add: 'Afegir entrada'
     show:
-      author: 'Por %{name}'
+      author: 'De %{name}'
     edit:
       title: "Editar '%{title}'"
 
@@ -28,28 +34,28 @@ es:
 
   proposed_names:
     index:
-      title: 'Vota los nombres que más te gusten'
-      vote: 'Votar este nombre'
+      title: "Vota els noms que més t'agradin"
+      vote: 'Votar aquest nom'
     show:
-      title: "Gestionar nombre '%{name}'"
+      title: "Gestionar nom '%{name}'"
       rename: 'renombrar'
     summary:
-      title: 'Los 6 nombres más votados'
-      more: 'más...'
+      title: 'Els 6 noms més votats'
+      more: 'més...'
     form:
-      placeholder: "¿Se te ocurre alguno mejor?"
+      placeholder: "Se t'acut un nom millor?"
       submit: '> Enviar'
 
   users:
     index:
-      title: 'Participantes'
-      add: 'Añadir participante'
+      title: 'Participants'
+      add: 'Afegir participant'
     edit:
-      title: 'Editar datos de %{name}'
+      title: 'Editar les dades de %{name}'
 
   comments:
     index:
-      title: 'Todos los comentarios'
+      title: 'Tots els comentaris'
     new:
       submit: '> Comentar'
 

@@ -1,7 +1,7 @@
-<h2>Contacto</h2>
+<h2><%= t('.contact') %></h2>
 
-<p>Puedes escribirnos a xxx@casamasomenos.net</p>
-<p>Si quieres recibir más información déjanos tu email:</p>
+<p><%= t('.email_us') %></p>
+<p><%= t('.suscribe') %></p>
 
 <%= form_tag subscribe_users_path, id: 'subscribe' do %>
     <%= text_field_tag :email %>
@@ -9,7 +9,7 @@
 <% end %>
 
 <div id="logos">
-  Esto es un proyecto iniciado por:
+  <%= t('.project_initiated_by') %>
   <%= link_to 'La panadería', 'http://despachodepan.com', id: 'lapanaderia' %>
   <%= link_to 'Sostre cívic', 'http://www.sostrecivic.org/', id: 'sostrecivic' %>
 </div>

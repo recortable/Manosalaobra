@@ -1,5 +1,5 @@
-es:
+ca:
   actions:
-    cancel: 'Cancelar'
+    cancel: 'Cancel·lar'
     edit: 'Editar'
-    destroy: 'Borrar'
+    destroy: 'Esborrar'
