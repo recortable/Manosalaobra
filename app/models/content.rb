@@ -10,6 +10,7 @@ class Content < ActiveRecord::Base
   # @param attribute [String] El nombre del atributo
   # @param locale [String] El locale especificado
   def localized(attribute, locale)
+    locale = locale.to_s.downcase
     if locale == 'es'
       send(attribute)
     else
