@@ -14,7 +14,7 @@ module ContentsHelper
   def process_media_items(text)
     text.gsub /!!@(\d+)/ do
       media = MediaItem.find_by_id($1)
-      render_media(media)
+      media.present? ? render_media(media) : "[Multimedia no encontrado: !!@#{$1}]"
     end
   end
 

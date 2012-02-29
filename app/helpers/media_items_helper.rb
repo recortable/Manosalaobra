@@ -1,5 +1,6 @@
 module MediaItemsHelper
   def render_media(item)
+    return if item.blank?
     output = if item.file.present?
                render_image_or_link(item.file, item)
              elsif item.url.present?
