@@ -1,3 +1,3 @@
 <%= form_for ProposedName.new do |f| %>
-  <%= f.text_field :value, size: 22, maxlength: 30, placeholder: "¿Se te ocurre alguno mejor?" %><%= f.submit "> Enviar" %>
+  <%= f.text_field :value, size: 22, maxlength: 30, placeholder: t('.placeholder') %><%= f.submit t('.submit') %>
 <% end %>

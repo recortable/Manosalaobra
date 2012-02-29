@@ -1,0 +1,56 @@
+es:
+  application:
+    session_bar:
+      current_user: 'Eres %{name}'
+      logout: 'Salir'
+      posts: 'Blog'
+      media_items: 'Multimedia'
+      proposed_names: 'Nombres'
+      pages: 'Páginas'
+      users: 'Participantes'
+      comments: 'Comentarios'
+
+  posts:
+    index:
+      title: 'Entradas al blog'
+      add: 'Añadir entrada'
+    show:
+      author: 'Por %{name}'
+    edit:
+      title: "Editar '%{title}'"
+
+    summary:
+      title: 'Blog'
+
+  proposed_names:
+    index:
+      title: 'Vota los nombres que más te gusten'
+      vote: 'Votar este nombre'
+    show:
+      title: "Gestionar nombre '%{name}'"
+      rename: 'renombrar'
+    summary:
+      title: 'Los 6 nombres más votados'
+      more: 'más...'
+    form:
+      placeholder: "¿Se te ocurre alguno mejor?"
+      submit: '> Enviar'
+
+  users:
+    index:
+      title: 'Participantes'
+      add: 'Añadir participante'
+    edit:
+      title: 'Editar datos de %{name}'
+
+  comments:
+    index:
+      title: 'Todos los comentarios'
+    new:
+      submit: '> Comentar'
+
+  user_sessions:
+    new:
+      title: 'Entrar'
+      submit: 'Entrar'
+

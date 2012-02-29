@@ -1,16 +1,20 @@
 <%= render 'proposed_names/summary' %>
 <div id="content-region" class="row">
   <div class="span6 posts-index">
-    <%= title 'Entradas al blog' %>
-    <%= link_to icon(:plus, 'Añadir entrada'), new_post_path if can? :create, Post %>
+    <%= title t('.title') %>
+
+    <div class="btn-group">
+      <%= link_to icon(:plus, t('.add')), new_post_path,
+                  class: 'btn' if can? :create, Post %>
+    </div>
     <%= div_for posts do |post| %>
-      <h2 class><%= link_to post.title, post %></h2>
-      <%= render_body post %>
-      <div class="post-info">
-        <span class="post-date"><%= l post.created_at %></span>
-        <%= content_tag :span, ", por: " + post.user.name, class: "post-author" if post.user.present? %>
-        - <%= link_to pluralize(post.comments.count, 'comentario', 'comentarios'), post_path(post, anchor: "comments") %>
-      </div>
+        <h2 class><%= link_to post.title, post %></h2>
+        <%= render_body post %>
+        <div class="post-info">
+          <span class="post-date"><%= l post.created_at %></span>
+          <%= content_tag :span, ", por: " + post.user.name, class: "post-author" if post.user.present? %>
+          - <%= link_to pluralize(post.comments.count, 'comentario', 'comentarios'), post_path(post, anchor: "comments") %>
+        </div>
     <% end %>
   </div>
   <div class="sidebar sidebar-right span3 offset3">

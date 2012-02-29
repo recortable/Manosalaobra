@@ -1,5 +1,11 @@
-<h1>Editar usuario '<%= user.name %>'</h1>
- 
-<%= render 'form' %>
- 
-<%= link_to 'Back', users_path %>
+<div class="row">
+  <div class="span12">
+    <%= title t('.title', name: user.name) %>
+    <div class="btn-group">
+      <%= link_to icon(:arrow_left, :cancel), user_path, class: 'btn' %>
+    </div>
+    <%= render 'form' %>
+  </div>
+</div>
+
+

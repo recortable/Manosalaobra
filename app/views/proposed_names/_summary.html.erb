@@ -4,7 +4,7 @@
   </div>
   <div class="proposed-names-block span12">
     <div class="block-title">
-      Los 6 nombres más votados
+      <%= t('.title') %>
     </div>
     <ul class="proposed-names">
       <%= content_tag_for :li, summary_names do |name| %>
@@ -17,12 +17,12 @@
                     <%= name.votes_value %>
                   </span>
                   <span class="votes-label">
-                    <%= name.votes_value == 1 ? 'voto' : 'votos' %>
+                    <%= plural name.votes_value, Vote.model_name.human %>
                   </span>
               </div>
           <% end %>
       <% end %>
     </ul>
-    <%= link_to 'más...', proposed_names_path, class: 'more' %>
+    <%= link_to t('.more'), proposed_names_path, class: 'more' %>
   </div>
 </div>

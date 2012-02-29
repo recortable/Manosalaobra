@@ -1,8 +1,8 @@
 <div class="row">
   <div class="span12 admin">
-    <%= title 'Participantes' %>
+    <%= title t('.title') %>
     <div class="btn-group">
-      <%= link_to icon(:plus, 'Añadir participante'), new_user_path, class: :btn if can? :create, User %>
+      <%= link_to icon(:plus, t('.add')), new_user_path, class: :btn if can? :create, User %>
     </div>
     <table class="table table-striped">
       <tbody>
@@ -13,9 +13,9 @@
             <td><%= user.email %></td>
             <td><%= user.role %></td>
             <td class="btn-group">
-              <%= link_to icon(:edit, 'Editar'), edit_user_path(user),
+              <%= link_to icon(:pencil, :edit), edit_user_path(user),
                           class: 'btn' if can? :edit, user %>
-              <%= link_to icon(:trash, 'Borrar'), user,
+              <%= link_to icon(:trash, :destroy), user,
                           class: 'btn', confirm: '¿Estás seguro?',
                           method: :delete if can? :destroy, user %>
             </td>

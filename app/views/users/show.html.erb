@@ -1,10 +1,20 @@
-<h1><%= user.name %></h1>
-<dl>
-  <dt>Name:</dt>
-  <dd><%= user.name %></dd>
-  
-  <dt>e-mail:</dt>
-  <dd><%= user.email %></dd>
-</dl>
-<%= link_to 'Editar', edit_user_path if can? :edit, user %>
-<%= link_to 'Borrar', user, confirm: '¿Estás seguro?', method: :delete if can? :destroy, :user %>
+<div class="row">
+  <div class="span12">
+    <%= title user.name %>
+    <div class="btn-group">
+      <%= link_to icon(:arrow_left, :cancel), users_path, class: 'btn' %>
+      <%= link_to icon(:pencil, :edit), edit_user_path,
+                  class: 'btn' if can? :edit, user %>
+      <%= link_to icon(:trash, :destroy), user, class: 'btn', method: :delete,
+                  confirm: '¿Estás seguro?' if can? :destroy, user %>
+    </div>
+
+    <dl>
+      <dt><%= User.human_attribute_name(:name) %></dt>
+      <dd><%= user.name %></dd>
+      <dt><%= User.human_attribute_name(:email) %></dt>
+      <dd><%= user.email %></dd>
+    </dl>
+
+  </div>
+</div>

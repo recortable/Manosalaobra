@@ -4,20 +4,20 @@
     <div class="post-date">
       <%= l post.created_at %>
     </div>
-    <%= content_tag :div, "Por: " + post.user.name, class: "post-author" if post.user.present? %>
+    <%= content_tag :div, t('.author', name: post.user.name), class: "post-author" if post.user.present? %>
   </div>
   <div class="span6">
     <%= render 'show' %>
 
     <div id="comments">
       <p id="comments-count">
-        <%= pluralize content.comments.count, "comentario", "comentarios" %>
+        <%= pluralize content.comments.count, Comment.model_name.human %>
       </p>
       <%= render content.comments %>
     </div>
     <%= form_for [content, Comment.new] do |form| %>
         <%= form.text_area :body %>
-        <%= form.submit "> Comentar" %>
+        <%= form.submit t('comments.new.submit') %>
     <% end %>
   </div>
   <div class="sidebar sidebar-right span3">
