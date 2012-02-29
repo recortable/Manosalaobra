@@ -12,13 +12,16 @@ es:
 
     contact_social_info:
       contact: Contacto
-      email_us: Puedes escribirnos a xxx@casamasomenos.net
+      email_us: "Puedes escribirnos a enproceso@casamasomenos.net"
       suscribe: "Si quieres recibir más información déjanos tu email:"
       project_initiated_by: "Esto es un proyecto iniciado por:"
 
+      send: "> Envía"
   contents:
     new:
       title: 'Nueva %{type}'
+    show:
+      delete_confirm: "Borrar esta entrada ¿Seguro?"
 
   posts:
     index:

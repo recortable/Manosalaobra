@@ -1,8 +1,8 @@
 
 @import 'variables';
 
-div#top {
-  color: gray;
+div#session-bar {
+  .languages {text-align: right;}
 }
 
 #page {
@@ -126,9 +126,25 @@ div#logos {
 }
 
 form#subscribe {
+  position:relative;
   margin-top: -10px;
+  height: 40px;
+
   input[type=text] {
-    border: 1px solid $foreground;
+    position: absolute;
+    left: 0; top: 0;
+    width: 222px; height: 1.5em;
+    padding: 2px;
+    border: 2px solid $foreground;
     border-radius: 0px;
+  }
+  input[type=submit] {
+    position: absolute;
+    right: 0; top: 0;
+    width: 70px; height: 27px;
+    font-weight: 600;
+    color: #F8F9EF;
+    border-radius: 0;
+    background-color: #484848;
   }
 }

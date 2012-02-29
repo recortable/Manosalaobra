@@ -5,6 +5,7 @@
 
 <%= form_tag subscribe_users_path, id: 'subscribe' do %>
     <%= text_field_tag :email %>
+    <%= submit_tag t('.send') %>
     <%= hidden_field_tag :from_url, request.path %>
 <% end %>
 

@@ -1,12 +1,18 @@
 module ContentsHelper
+  # Localize attribute of content
+  def loc(content, attribute)
+    content.localized(attribute, current_locale)
+  end
+
   def render_body(content)
-    rendered = if content.body.blank?
+    body = loc(content, :body)
+    rendered = if body.blank?
                  ''
                elsif content.content_type == 'markdown'
-                 text = process_media_items(content.body)
+                 text = process_media_items(body)
                  markdown.render(text).html_safe
                else
-                 content.body
+                 body
                end
     content_tag(:div, rendered, class: "body #{content.content_type}")
   end

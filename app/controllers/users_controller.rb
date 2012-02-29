@@ -1,6 +1,6 @@
 # encoding: utf-8
 class UsersController < ApplicationController
-  before_filter :require_user, except: [:enter]
+  before_filter :require_user, except: [:enter, :subscribe ]
   respond_to :html, :json, :xml
   expose(:users) { User.all }
   expose(:user)

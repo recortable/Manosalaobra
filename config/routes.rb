@@ -14,6 +14,7 @@ Manosalaobra::Application.routes.draw do
   resources :media_items, path: 'multimedia'
 
   resources :user_sessions, only: :create
+
   # Utilizamos match para que las rutas sean más bonitas
   match '/entrar' => 'user_sessions#new', as: :login
   match '/salir' => 'user_sessions#destroy', as: :logout

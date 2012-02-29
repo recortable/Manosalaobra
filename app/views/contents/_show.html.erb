@@ -1,8 +1,11 @@
-<%= title content.title %>
+<%= title loc(content, :title) %>
 <div class="btn-group">
   <%= link_to icon(:arrow_left, :cancel), content.class, class: 'btn' %>
   <%= link_to icon(:pencil, :edit), [:edit, content], class: 'btn' if can? :edit, content %>
+  <%= link_to icon(:trash, :destroy), content, class: 'btn',
+              method: :delete, confirm: t('.delete_confirm') if can? :edit, content %>
 </div>
 <div class="body">
+
   <%= render_body content %>
 </div>

@@ -12,14 +12,17 @@ ca:
 
     contact_social_info:
       contact: Contacte
-      email_us: Pots escriure'ns a xxx@casamasomenos.net
+      email_us: "Pots escriure'ns a enproceso@casamasomenos.net"
       suscribe: "Si vols rebre més informació deixa'ns el teu correu electrònic:"
       project_initiated_by: "Això és un projecte iniciat per:"
 
+      send: "> Envìa"
   contents:
     new:
       title: 'Nova %{type}'
 
+    show:
+      delete_confirm: "¿Seguro?"
   posts:
     index:
       title: 'Entrades al blog'

@@ -17,15 +17,17 @@ ca:
         name: 'Nom'
         author: 'Autors o autores'
         published_at: 'Data de publicació'
-        body: 'Text en català'
+        body: 'Text'
         content_type: 'Tipus de text'
         url: 'Enlace'
         title_ca: 'Títol en català'
         body_ca: 'Text en català'
       post:
-        title: 'Título en castellano'
+        title: 'Títol en català'
+        body: 'Text en castellà'
       page:
-        title: 'Título en castellano'
+        title: 'Títol en català'
+        body: 'Text en castellà'
       user:
         role: 'rol'
         password: 'contrasenya'

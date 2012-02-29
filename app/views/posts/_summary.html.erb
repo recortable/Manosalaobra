@@ -4,7 +4,7 @@
   </h2>
   <ul class="post-summary-list">
     <%= content_tag_for :li, posts do |post| %>
-        <div class="post-title"><%= link_to post.title, post %></div>
+        <div class="post-title"><%= link_to loc(post, :title), post %></div>
         <div class="post-date"><%= l post.created_at %></div>
     <% end %>
   </ul>
