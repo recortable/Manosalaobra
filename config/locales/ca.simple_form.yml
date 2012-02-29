@@ -1,40 +1,40 @@
-es:
+ca:
   simple_form:
     "yes": 'Sí'
     "no": 'No'
     required:
-      text: 'requerido'
+      text: 'requerit'
       mark: '*'
       # You can uncomment the line below if you need to overwrite the whole required html.
       # When using html, text and mark won't be used.
       # html: '<abbr title="required">*</abbr>'
     error_notification:
-      default_message: "Some errors were found, please take a look:"
+      default_message: "S'han trobat alguns errors, dóna una ullada:"
 
     labels:
       defaults:
-        title: 'Título'
-        name: 'Nombre'
-        author: 'Autorxs'
-        published_at: 'Fecha de publicación'
-        body: 'Texto en castellano'
-        content_type: 'Tipo de texto'
+        title: 'Títol'
+        name: 'Nom'
+        author: 'Autors o autores'
+        published_at: 'Data de publicació'
+        body: 'Text en català'
+        content_type: 'Tipus de text'
         url: 'Enlace'
-        title_ca: 'Título can catalán'
-        body_ca: 'Texto en catalán'
+        title_ca: 'Títol en català'
+        body_ca: 'Text en català'
       post:
         title: 'Título en castellano'
       page:
         title: 'Título en castellano'
       user:
         role: 'rol'
-        password: 'contraseña'
-        password_confirmation: 'repite contraseña'
+        password: 'contrasenya'
+        password_confirmation: 'repeteix la contrasenya'
 
 
     hints:
       defaults:
-        url: 'Si el enlace acaba con .jpg, .png o .gif se tratará como una imágen'
-    #   username: 'User name to sign in.'
-    #   password: 'No special characters, please.'
+        url: "Si l'enllaç acaba amb .jpg, .png o .gif serà tractat com una imatge"
+    #   username: "Nom d'usuari del lloc."
+    #   password: 'Sense caràcters especials, si us plau.'
 

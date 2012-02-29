@@ -10,6 +10,12 @@ es:
       users: 'Participantes'
       comments: 'Comentarios'
 
+    contact_social_info:
+      contact: Contacto
+      email_us: Puedes escribirnos a xxx@casamasomenos.net
+      suscribe: "Si quieres recibir más información déjanos tu email:"
+      project_initiated_by: "Esto es un proyecto iniciado por:"
+
   contents:
     new:
       title: 'Nueva %{type}'
