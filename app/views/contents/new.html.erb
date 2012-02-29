@@ -1,5 +1,10 @@
-<div class="span6 offset3">
-  <h1>New <%= content.type %></h1>
-  <%= render 'form' %>
+<div class="row">
+  <div class="span12">
+    <%= title t('.title', type: content.class.model_name.human) %>
+    <div class="btn-group">
+      <%= link_to icon(:arrow_left, :cancel), content.class, class: 'btn' %>
+    </div>
+    <%= render 'form' %>
+  </div>
 </div>
 

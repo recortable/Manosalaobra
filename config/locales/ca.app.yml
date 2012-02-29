@@ -1,0 +1,5 @@
+es:
+  actions:
+    cancel: 'Cancelar'
+    edit: 'Editar'
+    destroy: 'Borrar'

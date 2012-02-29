@@ -1,0 +1,14 @@
+es:
+  activerecord:
+    models:
+      media_item: 'multimedia'
+      page: 'página'
+      post: 'entrada'
+      user: 'participante'
+      comment: 'comentario'
+      vote: 'voto'
+
+    attributes:
+      user:
+        name: 'Nombre'
+        email: 'Correo'
