@@ -13,4 +13,10 @@ module ApplicationHelper
   def plural(count, singular, plural = nil)
     count == 1 ? singular : (plural || singular.pluralize)
   end
+
+  # TC: translate_collection
+  # Prepare a collection for a select input box
+  def tc(prefix, collection)
+    collection.map {|i| [t("#{prefix}.#{i}"), i]}
+  end
 end

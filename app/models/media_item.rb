@@ -5,7 +5,7 @@ class MediaItem < ActiveRecord::Base
   # Upload file
   mount_uploader :file, FileUploader
 
-  POSITIONS = [:left, :center, :right]
+  POSITIONS = [:left, :center, :right, :float_left, :float_right]
 
   validates :title, presence: true
 end

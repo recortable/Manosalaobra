@@ -3,3 +3,12 @@ es:
     cancel: 'Cancelar'
     edit: 'Editar'
     destroy: 'Borrar'
+
+  media_item:
+    positions:
+      left: 'Izquierda'
+      right: 'Derecha'
+      center: 'Centrado'
+      float_left: 'Izquierda con texto a la derecha'
+      float_right: 'Derecha con texto a la izquierda'
+

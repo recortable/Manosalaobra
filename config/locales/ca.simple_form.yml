@@ -32,11 +32,15 @@ ca:
         role: 'rol'
         password: 'contrasenya'
         password_confirmation: 'repeteix la contrasenya'
-
+      media_item:
+        position: 'Posición'
+        width: 'Ancho'
+        height: 'Alto'
+        file: 'Fichero'
+        embed_code: 'Código html'
 
     hints:
-      defaults:
-        url: "Si l'enllaç acaba amb .jpg, .png o .gif serà tractat com una imatge"
-    #   username: "Nom d'usuari del lloc."
-    #   password: 'Sense caràcters especials, si us plau.'
+      media_item:
+        url: 'Si el enlace acaba con .jpg, .png o .gif se tratará como una imágen'
+
 
