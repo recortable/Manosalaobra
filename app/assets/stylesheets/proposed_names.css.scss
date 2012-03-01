@@ -93,12 +93,12 @@ ul.proposed-names{
     position: absolute;
     top: 0;
     right: 0;
-    background: #484848;
+    background: $foreground;
 
     input {
       height: 100%;
       margin: 0;
-      border: 2px solid #484848;
+      border: 2px solid $foreground;
       border-radius: 0;
       font-size: 23px;
       line-height: 1.286em;
@@ -111,9 +111,9 @@ ul.proposed-names{
 
     input[type="submit"] {
       padding-right: 5px;
-      background-color: #484848;
+      background-color: $foreground;
       font-weight: 600;
-      color: #F8F9EF;
+      color: $background;
     }
   }
 

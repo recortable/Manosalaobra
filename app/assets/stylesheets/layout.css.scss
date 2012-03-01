@@ -126,25 +126,23 @@ div#logos {
 }
 
 form#subscribe {
-  position:relative;
   margin-top: -10px;
-  height: 40px;
+  background: $foreground;
 
-  input[type=text] {
-    position: absolute;
-    left: 0; top: 0;
-    width: 222px; height: 1.5em;
-    padding: 2px;
+  input{
+    // height: 100%;
+    margin: 0;
     border: 2px solid $foreground;
     border-radius: 0px;
+  } 
+
+  input[type=text] {
+    width: 210px;
   }
   input[type=submit] {
-    position: absolute;
-    right: 0; top: 0;
-    width: 70px; height: 27px;
+    width: 70px;
     font-weight: 600;
-    color: #F8F9EF;
-    border-radius: 0;
-    background-color: #484848;
+    color: $background;
+    background-color: $foreground;
   }
 }
