@@ -20,8 +20,11 @@
 <div id="page" class="container">
   <div class="row">
     <div class="span12">
-      <%= link_to image_tag('cabecera.png', width: 942, height: 195),
-                  current_page?(proposed_names_path) ? root_path : proposed_names_path %>
+      <% if current_page?(proposed_names_path) %>
+          <%= link_to image_tag('participa-afirma.png', width: 942, height: 195), root_path %>
+      <% else %>
+          <%= link_to image_tag('participas-pregunta.png', width: 942, height: 195), proposed_names_path %>
+      <% end %>
     </div>
   </div>
   <%= yield %>

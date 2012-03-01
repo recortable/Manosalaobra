@@ -8,7 +8,7 @@
                   class: 'btn' if can? :create, Post %>
     </div>
     <%= div_for posts do |post| %>
-        <h2 class><%= link_to loc(post, :title), post %></h2>
+        <h2><%= link_to loc(post, :title), post %></h2>
         <%= render_body post %>
         <div class="post-info">
           <span class="post-date"><%= l post.created_at %></span>

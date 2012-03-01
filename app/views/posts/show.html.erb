@@ -1,26 +1,34 @@
 <%= render 'proposed_names/summary' %>
-<div id="content-region" class="row blog-post">
-  <div class="span3 post-info">
-    <div class="post-date">
-      <%= l post.created_at %>
+<div class="row blog-post">
+  <div class="span8">
+    <!-- Filas anidadas: http://twitter.github.com/bootstrap/scaffolding.html#gridSystem -->
+    <div class="row"><!-- contenido del post -->
+      <div class="span2 post-info">
+        <div class="post-date">
+          <%= l post.created_at %>
+        </div>
+        <%= content_tag :div, t('.author', name: post.user.name), class: "post-author" if post.user.present? %>
+      </div>
+      <div class="span6">
+        <%= render 'show' %>
+      </div>
     </div>
-    <%= content_tag :div, t('.author', name: post.user.name), class: "post-author" if post.user.present? %>
-  </div>
-  <div class="span6">
-    <%= render 'show' %>
-
-    <div id="comments">
-      <p id="comments-count">
+    <div class="row"><!-- comentarios del post -->
+      <div class="span2">
         <%= pluralize content.comments.count, Comment.model_name.human %>
-      </p>
-      <%= render content.comments %>
+      </div>
+      <div class="span6">
+        <div id="comments">
+          <%= render content.comments %>
+        </div>
+        <%= form_for [content, Comment.new] do |form| %>
+            <%= form.text_area :body %>
+            <%= form.submit t('comments.new.submit') %>
+        <% end %>
+      </div>
     </div>
-    <%= form_for [content, Comment.new] do |form| %>
-        <%= form.text_area :body %>
-        <%= form.submit t('comments.new.submit') %>
-    <% end %>
   </div>
-  <div class="sidebar sidebar-right span3">
+  <div class="sidebar sidebar-right span3 offset1">
     <%= render 'posts/summary' %>
     <%= render 'contact_social_info' %>
   </div>

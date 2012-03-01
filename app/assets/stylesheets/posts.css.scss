@@ -4,8 +4,12 @@
 
 @import 'variables';
 
-.posts-index .post {
-  margin: 30px 0;
+.posts-index {
+  h1 {font-size: 18px;}
+  h2 {font-size: 24px;}
+  .post {
+    margin: 30px 0;
+  }
 }
 
 .post-info {
