@@ -6,16 +6,22 @@
       <%= link_to icon(:arrow_left, 'Volver'), media_items_path %>
       <%= link_to 'Editar', [:edit, media_item] if can? :edit, media_item %>
       <%= link_to 'Borrar', media_item, method: :delete,
-      confirm: 'Borrar multimedia ¿seguro?' if can? :destroy, media_item %>
+                  confirm: 'Borrar multimedia ¿seguro?' if can? :destroy, media_item %>
     </div>
 
     <dl>
-      <dt>Identificador:</dt><dd>!!@<%= media_item.id %></dd>
-      <dt>Posición:</dt><dd><%= media_item.position %></dd>
-      <dt>Ancho:</dt><dd><%= media_item.width %></dd>
-      <dt>Alto:</dt><dd><%= media_item.height %></dd>
-      <dt>Enlace:</dt><dd><%= media_item.url %></dd>
-      <dt>Fichero:</dt><dd><%= media_item.file %></dd>
+      <dt>Identificador:</dt>
+      <dd>!!@<%= media_item.id %></dd>
+      <dt>Posición:</dt>
+      <dd><%= t(media_item.position, scope: [:media_item, :positions]) %></dd>
+      <dt>Ancho:</dt>
+      <dd><%= media_item.width %></dd>
+      <dt>Alto:</dt>
+      <dd><%= media_item.height %></dd>
+      <dt>Enlace:</dt>
+      <dd><%= media_item.url %></dd>
+      <dt>Fichero:</dt>
+      <dd><%= media_item.file %></dd>
     </dl>
 
     <div class="media_item_example">

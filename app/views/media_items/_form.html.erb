@@ -1,10 +1,17 @@
-<%=  simple_form_for media_item do |form| %>
+<%= simple_form_for media_item do |form| %>
     <%= form.input :title %>
-    <%= form.input :position, collection: MediaItem::POSITIONS, include_blank: false %>
+    <%= form.input :position, collection: tc('media_item.positions', MediaItem::POSITIONS), include_blank: false %>
     <%= form.input :width %>
     <%= form.input :height %>
     <%= form.input :url %>
     <%= form.input :file %>
+    <% if media_item.file? %>
+        <div class="control-group">
+          <label>Fichero actual:</label>
+          <%= media_item.file %>
+        </div>
+    <% end %>
+
     <%= form.input :embed_code %>
-    <%= form.submit  %>
+    <%= form.submit %>
 <% end %>

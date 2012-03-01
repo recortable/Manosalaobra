@@ -30,11 +30,17 @@ es:
         role: 'rol'
         password: 'contraseña'
         password_confirmation: 'repite contraseña'
+      media_item:
+        position: 'Posición'
+        width: 'Ancho'
+        height: 'Alto'
+        file: 'Fichero'
+        embed_code: 'Código html'
+
 
 
     hints:
-      defaults:
+      media_item:
         url: 'Si el enlace acaba con .jpg, .png o .gif se tratará como una imágen'
-    #   username: 'User name to sign in.'
-    #   password: 'No special characters, please.'
+
 

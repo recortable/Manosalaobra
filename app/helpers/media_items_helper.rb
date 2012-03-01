@@ -14,9 +14,16 @@ module MediaItemsHelper
     style = ""
     style += "width:#{item.width}px;" if item.width.present?
     style += "height:#{item.height}px;" if item.height.present?
-    style += "display:block;margin:0 auto;" if item.position == 'center'
-    style += "float:left;" if item.position == 'left'
-
+    if item.position == 'left'
+    elsif item.position == 'right'
+      style += "text-align: right;"
+    elsif item.position == 'center'
+      style += "display:block;margin:0 auto;"
+    elsif item.position =='float_left'
+      style += "float:left;"
+    elsif item.position == 'float_right'
+      style += "float:right;"
+    end
     div_for(item, style: style) { output.html_safe }
   end
 
