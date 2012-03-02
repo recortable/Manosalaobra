@@ -7,7 +7,7 @@
     <ul class="proposed-names">
       <%= content_tag_for :li, proposed_names do |name| %>
           <div class="proposed_name-value">
-            <%= link_to_if can?(:manage, name), name.value, name %>
+            <%= link_to_if can?(:manage, name), process_name(name.value), name %>
           </div>
           <div class="votes">
               <span class="votes-value">

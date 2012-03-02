@@ -12,8 +12,13 @@ class CommentsController < ApplicationController
 
   def create
     comment.post = Content.find(params[:post_id])
-    flash[:notice] = "Gracias por tu comentario!" if comment.save
-    respond_with comment, location: comment.post
+    if comment.save
+      flash[:notice] = "Gracias por tu comentario!"
+      respond_with comment, location: comment.post
+    else
+      flash[:notice] = "No se ha podido guardar el comentario"
+      redirect_to post_path(comment.post)
+    end
   end
   
   def edit

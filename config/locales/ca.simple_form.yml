@@ -23,10 +23,10 @@ ca:
         title_ca: 'Títol en català'
         body_ca: 'Text en català'
       post:
-        title: 'Títol en català'
+        title: 'Títol en castellà'
         body: 'Text en castellà'
       page:
-        title: 'Títol en català'
+        title: 'Títol en castellà'
         body: 'Text en castellà'
       user:
         role: 'rol'
@@ -41,6 +41,4 @@ ca:
 
     hints:
       media_item:
-        url: 'Si el enlace acaba con .jpg, .png o .gif se tratará como una imágen'
-
-
+        url: "Si l'enllaç acaba en .jpg, .png o .gif serà tractat com una imatge"

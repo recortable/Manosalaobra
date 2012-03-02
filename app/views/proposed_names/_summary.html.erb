@@ -10,7 +10,7 @@
       <%= content_tag_for :li, summary_names do |name| %>
           <%= link_to proposed_names_path do %>
               <div class="proposed_name-value">
-                <%= name.value %>
+                <%= process_name name.value %>
               </div>
               <div class="votes">
                   <span class="votes-value">
