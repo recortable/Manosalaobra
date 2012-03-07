@@ -5,6 +5,25 @@
   a.more {display: block; float: right; font-size: 14px;}
 }
 
+#proposed-names-counter {
+  margin-bottom: 40px;
+
+  .arrow {
+    background: image_url('flechas.png') no-repeat;
+    height: 25px;
+  }
+  .arrow.left {
+    background-position: -300px 0;
+  }
+
+  .counter {
+    font-weight: bold;
+    padding: 2px 5px;
+    border-radius: 3px;
+    background-color: $naranja;
+  }
+}
+
 /* Estilos generales para los nombres propuestos */
 ul.proposed-names{
   margin: 0 0 0 -12px;

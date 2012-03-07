@@ -1,4 +1,4 @@
-<div id="content-top" class="row">
+<div id="proposed-names-summary" class="row">
   <div id="new-proposed-name">
     <%= render 'proposed_names/form' if current_page?(proposed_names_path) %>
   </div>
@@ -10,7 +10,7 @@
       <%= content_tag_for :li, summary_names do |name| %>
           <%= link_to proposed_names_path do %>
               <div class="proposed_name-value">
-                <%= process_name name.value %>
+                <%= divide_name name.value %>
               </div>
               <div class="votes">
                   <span class="votes-value">
@@ -25,4 +25,12 @@
     </ul>
     <%= link_to t('.more'), proposed_names_path, class: 'more' %>
   </div>
+</div>
+<div id="proposed-names-counter" class="row">
+  <div class="arrow right span4">
+    &nbsp;
+  </div>
+  <div class="span4">
+    Quedan <span class="counter"><%= end_of_voting_in_days %></span> días para el final de la votación</div>
+  <div class="arrow left span4">&nbsp;</div>
 </div>
