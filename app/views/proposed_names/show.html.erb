@@ -18,7 +18,7 @@
           <tr>
             <td><%= vote.value %></td>
             <td><%= vote.request_ip %></td>
-            <td><%= time_ago_in_words vote.created_at %></td>
+            <td><%= l vote.created_at %></td>
             <td>
               <%= link_to icon(:trash, :destroy), [proposed_name, vote], confirm: 'Estás seguro?', method: :delete if can? :destroy, vote %>
             </td>

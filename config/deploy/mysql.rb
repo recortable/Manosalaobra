@@ -9,10 +9,10 @@ namespace :mysql do
     run "mysqldump -u #{db['username']} --password=#{db['password']} #{db['database']} | bzip2 -c > #{file}" do |ch, stream, data|
       puts data
     end
-    `mkdir -p #{File.dirname(__FILE__)}/../backups/`
+    `mkdir -p #{File.dirname(__FILE__)}/../../backups/`
     get file, "backups/#{filename}"
-    `gpg -c #{File.dirname(__FILE__)}/../backups/#{filename}`
-    `rm #{File.dirname(__FILE__)}/../backups/#{filename}`
+    `gpg -c #{File.dirname(__FILE__)}/../../backups/#{filename}`
+    `rm #{File.dirname(__FILE__)}/../../backups/#{filename}`
     # delete file
   end
 
