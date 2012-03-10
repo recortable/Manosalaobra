@@ -22,7 +22,7 @@
           <%= render content.comments %>
         </div>
         <%= form_for [content, Comment.new] do |form| %>
-            <%= form.text_area :body %>
+            <%= form.cktext_area :body %>
             <%= form.submit t('comments.new.submit') %>
         <% end %>
       </div>

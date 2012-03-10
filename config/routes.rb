@@ -1,4 +1,6 @@
 Manosalaobra::Application.routes.draw do
+  mount Ckeditor::Engine => '/ckeditor'
+
   root to: 'dashboards#show'
   resources :posts, path: 'blog' do
     resources :comments, only: :create

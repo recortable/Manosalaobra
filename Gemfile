@@ -37,6 +37,10 @@ gem 'fog'
 gem 'carrierwave'
 gem 'rmagick'
 
+# CKEditor
+gem "ckeditor", "3.7.0.rc3"
+gem "mini_magick"
+
 # To use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.0'
 
