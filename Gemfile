@@ -37,6 +37,9 @@ gem 'fog'
 gem 'carrierwave'
 gem 'rmagick'
 
+# Translate routes
+gem 'rails-translate-routes'
+
 # To use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.0'
 

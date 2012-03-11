@@ -1,0 +1,17 @@
+es:
+  posts: blog
+  comments: comentarios
+  pages: paginas
+  users: participantes
+  proposed_names: nombres
+  votes: votos
+  media_items: multimedia
+ca:
+  posts: blog
+  comments: comentaris
+  pages: pagines
+  users: participants
+  proposed_names: noms
+  votes: vots
+  media_items: multimedia
+  

@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   before_filter :set_locale
+  before_filter :set_locale_from_url
 
   expose(:posts) { Post.limit(4) }
 
@@ -12,13 +13,8 @@ class ApplicationController < ActionController::Base
 
   VALID_LOCALES = ['es', 'ca']
   def set_locale
-    locale = params[:locale]
-    if locale.present? and VALID_LOCALES.include?(locale)
-      cookies.permanent[:locale] = locale
-    end
-    cookies.permanent[:locale] = I18n.default_locale if cookies[:locale].blank?
-    I18n.locale = cookies[:locale]
-    @current_locale = cookies[:locale]
+    I18n.locale = params[:locale] || I18n.default_locale
+    @current_locale = I18n.locale
   end
 
   def current_locale

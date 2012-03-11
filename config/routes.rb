@@ -1,17 +1,19 @@
 Manosalaobra::Application.routes.draw do
   root to: 'dashboards#show'
-  resources :posts, path: 'blog' do
+
+
+  resources :posts do
     resources :comments, only: :create
   end
-  resources :comments, path: 'comentarios'
-  resources :pages, path: 'paginas'
-  resources :users, path: 'participantes' do
+  resources :comments
+  resources :pages
+  resources :users do
     post :subscribe, on: :collection
   end
-  resources :proposed_names, path: 'nombres' do
-    resources :votes, path: 'votos'
+  resources :proposed_names do
+    resources :votes
   end
-  resources :media_items, path: 'multimedia'
+  resources :media_items
 
   resources :user_sessions, only: :create
 
@@ -21,4 +23,6 @@ Manosalaobra::Application.routes.draw do
 
   # Simula un login
   match '/enter/:id' => 'users#enter' unless Rails.env.production?
+
+  ActionDispatch::Routing::Translator.translate_from_file('config/locales/routes/routes.yml', { :prefix_on_default_locale => true })
 end
