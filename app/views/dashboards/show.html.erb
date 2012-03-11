@@ -1,7 +1,7 @@
 <%= render 'proposed_names/summary' %>
 <div class="row">
   <div class="main span6">
-    <%= title page.title %>
+    <%= title loc(page, :title) %>
     <% if can? :edit, page %>
         <div class="btn-group">
           <%= link_to icon(:pencil, :edit), edit_page_path(page), class: :btn %>
