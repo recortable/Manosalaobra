@@ -1,0 +1,9 @@
+<%= link_to 'Añadir fase', new_phase_path if can? :new, Phase %>
+<table class="table">
+  <% phases.each do |phase| %>
+    <tr>
+      <td><%= link_to phase.name, phase %></td>
+    </tr>
+  <% end %>
+</table>
+

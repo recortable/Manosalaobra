@@ -8,6 +8,18 @@ class IntegrationTest < MiniTest::Spec
   include Rails.application.routes.url_helpers
   include Capybara::DSL
   register_spec_type(/integration$/, self)
+
+  def login_user(user)
+    if user.present?
+      visit enter_path(user)
+    else
+      visit logout_path
+    end
+  end
+
+  def click_submit
+    page.find('input[name="commit"]').click
+  end
 end
 
 class HelperTest < MiniTest::Spec

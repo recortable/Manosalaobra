@@ -12,4 +12,12 @@ describe Group do
     g.users << Factory(:user)
     g.users.count.must_equal 1
   end
+
+  it "should destroy memberships when destroy" do
+    g = Factory(:group)
+    g.users << Factory(:user)
+    Membership.count.must_equal 1
+    g.destroy
+    Membership.count.must_equal 0
+  end
 end
