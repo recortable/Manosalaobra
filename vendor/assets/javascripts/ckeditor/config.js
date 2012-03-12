@@ -51,13 +51,15 @@ CKEDITOR.editorConfig = function( config )
   config.forcePasteAsPlainText = true;
 
   config.format_tags = 'p;h2;h3;h4;h5;h6;pre;address;div' 
+
+  config.removeDialogTabs = 'image:advanced;image:Upload';
   
   /* Toolbars */
   config.toolbar = 'Easy';
   
   config.toolbar_Easy =
     [
-        ['Source', 'Format'],
+        ['Format'],
         ['Cut','Copy','Paste','PasteText'],
         ['Bold','Italic','Underline','Strike'], ['NumberedList','BulletedList'],
         ['Link','Unlink'],
