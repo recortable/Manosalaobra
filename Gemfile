@@ -50,5 +50,12 @@ end
 # Deploy with Capistrano
 gem 'capistrano'
 
-# To use debugger
-gem 'ruby-debug19', :require => 'ruby-debug'
+group :test do
+  gem 'minitest'
+  gem 'capybara'
+  gem 'turn'
+  gem 'database_cleaner'
+  gem 'factory_girl_rails'
+  gem 'ruby-debug19', :require => 'ruby-debug'
+end
+

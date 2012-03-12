@@ -1,7 +1,9 @@
 require 'test_helper'
 
-class UserTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+describe User do
+  it "should have name and email" do
+    u = Factory.create :user
+    u.name.wont_be :empty?
+    u.email.wont_be :empty?
+  end
 end

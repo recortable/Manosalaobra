@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120229091545) do
+ActiveRecord::Schema.define(:version => 20120311233256) do
 
   create_table "comments", :force => true do |t|
     t.integer  "user_id"
@@ -47,6 +47,30 @@ ActiveRecord::Schema.define(:version => 20120229091545) do
     t.string   "settings",     :limit => 300
     t.datetime "created_at",                  :null => false
     t.datetime "updated_at",                  :null => false
+  end
+
+  create_table "phases", :force => true do |t|
+    t.string   "name",        :limit => 100
+    t.string   "description", :limit => 300
+    t.string   "token",       :limit => 50
+    t.integer  "position"
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
+  end
+
+  add_index "phases", ["token"], :name => "index_phases_on_token"
+
+  create_table "problems", :force => true do |t|
+    t.string   "title"
+    t.integer  "user_id"
+    t.integer  "phase_id"
+    t.integer  "parent_id"
+    t.text     "body_context"
+    t.text     "body_description"
+    t.text     "body_solutions"
+    t.text     "settings"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
   end
 
   create_table "proposed_names", :force => true do |t|
