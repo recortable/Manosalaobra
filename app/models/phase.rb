@@ -1,4 +1,7 @@
 class Phase < ActiveRecord::Base
+  # RELATIONS
+  has_many :problems
+
   # SCOPES
   default_scope order: 'position ASC'
 

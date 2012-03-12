@@ -12,8 +12,11 @@ Manosalaobra::Application.routes.draw do
     resources :votes, path: 'votos'
   end
   resources :media_items, path: 'multimedia'
-  resources :phases, path: 'fases'
+  resources :phases, path: 'fases' do
+    resources :problems, path: 'preguntas', only: [:new]
+  end
   resources :groups, path: 'colectivos'
+  resources :problems, parh: 'preguntas', except: [:new]
 
   resources :user_sessions, only: :create
 

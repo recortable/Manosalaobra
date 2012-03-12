@@ -4,9 +4,14 @@ require "minitest/autorun"
 require "capybara/rails"
 require "active_support/testing/setup_and_teardown"
 
+class MiniTest::Spec
+  include FactoryGirl::Syntax::Methods
+end
+
 class IntegrationTest < MiniTest::Spec
   include Rails.application.routes.url_helpers
   include Capybara::DSL
+
   register_spec_type(/integration$/, self)
 
   def login_user(user)
@@ -25,6 +30,7 @@ end
 class HelperTest < MiniTest::Spec
   include ActiveSupport::Testing::SetupAndTeardown
   include ActionView::TestCase::Behavior
+
   register_spec_type(/Helper$/, self)
 end
 

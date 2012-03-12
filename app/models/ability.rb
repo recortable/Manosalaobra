@@ -24,6 +24,7 @@ class Ability
         can :manage, Vote
         can :manage, Phase
         can :manage, Group
+        can :manage, Problem
       end
     end
 
