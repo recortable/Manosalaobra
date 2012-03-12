@@ -5,6 +5,8 @@ class Content < ActiveRecord::Base
   validates :title, presence: true
   validates :content_type, presence: true
 
+  before_save :clean_input
+
   # Devuelve el valor del un atributo con el locale especificado.
   # Si el valor del atributo está vacío, devuelve el valor por defecto (locale = 'es')
   # @param attribute [String] El nombre del atributo
@@ -18,4 +20,11 @@ class Content < ActiveRecord::Base
       localized.present? ? localized : send(attribute)
     end
   end
+
+  private 
+
+    def clean_input
+      self.body = self.body.sanitize
+      self.body_ca = self.body_ca.sanitize
+    end
 end

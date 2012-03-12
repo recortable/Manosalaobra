@@ -58,5 +58,10 @@ module Manosalaobra
 
     # Autoload ckeditor models folder
     config.autoload_paths += %W(#{config.root}/app/models/ckeditor)
+
+    # Remove tags to the default allowed tags in sanitize function
+    config.after_initialize do
+      ActionView::Base.sanitized_allowed_tags.delete 'h1'
+    end
   end
 end

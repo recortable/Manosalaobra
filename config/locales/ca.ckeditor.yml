@@ -1,0 +1,8 @@
+ca:
+  ckeditor:
+    page_title: "CKEditor Files Manager"
+    confirm_delete: "Vols esborrar l'arxiu? L'acció no es pot desfer."
+    buttons: 
+      cancel: "Cancel·lar"
+      upload: "Penjar al servidor"
+      delete: "Esborrar"

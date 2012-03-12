@@ -3,9 +3,9 @@
     <%= form.input :title_ca %>
     <%= form.input :author %>
     <%= form.input :published_at %>
-    <%= form.input :body %>
-    <%= form.input :body_ca %>
-    <%= form.input :content_type, collection: [:markdown], include_blank: false %>
+    <%= form.input :body, as: :ckeditor %>
+    <%= form.input :body_ca, as: :ckeditor %>
+    <%= form.input :content_type, collection: [:html], include_blank: false %>
     <%= form.submit %>
 <% end %>
 

@@ -11,6 +11,8 @@ module ContentsHelper
                elsif content.content_type == 'markdown'
                  text = process_media_items(body)
                  markdown.render(text).html_safe
+               elsif content.content_type == 'html'
+                 body.html_safe
                else
                  body
                end
