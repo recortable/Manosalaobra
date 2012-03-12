@@ -36,6 +36,23 @@ ActiveRecord::Schema.define(:version => 20120311233256) do
     t.text     "body_ca"
   end
 
+  create_table "examples", :force => true do |t|
+    t.string   "title",           :limit => 200
+    t.string   "slug",            :limit => 200
+    t.integer  "user_id"
+    t.integer  "group_id"
+    t.boolean  "published",                      :default => true
+    t.text     "body"
+    t.integer  "solutions_count",                :default => 0
+    t.text     "settings"
+    t.datetime "created_at",                                       :null => false
+    t.datetime "updated_at",                                       :null => false
+  end
+
+  add_index "examples", ["group_id"], :name => "index_examples_on_group_id"
+  add_index "examples", ["slug"], :name => "index_examples_on_slug"
+  add_index "examples", ["user_id"], :name => "index_examples_on_user_id"
+
   create_table "groups", :force => true do |t|
     t.string   "name",       :limit => 100
     t.string   "slug",       :limit => 100
@@ -88,17 +105,20 @@ ActiveRecord::Schema.define(:version => 20120311233256) do
     t.integer  "user_id"
     t.integer  "phase_id"
     t.integer  "parent_id"
+    t.integer  "group_id"
+    t.boolean  "published",                       :default => true
     t.text     "body_context"
     t.text     "body_description"
     t.text     "body_solutions"
+    t.integer  "solutions_count",                 :default => 0
     t.text     "settings"
-    t.datetime "created_at",                      :null => false
-    t.datetime "updated_at",                      :null => false
+    t.datetime "created_at",                                        :null => false
+    t.datetime "updated_at",                                        :null => false
   end
 
   add_index "problems", ["parent_id"], :name => "index_problems_on_parent_id"
   add_index "problems", ["phase_id"], :name => "index_problems_on_phase_id"
-  add_index "problems", ["slug"], :name => "index_problems_on_slug"
+  add_index "problems", ["slug"], :name => "index_problems_on_slug", :length => {"slug"=>255}
   add_index "problems", ["user_id"], :name => "index_problems_on_user_id"
 
   create_table "proposed_names", :force => true do |t|
@@ -110,16 +130,44 @@ ActiveRecord::Schema.define(:version => 20120311233256) do
     t.datetime "updated_at",                               :null => false
   end
 
+  create_table "questions", :force => true do |t|
+    t.integer  "resource_id"
+    t.string   "resource_type"
+    t.integer  "user_id"
+    t.text     "body"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  add_index "questions", ["resource_id", "resource_type"], :name => "index_questions_on_resource_id_and_resource_type"
+  add_index "questions", ["user_id"], :name => "index_questions_on_user_id"
+
+  create_table "solution_examples", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "solution_id"
+    t.integer  "example_id"
+    t.text     "body"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "solution_examples", ["example_id"], :name => "index_solution_examples_on_example_id"
+  add_index "solution_examples", ["solution_id"], :name => "index_solution_examples_on_solution_id"
+  add_index "solution_examples", ["user_id"], :name => "index_solution_examples_on_user_id"
+
   create_table "solutions", :force => true do |t|
-    t.string   "title",      :limit => 200
-    t.string   "slug",       :limit => 200
+    t.string   "title",          :limit => 200
+    t.string   "slug",           :limit => 200
     t.integer  "user_id"
     t.integer  "phase_id"
     t.integer  "problem_id"
+    t.integer  "group_id"
+    t.boolean  "published",                     :default => true
     t.text     "body"
+    t.integer  "examples_count",                :default => 0
     t.text     "settings"
-    t.datetime "created_at",                :null => false
-    t.datetime "updated_at",                :null => false
+    t.datetime "created_at",                                      :null => false
+    t.datetime "updated_at",                                      :null => false
   end
 
   add_index "solutions", ["phase_id"], :name => "index_solutions_on_phase_id"

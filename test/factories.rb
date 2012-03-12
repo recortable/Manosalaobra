@@ -30,4 +30,9 @@ FactoryGirl.define do
     user
     sequence(:name) {|n| "Group #{n}" }
   end
+
+  factory :example do
+    sequence(:title) {|n| "Example #{n}" }
+    user
+  end
 end

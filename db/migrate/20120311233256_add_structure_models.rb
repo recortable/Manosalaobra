@@ -20,6 +20,7 @@ class AddStructureModels < ActiveRecord::Migration
       t.text :body_context
       t.text :body_description
       t.text :body_solutions
+      t.integer :solutions_count, default: 0
       t.text :settings
       t.timestamps
     end
@@ -37,6 +38,7 @@ class AddStructureModels < ActiveRecord::Migration
       t.integer :group_id
       t.boolean :published, default: true
       t.text :body
+      t.integer :examples_count, default: 0
       t.text :settings
       t.timestamps
     end
@@ -44,6 +46,41 @@ class AddStructureModels < ActiveRecord::Migration
     add_index :solutions, :user_id
     add_index :solutions, :phase_id
     add_index :solutions, :problem_id
+
+    create_table :examples do |t|
+      t.string :title, limit: 200
+      t.string :slug, limit: 200
+      t.integer :user_id
+      t.integer :group_id
+      t.boolean :published, default: true
+      t.text :body
+      t.integer :solutions_count, default: 0
+      t.text :settings
+      t.timestamps
+    end
+    add_index :examples, :slug
+    add_index :examples, :user_id
+    add_index :examples, :group_id
+
+    create_table :solution_examples do |t|
+      t.belongs_to :user
+      t.integer :solution_id
+      t.integer :example_id
+      t.text :body
+      t.timestamps
+    end
+    add_index :solution_examples, :solution_id
+    add_index :solution_examples, :example_id
+    add_index :solution_examples, :user_id
+
+    create_table :questions do |t|
+      t.belongs_to :resource, polymorphic: true
+      t.belongs_to :user
+      t.text :body
+      t.timestamps
+    end
+    add_index :questions, [:resource_id, :resource_type]
+    add_index :questions, :user_id
 
     create_table :groups do |t|
       t.string :name, limit: 100
