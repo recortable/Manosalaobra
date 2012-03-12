@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
-  before_filter :set_locale
+  before_filter :set_locale_from_user_prefs
   before_filter :set_locale_from_url
 
   expose(:posts) { Post.limit(4) }
@@ -10,15 +10,20 @@ class ApplicationController < ActionController::Base
   helper_method :current_locale
 
   protected
-
+  
   VALID_LOCALES = ['es', 'ca']
-  def set_locale
-    I18n.locale = params[:locale] || I18n.default_locale
-    @current_locale = I18n.locale
+  def set_locale_from_user_prefs
+    locale = params[:locale]
+    if !(locale.present? and VALID_LOCALES.include?(locale))
+      location = request.fullpath
+      locale = request.compatible_language_from(VALID_LOCALES) || I18n.default_locale
+      location = '/' + locale.to_s + location
+      redirect_to location
+    end
   end
 
   def current_locale
-    @current_locale
+    @current_locale = I18n.locale
   end
 
   def require_user

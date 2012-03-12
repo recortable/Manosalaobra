@@ -39,6 +39,7 @@ gem 'rmagick'
 
 # Translate routes
 gem 'rails-translate-routes'
+gem 'http_accept_language'
 
 # To use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.0'
