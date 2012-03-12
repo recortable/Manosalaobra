@@ -16,4 +16,9 @@ describe Phase do
     phase.token = 'token2'
     phase.save.must_equal true
   end
+
+  it 'should find by token' do
+    p = Factory(:phase, token: 'some-token')
+    Phase.find('some-token').must_equal p
+  end
 end

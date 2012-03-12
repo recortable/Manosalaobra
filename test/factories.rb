@@ -18,4 +18,16 @@ FactoryGirl.define do
     phase
     sequence(:title) {|n| "Problem #{n}" }
   end
+
+  factory :solution do
+    user
+    phase
+    problem
+    sequence(:title) {|n| "Solution #{n}" }
+  end
+
+  factory :group do
+    user
+    sequence(:name) {|n| "Group #{n}" }
+  end
 end
