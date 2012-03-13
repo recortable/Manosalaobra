@@ -9,17 +9,15 @@ describe Phase do
     Phase.all.last.must_equal last
   end
 
-  it 'should have unique tokens' do
-    create(:phase, token: 'token')
-    phase = build(:phase, token: 'token')
-    phase.save.must_equal false
-    phase.token = 'token2'
-    phase.save.must_equal true
+  it 'should find by slug' do
+    p = create(:phase, name: 'Some name')
+    Phase.find('some-name').must_equal p
   end
 
-  it 'should find by token' do
-    p = create(:phase, token: 'some-token')
-    Phase.find('some-token').must_equal p
+  it 'should create versions' do
+    Version.count.must_equal 0
+    create(:phase, name: 'Some phase')
+    Version.count.must_equal 1
   end
 
 

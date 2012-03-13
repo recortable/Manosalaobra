@@ -9,6 +9,7 @@ describe Example do
 
     example.reload
     example.solutions.count.must_equal 1
+    example.solutions_count.must_equal 1
     example.solutions.first.must_equal solution
   end
 end

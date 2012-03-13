@@ -11,7 +11,10 @@ class Problem < ActiveRecord::Base
   validates_presence_of :title, :user_id, :phase_id
 
   # EXTENSIONS
+  # has_paper_trail
   extend FriendlyId
-  friendly_id :title, use: :slugged
+  friendly_id :title, use: [:slugged, :globalize]
+  translates :title, :slug, :body_context, :body_description,
+    :body_solutions#, versioning: true
 
 end

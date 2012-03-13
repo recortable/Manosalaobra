@@ -9,7 +9,6 @@ FactoryGirl.define do
 
   factory :phase do
     sequence(:name) {|n| "Phase #{n}" }
-    sequence(:token) {|n| "phase#{n}" }
     sequence(:position)
   end
 

@@ -29,6 +29,8 @@ gem 'decent_exposure'
 gem 'cancan'
 gem 'redcarpet'
 gem 'friendly_id'
+gem 'globalize3'
+gem 'paper_trail'
 
 gem 'hoptoad_notifier'
 

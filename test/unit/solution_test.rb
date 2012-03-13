@@ -6,6 +6,9 @@ describe Solution do
     solution = create :solution
     solution.add_example(create(:example), solution.user)
     
-    solution.examples.count == 1
+    solution.reload
+    solution.examples.count.must_equal 1
+    solution.examples_count.must_equal 1
+    
   end
 end

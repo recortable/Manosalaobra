@@ -6,11 +6,13 @@ class Phase < ActiveRecord::Base
   default_scope order: 'position ASC'
 
   # VALIDATIONS
-  validates :name, presence: true
-  validates :token, presence: true, uniqueness: true
+  validates :name, presence: true, uniqueness: true
   validates :position, presence: true
+  validates :slug, presence: true
 
   # EXTENSIONS
+#  has_paper_trail
   extend FriendlyId
-  friendly_id :token
+  friendly_id :name, use: [:slugged, :globalize]
+  translates :name, :slug, :description#, versioning: true
 end

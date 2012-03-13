@@ -12,8 +12,10 @@ class Solution < ActiveRecord::Base
   validates :phase_id, presence: true
 
   # EXTENSIONS
+#  has_paper_trail
   extend FriendlyId
-  friendly_id :title, use: :slugged
+  friendly_id :title, use: [:slugged, :globalize]
+  translates :title, :slug, :body#, versioning: true
 
   def add_example(example, user)
     SolutionExample.create(example: example, solution: self, user: user)

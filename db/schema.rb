@@ -36,6 +36,19 @@ ActiveRecord::Schema.define(:version => 20120311233256) do
     t.text     "body_ca"
   end
 
+  create_table "example_translations", :force => true do |t|
+    t.integer  "example_id"
+    t.string   "locale"
+    t.string   "title"
+    t.string   "slug"
+    t.text     "body"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "example_translations", ["example_id"], :name => "index_example_translations_on_example_id"
+  add_index "example_translations", ["locale"], :name => "index_example_translations_on_locale"
+
   create_table "examples", :force => true do |t|
     t.string   "title",           :limit => 200
     t.string   "slug",            :limit => 200
@@ -88,16 +101,44 @@ ActiveRecord::Schema.define(:version => 20120311233256) do
   add_index "memberships", ["group_id"], :name => "index_memberships_on_group_id"
   add_index "memberships", ["user_id"], :name => "index_memberships_on_user_id"
 
+  create_table "phase_translations", :force => true do |t|
+    t.integer  "phase_id"
+    t.string   "locale"
+    t.string   "name"
+    t.string   "slug"
+    t.string   "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "phase_translations", ["locale"], :name => "index_phase_translations_on_locale"
+  add_index "phase_translations", ["phase_id"], :name => "index_phase_translations_on_phase_id"
+
   create_table "phases", :force => true do |t|
-    t.string   "name",        :limit => 100
+    t.string   "name",        :limit => 50
     t.string   "description", :limit => 300
-    t.string   "token",       :limit => 50
+    t.string   "slug",        :limit => 50
     t.integer  "position"
     t.datetime "created_at",                 :null => false
     t.datetime "updated_at",                 :null => false
   end
 
-  add_index "phases", ["token"], :name => "index_phases_on_token"
+  add_index "phases", ["slug"], :name => "index_phases_on_slug"
+
+  create_table "problem_translations", :force => true do |t|
+    t.integer  "problem_id"
+    t.string   "locale"
+    t.string   "title"
+    t.string   "slug"
+    t.text     "body_context"
+    t.text     "body_description"
+    t.text     "body_solutions"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+  end
+
+  add_index "problem_translations", ["locale"], :name => "index_problem_translations_on_locale"
+  add_index "problem_translations", ["problem_id"], :name => "index_problem_translations_on_problem_id"
 
   create_table "problems", :force => true do |t|
     t.string   "title",            :limit => 300
@@ -155,6 +196,19 @@ ActiveRecord::Schema.define(:version => 20120311233256) do
   add_index "solution_examples", ["solution_id"], :name => "index_solution_examples_on_solution_id"
   add_index "solution_examples", ["user_id"], :name => "index_solution_examples_on_user_id"
 
+  create_table "solution_translations", :force => true do |t|
+    t.integer  "solution_id"
+    t.string   "locale"
+    t.string   "title"
+    t.string   "slug"
+    t.text     "body"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "solution_translations", ["locale"], :name => "index_solution_translations_on_locale"
+  add_index "solution_translations", ["solution_id"], :name => "index_solution_translations_on_solution_id"
+
   create_table "solutions", :force => true do |t|
     t.string   "title",          :limit => 200
     t.string   "slug",           :limit => 200
@@ -184,6 +238,18 @@ ActiveRecord::Schema.define(:version => 20120311233256) do
     t.datetime "created_at",                     :null => false
     t.datetime "updated_at",                     :null => false
   end
+
+  create_table "versions", :force => true do |t|
+    t.string   "item_type",  :null => false
+    t.integer  "item_id",    :null => false
+    t.string   "event",      :null => false
+    t.string   "whodunnit"
+    t.text     "object"
+    t.datetime "created_at"
+    t.string   "locale"
+  end
+
+  add_index "versions", ["item_type", "item_id"], :name => "index_versions_on_item_type_and_item_id"
 
   create_table "votes", :force => true do |t|
     t.integer  "value"

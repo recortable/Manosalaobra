@@ -1,13 +1,25 @@
 class AddStructureModels < ActiveRecord::Migration
   def change
+    create_table :versions do |t|
+      t.string   :item_type, :null => false
+      t.integer  :item_id,   :null => false
+      t.string   :event,     :null => false
+      t.string   :whodunnit
+      t.text     :object
+      t.datetime :created_at
+      t.string :locale
+    end
+    add_index :versions, [:item_type, :item_id]
+    
     create_table :phases do |t|
-      t.string :name, limit: 100
+      t.string :name, limit: 50
       t.string :description, limit: 300
-      t.string :token, limit: 50
+      t.string :slug, limit: 50
       t.integer :position
       t.timestamps
     end
-    add_index :phases, :token
+    add_index :phases, :slug
+    Phase.create_translation_table!(name: :string, slug: :string, description: :string)
 
     create_table :problems do |t|
       t.string :title, limit: 300
@@ -28,6 +40,10 @@ class AddStructureModels < ActiveRecord::Migration
     add_index :problems, :user_id
     add_index :problems, :phase_id
     add_index :problems, :parent_id
+    Problem.create_translation_table!(title: :string, slug: :string,
+                                       body_context: :text,
+                                       body_description: :text,
+                                       body_solutions: :text)
 
     create_table :solutions do |t|
       t.string :title, limit: 200
@@ -46,6 +62,8 @@ class AddStructureModels < ActiveRecord::Migration
     add_index :solutions, :user_id
     add_index :solutions, :phase_id
     add_index :solutions, :problem_id
+    Solution.create_translation_table!(title: :string, slug: :string,
+                                       body: :text)
 
     create_table :examples do |t|
       t.string :title, limit: 200
@@ -61,6 +79,8 @@ class AddStructureModels < ActiveRecord::Migration
     add_index :examples, :slug
     add_index :examples, :user_id
     add_index :examples, :group_id
+    Example.create_translation_table!(title: :string, slug: :string,
+                                       body: :text)
 
     create_table :solution_examples do |t|
       t.belongs_to :user

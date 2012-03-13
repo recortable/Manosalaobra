@@ -5,8 +5,10 @@ class Example < ActiveRecord::Base
   has_many :solutions, through: :solution_examples
 
   # EXTENSIONS
+#  has_paper_trail
   extend FriendlyId
-  friendly_id :title, use: :slugged
+  friendly_id :title, use: [:slugged, :globalize]
+  translates :title, :slug, :body#, versioning: true 
 
   # VALIDATIONS
   validates :title, presence: true, 

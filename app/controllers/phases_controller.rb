@@ -31,7 +31,8 @@ class PhasesController < ApplicationController
 
   def update
     authorize! :update, phase
-    flash[:save] = 'Fase guardada' if phase.update_attributes(params[:phase])
+    phase.assign_attributes(params[:phase])
+    flash[:save] = 'Fase guardada' if phase.save!
     respond_with phase
   end
 end

@@ -29,20 +29,20 @@ describe 'Phases integration' do
     login_user(Factory(:user))
     visit new_phase_path
     fill_in 'phase_name', with: 'Fase Uno'
-    fill_in 'phase_token', with: 'faseuno'
     fill_in 'phase_position', with: '1'
     click_submit
     Phase.count.must_equal 1
-    Phase.first.name.must_equal 'Fase Uno'
+    phase = Phase.first
+    phase.name.must_equal 'Fase Uno'
   end
 
   it "edit phase" do
-    phase = Factory(:phase)
+    phase = create(:phase)
     login_user(Factory(:user))
     visit edit_phase_path(phase)
     fill_in 'phase_name', with: 'Edited phase'
     click_submit
-    phase.reload
+    phase = Phase.find phase.id
     phase.name.must_equal 'Edited phase'
   end
 end
