@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
   # RELATIONS
   has_many :comments
   has_many :posts
+  has_many :memberships, dependent: :destroy
 
   # EXTENSIONS
   extend FriendlyId

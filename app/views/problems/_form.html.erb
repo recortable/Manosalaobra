@@ -1,0 +1,6 @@
+<%= link_to phase.name, phase %>
+<%= simple_form_for problem do |form| %>
+  <%= form.input :phase_id, as: :hidden %>
+  <%= form.input :title %>
+  <%= form.submit %>
+<% end %>

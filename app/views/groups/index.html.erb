@@ -1,0 +1,9 @@
+<%= link_to 'Añadir colectivo', new_group_path %>
+<table class="table">
+  <% groups.each do |group| %>
+    <tr>
+      <td><%= link_to group.name, group %>
+    </tr>
+  <% end %>
+</table>
+

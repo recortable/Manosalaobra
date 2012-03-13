@@ -1,6 +1,6 @@
 # encoding: utf-8
 class UsersController < ApplicationController
-  before_filter :require_user, except: [:enter, :subscribe ]
+  before_filter :require_user, except: [:subscribe ]
   respond_to :html, :json, :xml
   expose(:users) { User.all }
   expose(:user)
@@ -54,15 +54,6 @@ class UsersController < ApplicationController
       notice = 'Te mantendremos informadx' if user.save(validate: false)
     end
     redirect_to params[:from_url], notice: notice
-  end
-
-  # Este método es una puerta de entrada que eliminaremos
-  # cuando implementemos el inicio de sesión como dios manda
-  # Mira el fichero routes.rb para saber de dónde sale el params[:id]
-  def enter
-    self.current_user = User.find params[:id]
-    flash[:notice] = "Hola #{current_user.name}"
-    redirect_to root_path
   end
 
 end

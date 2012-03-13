@@ -13,7 +13,12 @@ Manosalaobra::Application.routes.draw do
   resources :proposed_names do
     resources :votes
   end
-  resources :media_items
+  resources :media_items, path: 'multimedia'
+  resources :phases, path: 'fases' do
+    resources :problems, path: 'preguntas', only: [:new]
+  end
+  resources :groups, path: 'colectivos'
+  resources :problems, parh: 'preguntas', except: [:new]
 
   resources :user_sessions, only: :create
 
@@ -22,7 +27,6 @@ Manosalaobra::Application.routes.draw do
   match '/salir' => 'user_sessions#destroy', as: :logout
 
   # Simula un login
-  match '/enter/:id' => 'users#enter' unless Rails.env.production?
-
+  match '/enter/:id' => 'user_sessions#enter', as: :enter unless Rails.env.production?
   ActionDispatch::Routing::Translator.translate_from_file('config/locales/routes/routes.yml', { :prefix_on_default_locale => true })
 end
