@@ -52,7 +52,7 @@ CKEDITOR.editorConfig = function( config )
 
   config.format_tags = 'p;h2;h3;h4;h5;h6;pre;address;div' 
 
-  config.removeDialogTabs = 'image:advanced;image:Upload';
+  config.removeDialogTabs = 'image:advanced;image:Upload;link:target;link:advanced';
   
   /* Toolbars */
   config.toolbar = 'Easy';

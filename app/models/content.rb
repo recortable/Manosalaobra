@@ -24,7 +24,7 @@ class Content < ActiveRecord::Base
   private 
 
     def clean_input
-      self.body = self.body.sanitize
-      self.body_ca = self.body_ca.sanitize
+      self.body = self.body.sanitize if self.body.present?
+      self.body_ca = self.body_ca.sanitize if self.body_ca.present?
     end
 end
