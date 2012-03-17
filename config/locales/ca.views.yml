@@ -45,6 +45,7 @@ ca:
     summary:
       title: 'Els 6 noms més votats'
       more: 'més...'
+      votes_end: 'La votació ha finalitzat.'
     form:
       placeholder: "Se t'acut un nom millor?"
       submit: '> Enviar'

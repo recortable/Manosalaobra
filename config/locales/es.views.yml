@@ -45,6 +45,7 @@ es:
     summary:
       title: 'Los 6 nombres más votados'
       more: 'más...'
+      votes_end: 'La votación ha finalizado.'
     form:
       placeholder: "¿Se te ocurre alguno mejor?"
       submit: '> Enviar'
