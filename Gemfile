@@ -2,12 +2,6 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.0'
 
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
-
-gem 'sqlite3'
-
-
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -22,7 +16,6 @@ group :assets do
 end
 
 
-gem 'mysql2' #, '< 0.3'
 gem 'jquery-rails'
 gem 'simple_form'
 gem 'decent_exposure'
@@ -49,14 +42,20 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'
 
+
 group :production do
   gem 'unicorn'
+  gem 'mysql2'
 end
 
-# Deploy with Capistrano
-gem 'capistrano'
+group :development do
+  # Deploy with Capistrano
+  gem 'capistrano'
+  gem 'mysql2'
+end
 
 group :test do
+  gem 'sqlite3'
   gem 'minitest'
   gem 'capybara'
   gem 'turn'
@@ -66,3 +65,6 @@ group :test do
   gem 'faker'
 end
 
+group :heroku do
+  gem 'pg'
+end

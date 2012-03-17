@@ -12,8 +12,18 @@ require "sprockets/railtie"
 # require "rails/test_unit/railtie"
 
 if defined?(Bundler)
+  # http://iain.nl/getting-the-most-out-of-bundler-groups
+  groups = {
+    assets: %w(development test),
+    monitoring: %w(production),
+    heroku: %w(staging)
+  }
+  Bundler.require(*Rails.groups(groups))
+
+
+
   # If you precompile assets before deploying to production, use this line
-  Bundler.require(*Rails.groups(:assets => %w(development test)))
+  # Bundler.require(*Rails.groups(:assets => %w(development test)))
   # If you want your assets lazily compiled in production, use this line
   # Bundler.require(:default, :assets, Rails.env)
 end
