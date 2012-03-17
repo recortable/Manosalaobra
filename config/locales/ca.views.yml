@@ -37,7 +37,7 @@ ca:
 
   proposed_names:
     index:
-      title: "Vota els noms que més t'agradin"
+      title: "Noms proposats"
       vote: 'Votar aquest nom'
     show:
       title: "Gestionar nom '%{name}'"

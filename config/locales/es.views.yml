@@ -37,7 +37,7 @@ es:
 
   proposed_names:
     index:
-      title: 'Vota los nombres que más te gusten'
+      title: 'Nombres propuestos'
       vote: 'Votar este nombre'
     show:
       title: "Gestionar nombre '%{name}'"
