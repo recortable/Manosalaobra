@@ -20,8 +20,7 @@ class User < ActiveRecord::Base
             length: {minimum: 3, maximum: 60},
             confirmation: true
 
-  # El primer usuario siempre será administrador
   def admin?
-    self.id == 1 or self.role == 'admin'
+    self.role == 'admin'
   end
 end

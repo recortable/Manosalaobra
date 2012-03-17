@@ -17,7 +17,7 @@ describe Phase do
   it 'should create versions' do
     Version.count.must_equal 0
     create(:phase, name: 'Some phase')
-    Version.count.must_equal 1
+    Version.count.must_be :>, 0
   end
 
 

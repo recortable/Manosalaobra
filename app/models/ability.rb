@@ -8,6 +8,7 @@ class Ability
     can :destroy, UserSession if user.present?
     can :create, ProposedName
     can :read, Group
+    can :read, Problem, published: true
 
     # Admin permissions
     if user.present? 

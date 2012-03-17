@@ -1,10 +1,11 @@
 require 'test_helper'
 
 describe Problem do
-  it 'should have phase and user' do
+  it 'should have required attributes' do
     p = create :problem
-    p.user.wont_be :nil?
-    p.phase.wont_be :nil?
+    p.update_attributes(title: nil).must_equal false
+    p.update_attributes(phase_id: nil).must_equal false
+    p.update_attributes(user_id: nil).must_equal false
   end
 
   it 'can have one parent' do
@@ -13,7 +14,7 @@ describe Problem do
     child.parent.must_equal parent
   end
 
-  
+
   it 'can have children' do
     parent = create :problem
     create(:problem, parent_id: parent.id)

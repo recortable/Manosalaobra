@@ -8,13 +8,14 @@ class Problem < ActiveRecord::Base
   store :settings, accesors: []
 
   # VALIDATIONS
-  validates_presence_of :title, :user_id, :phase_id
+  validates :title, presence: true
+  validates :user_id, presence: true
+  validates :phase_id, presence: true
 
   # EXTENSIONS
-  # has_paper_trail
   extend FriendlyId
   friendly_id :title, use: [:slugged, :globalize]
   translates :title, :slug, :body_context, :body_description,
-    :body_solutions#, versioning: true
+    :body_solutions, versioning: true
 
 end

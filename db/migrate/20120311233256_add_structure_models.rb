@@ -12,8 +12,8 @@ class AddStructureModels < ActiveRecord::Migration
     add_index :versions, [:item_type, :item_id]
     
     create_table :phases do |t|
-      t.string :name, limit: 50
-      t.string :description, limit: 300
+      #t.string :name, limit: 50
+      #t.string :description, limit: 300
       t.string :slug, limit: 50
       t.integer :position
       t.timestamps

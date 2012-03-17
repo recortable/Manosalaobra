@@ -115,12 +115,10 @@ ActiveRecord::Schema.define(:version => 20120311233256) do
   add_index "phase_translations", ["phase_id"], :name => "index_phase_translations_on_phase_id"
 
   create_table "phases", :force => true do |t|
-    t.string   "name",        :limit => 50
-    t.string   "description", :limit => 300
-    t.string   "slug",        :limit => 50
+    t.string   "slug",       :limit => 50
     t.integer  "position"
-    t.datetime "created_at",                 :null => false
-    t.datetime "updated_at",                 :null => false
+    t.datetime "created_at",               :null => false
+    t.datetime "updated_at",               :null => false
   end
 
   add_index "phases", ["slug"], :name => "index_phases_on_slug"

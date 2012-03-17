@@ -12,13 +12,7 @@ describe User do
     User.find('any-name').wont_be :nil?
   end
 
-  # ROLES
-  it "should be admin if id is 1" do
-    Factory(:user).admin?.must_equal true
-  end
-
   it "can be admin" do
-    Factory(:user) # We create a id=1 first
     u = Factory(:user)
     u.admin?.must_equal false
     u.update_attribute(:role, 'admin')

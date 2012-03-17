@@ -1,3 +1,7 @@
+# Phase
+#
+# Una fase del proceso de vivienda. Seguramente sólo existirán
+# tres: diseño, construcción, uso (y re-uso)
 class Phase < ActiveRecord::Base
   # RELATIONS
   has_many :problems
@@ -11,8 +15,7 @@ class Phase < ActiveRecord::Base
   validates :slug, presence: true
 
   # EXTENSIONS
-#  has_paper_trail
   extend FriendlyId
   friendly_id :name, use: [:slugged, :globalize]
-  translates :name, :slug, :description#, versioning: true
+  translates :name, :slug, :description, versioning: true
 end

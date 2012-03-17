@@ -4,8 +4,21 @@ require "minitest/autorun"
 require "capybara/rails"
 require "active_support/testing/setup_and_teardown"
 
+DatabaseCleaner.strategy = :truncation
 class MiniTest::Spec
   include FactoryGirl::Syntax::Methods
+
+  before :each do
+    DatabaseCleaner.clean
+  end
+
+  LOGGER = Logger.new(STDOUT)
+  def logger(&block)
+    l = ActiveRecord::Base.logger
+    ActiveRecord::Base.logger = LOGGER
+    yield
+    ActiveRecord::Base.logger = l
+  end
 end
 
 class IntegrationTest < MiniTest::Spec
@@ -25,6 +38,11 @@ class IntegrationTest < MiniTest::Spec
   def click_submit
     page.find('input[name="commit"]').click
   end
+
+  def visitable?(path)
+    visit path
+    page.current_path == path
+  end
 end
 
 class HelperTest < MiniTest::Spec
@@ -35,11 +53,4 @@ class HelperTest < MiniTest::Spec
 end
 
 Turn.config.format = :outline
-
-DatabaseCleaner.strategy = :truncation
-class MiniTest::Spec
-  before :each do
-    DatabaseCleaner.clean
-  end
-end
 

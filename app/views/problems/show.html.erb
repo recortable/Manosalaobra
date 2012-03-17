@@ -1,0 +1,13 @@
+<%= title problem.title %>
+<h2>Fase: <%= problem.phase.name %></h2>
+
+<%= problem.body_context %>
+<%= problem.body_description %>
+<%= problem.body_solutions %>
+
+<h2>Soluciones</h2>
+<ul>
+  <% problem.solutions.each do |solution| %>
+    <li><%= link_to solution.title, solution %></li>
+  <% end %>
+</ul>
