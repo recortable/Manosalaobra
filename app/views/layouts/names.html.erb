@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= yield :title %> :: Procesos colectivos de vivienda</title>
+  <link href='http://fonts.googleapis.com/css?family=Signika:400,300,600' rel='stylesheet' type='text/css'>
+  <%= stylesheet_link_tag "names", :media => "all" %>
+  <%= javascript_include_tag "names" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<% if flash[:notice].present? %>
+    <div class="container">
+      <div id="flash" class="row">
+        <%= flash[:notice] %>
+      </div>
+    </div>
+<% end %>
+
+<%= render 'session_bar' %>
+<div id="page" class="container">
+  <div class="row">
+    <div class="span12">
+      <% if current_page?(proposed_names_path) %>
+          <%= link_to image_tag('participa-afirma.png', width: 942, height: 195), root_path %>
+      <% else %>
+          <%= link_to image_tag('participas-pregunta.png', width: 942, height: 195), proposed_names_path %>
+      <% end %>
+    </div>
+  </div>
+  <%= yield %>
+  <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-11032039-10']);
+      _gaq.push(['_trackPageview']);
+
+      (function () {
+          var ga = document.createElement('script');
+          ga.type = 'text/javascript';
+          ga.async = true;
+          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(ga, s);
+      })();
+
+  </script>
+</div>
+</body>
+</html>
+
+

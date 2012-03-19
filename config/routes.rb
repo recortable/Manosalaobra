@@ -1,5 +1,5 @@
 Manosalaobra::Application.routes.draw do
-  root to: 'dashboards#problems'
+  root to: 'dashboards#names'
 
   resources :posts do
     resources :comments, only: :create

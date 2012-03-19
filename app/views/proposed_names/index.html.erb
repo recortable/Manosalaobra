@@ -1,6 +1,6 @@
 <div id="content-region" class="row">
   <div id="new-proposed-name">
-    <%= render 'form' %>
+    <%#= render 'form' %>
   </div>
   <div id="vote-proposed-names" class="main span8">
     <%= title t('.title') %>
@@ -17,9 +17,9 @@
                 <%= plural name.votes_value, Vote.model_name.human %>
               </span>
           </div>
-          <div class="vote-plus">
-            <%= link_to '+1', proposed_name_votes_path(name, value: 1), title: t('.vote'), method: :post %>
-          </div>
+          <!--div class="vote-plus">
+            <%#= link_to '+1', proposed_name_votes_path(name, value: 1), title: t('.vote'), method: :post %>
+          </div-->
       <% end %>
     </ul>
   </div>

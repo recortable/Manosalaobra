@@ -1,5 +1,6 @@
 es:
   actions:
+    back: 'Volver'
     cancel: 'Cancelar'
     edit: 'Editar'
     destroy: 'Borrar'

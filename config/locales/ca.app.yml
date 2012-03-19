@@ -1,5 +1,6 @@
 ca:
   actions:
+    back: 'Tornar'
     cancel: 'Cancel·lar'
     edit: 'Editar'
     destroy: 'Esborrar'

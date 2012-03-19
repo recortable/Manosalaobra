@@ -37,7 +37,7 @@ es:
 
   proposed_names:
     index:
-      title: 'Vota los nombres que más te gusten'
+      title: 'Nombres propuestos'
       vote: 'Votar este nombre'
     show:
       title: "Gestionar nombre '%{name}'"
@@ -45,6 +45,7 @@ es:
     summary:
       title: 'Los 6 nombres más votados'
       more: 'más...'
+      votes_end: 'La votación ha finalizado.'
     form:
       placeholder: "¿Se te ocurre alguno mejor?"
       submit: '> Enviar'

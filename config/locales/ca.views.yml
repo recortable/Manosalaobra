@@ -37,7 +37,7 @@ ca:
 
   proposed_names:
     index:
-      title: "Vota els noms que més t'agradin"
+      title: "Noms proposats"
       vote: 'Votar aquest nom'
     show:
       title: "Gestionar nom '%{name}'"
@@ -45,6 +45,7 @@ ca:
     summary:
       title: 'Els 6 noms més votats'
       more: 'més...'
+      votes_end: 'La votació ha finalitzat.'
     form:
       placeholder: "Se t'acut un nom millor?"
       submit: '> Enviar'
