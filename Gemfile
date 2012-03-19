@@ -42,6 +42,8 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'
 
+# I18n using an external server
+#gem 'copycopter_client'
 
 group :production do
   gem 'unicorn'

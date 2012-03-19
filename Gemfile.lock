@@ -123,6 +123,7 @@ GEM
     nokogiri (1.5.0)
     paper_trail (2.6.1)
       rails (~> 3)
+    pg (0.13.1)
     polyglot (0.3.3)
     rack (1.4.1)
     rack-cache (1.1)
@@ -227,6 +228,7 @@ DEPENDENCIES
   minitest
   mysql2
   paper_trail
+  pg
   rails (= 3.2.0)
   rails-translate-routes
   redcarpet
