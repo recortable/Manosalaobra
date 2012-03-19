@@ -1,5 +1,8 @@
 # encoding: utf-8
 class PostsController < ContentsController
+  respond_to :html
+  layout 'names'
+
   expose(:summary_names) { ProposedName.limit(6).order("votes_value DESC") }
   expose(:posts) { Post.all }
   expose(:post)
