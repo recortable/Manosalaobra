@@ -19,6 +19,7 @@ Manosalaobra::Application.routes.draw do
   end
   resources :groups, path: 'colectivos'
   resources :problems, parh: 'preguntas', except: [:new]
+  resources :solutions
 
   resources :user_sessions, only: :create
 

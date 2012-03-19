@@ -2,7 +2,15 @@
 #
 # Una fase del proceso de vivienda. Seguramente sólo existirán
 # tres: diseño, construcción, uso (y re-uso)
+#
 class Phase < ActiveRecord::Base
+  # EXTENSIONS
+  include Translatable
+  translates :name, :description
+  extend FriendlyId
+  friendly_id :name, use: :simple_i18n
+  has_paper_trail
+
   # RELATIONS
   has_many :problems
 
@@ -10,12 +18,8 @@ class Phase < ActiveRecord::Base
   default_scope order: 'position ASC'
 
   # VALIDATIONS
-  validates :name, presence: true, uniqueness: true
+  validates :name_es, presence: true, uniqueness: true
+  validates :name_ca, uniqueness: true
   validates :position, presence: true
-  validates :slug, presence: true
 
-  # EXTENSIONS
-  extend FriendlyId
-  friendly_id :name, use: [:slugged, :globalize]
-  translates :name, :slug, :description, versioning: true
 end

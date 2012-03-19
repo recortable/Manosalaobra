@@ -10,15 +10,16 @@ describe 'Problems integration' do
     page.text.must_include 'Dos'
   end
 
-  it "show problems" do
+  it "show problem" do
     problem = create(:problem, 
                      body_context: Faker::Lorem.sentence, 
                      body_description: Faker::Lorem.sentence, 
                      body_solutions: Faker::Lorem.sentence)
-    problem.solutions << create(:solution, title: 'Solution 1')
-    problem.solutions << create(:solution, title: 'Solution 2')
+    create(:solution, title: 'Solution 1', problem: problem)
+    create(:solution, title: 'Solution 2', problem: problem)
     problem.save
     visit problem_path(problem)
+    problem.solutions.count.must_equal 2
     page.text.must_include problem.title
     page.text.must_include problem.body_context
     page.text.must_include problem.body_description

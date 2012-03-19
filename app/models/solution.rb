@@ -1,4 +1,11 @@
 class Solution < ActiveRecord::Base
+  # EXTENSIONS
+  include Translatable
+  extend FriendlyId
+  friendly_id :title, use: :simple_i18n
+  translates :title, :slug, :body
+
+  # RELATIONS 
   belongs_to :problem, counter_cache: true
   belongs_to :user
   belongs_to :phase
@@ -10,11 +17,6 @@ class Solution < ActiveRecord::Base
   validates :problem_id, presence: true
   validates :user_id, presence: true
   validates :phase_id, presence: true
-
-  # EXTENSIONS
-  extend FriendlyId
-  friendly_id :title, use: [:slugged, :globalize]
-  translates :title, :slug, :body, versioning: true
 
   # OPERATIONS
   def add_example(example, user)

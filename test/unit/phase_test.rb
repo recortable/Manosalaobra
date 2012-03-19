@@ -9,9 +9,26 @@ describe Phase do
     Phase.all.last.must_equal last
   end
 
-  it 'should find by slug' do
-    p = create(:phase, name: 'Some name')
-    Phase.find('some-name').must_equal p
+  it 'finds by trasnlated slug' do
+    I18n.locale = :ca
+    p = create(:phase, name: 'Un nom')
+
+    I18n.locale = :es
+    p.update_attributes(name: 'Un nombre')
+
+    Phase.find('un-nombre').must_equal p
+    I18n.locale = :ca
+    Phase.find('un-nom').must_equal p
+  end
+
+  it 'have translated fields' do
+    I18n.locale = :ca
+    phase = create(:phase, name: 'Un nom')
+    I18n.locale = :es
+    phase.update_attributes(name: 'Un nombre')
+    phase.name.must_equal 'Un nombre'
+    I18n.locale = :ca
+    phase.name.must_equal 'Un nom'
   end
 
   it 'should create versions' do

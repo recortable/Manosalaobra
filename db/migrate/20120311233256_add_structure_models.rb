@@ -7,80 +7,88 @@ class AddStructureModels < ActiveRecord::Migration
       t.string   :whodunnit
       t.text     :object
       t.datetime :created_at
-      t.string :locale
     end
     add_index :versions, [:item_type, :item_id]
-    
+
     create_table :phases do |t|
-      #t.string :name, limit: 50
-      #t.string :description, limit: 300
-      t.string :slug, limit: 50
+      t.string :name_es, limit: 50
+      t.string :name_ca, limit: 50
+      t.string :description_es, limit: 300
+      t.string :description_ca, limit: 300
+      t.string :slug_es, limit: 50
+      t.string :slug_ca, limit: 50
       t.integer :position
       t.timestamps
     end
-    add_index :phases, :slug
-    Phase.create_translation_table!(name: :string, slug: :string, description: :string)
+    add_index :phases, :slug_es
+    add_index :phases, :slug_ca
 
     create_table :problems do |t|
-      t.string :title, limit: 300
-      t.string :slug, limit: 300
+      t.string :title_es, limit: 300
+      t.string :title_ca, limit: 300
+      t.string :slug_es, limit: 300
+      t.string :slug_ca, limit: 300
       t.integer :user_id
       t.integer :phase_id
       t.integer :parent_id
       t.integer :group_id
       t.boolean :published, default: true
-      t.text :body_context
-      t.text :body_description
-      t.text :body_solutions
+      t.text :body_context_es
+      t.text :body_context_ca
+      t.text :body_description_es
+      t.text :body_description_ca
+      t.text :body_solutions_es
+      t.text :body_solutions_ca
       t.integer :solutions_count, default: 0
       t.text :settings
       t.timestamps
     end
-    add_index :problems, :slug
+    add_index :problems, :slug_es
+    add_index :problems, :slug_ca
     add_index :problems, :user_id
     add_index :problems, :phase_id
     add_index :problems, :parent_id
-    Problem.create_translation_table!(title: :string, slug: :string,
-                                       body_context: :text,
-                                       body_description: :text,
-                                       body_solutions: :text)
 
     create_table :solutions do |t|
-      t.string :title, limit: 200
-      t.string :slug, limit: 200
+      t.string :title_es, limit: 200
+      t.string :title_ca, limit: 200
+      t.string :slug_es, limit: 200
+      t.string :slug_ca, limit: 200
       t.integer :user_id
       t.integer :phase_id
       t.integer :problem_id
       t.integer :group_id
       t.boolean :published, default: true
-      t.text :body
+      t.text :body_es
+      t.text :body_ca
       t.integer :examples_count, default: 0
       t.text :settings
       t.timestamps
     end
-    add_index :solutions, :slug
+    add_index :solutions, :slug_es
+    add_index :solutions, :slug_ca
     add_index :solutions, :user_id
     add_index :solutions, :phase_id
     add_index :solutions, :problem_id
-    Solution.create_translation_table!(title: :string, slug: :string,
-                                       body: :text)
 
     create_table :examples do |t|
-      t.string :title, limit: 200
-      t.string :slug, limit: 200
+      t.string :title_es, limit: 200
+      t.string :title_ca, limit: 200
+      t.string :slug_es, limit: 200
+      t.string :slug_ca, limit: 200
       t.integer :user_id
       t.integer :group_id
       t.boolean :published, default: true
-      t.text :body
+      t.text :body_es
+      t.text :body_ca
       t.integer :solutions_count, default: 0
       t.text :settings
       t.timestamps
     end
-    add_index :examples, :slug
+    add_index :examples, :slug_es
+    add_index :examples, :slug_ca
     add_index :examples, :user_id
     add_index :examples, :group_id
-    Example.create_translation_table!(title: :string, slug: :string,
-                                       body: :text)
 
     create_table :solution_examples do |t|
       t.belongs_to :user

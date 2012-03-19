@@ -36,26 +36,16 @@ ActiveRecord::Schema.define(:version => 20120311233256) do
     t.text     "body_ca"
   end
 
-  create_table "example_translations", :force => true do |t|
-    t.integer  "example_id"
-    t.string   "locale"
-    t.string   "title"
-    t.string   "slug"
-    t.text     "body"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  add_index "example_translations", ["example_id"], :name => "index_example_translations_on_example_id"
-  add_index "example_translations", ["locale"], :name => "index_example_translations_on_locale"
-
   create_table "examples", :force => true do |t|
-    t.string   "title",           :limit => 200
-    t.string   "slug",            :limit => 200
+    t.string   "title_es",        :limit => 200
+    t.string   "title_ca",        :limit => 200
+    t.string   "slug_es",         :limit => 200
+    t.string   "slug_ca",         :limit => 200
     t.integer  "user_id"
     t.integer  "group_id"
     t.boolean  "published",                      :default => true
-    t.text     "body"
+    t.text     "body_es"
+    t.text     "body_ca"
     t.integer  "solutions_count",                :default => 0
     t.text     "settings"
     t.datetime "created_at",                                       :null => false
@@ -63,7 +53,8 @@ ActiveRecord::Schema.define(:version => 20120311233256) do
   end
 
   add_index "examples", ["group_id"], :name => "index_examples_on_group_id"
-  add_index "examples", ["slug"], :name => "index_examples_on_slug"
+  add_index "examples", ["slug_ca"], :name => "index_examples_on_slug_ca"
+  add_index "examples", ["slug_es"], :name => "index_examples_on_slug_es"
   add_index "examples", ["user_id"], :name => "index_examples_on_user_id"
 
   create_table "groups", :force => true do |t|
@@ -101,63 +92,47 @@ ActiveRecord::Schema.define(:version => 20120311233256) do
   add_index "memberships", ["group_id"], :name => "index_memberships_on_group_id"
   add_index "memberships", ["user_id"], :name => "index_memberships_on_user_id"
 
-  create_table "phase_translations", :force => true do |t|
-    t.integer  "phase_id"
-    t.string   "locale"
-    t.string   "name"
-    t.string   "slug"
-    t.string   "description"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
-  end
-
-  add_index "phase_translations", ["locale"], :name => "index_phase_translations_on_locale"
-  add_index "phase_translations", ["phase_id"], :name => "index_phase_translations_on_phase_id"
-
   create_table "phases", :force => true do |t|
-    t.string   "slug",       :limit => 50
+    t.string   "name_es",        :limit => 50
+    t.string   "name_ca",        :limit => 50
+    t.string   "description_es", :limit => 300
+    t.string   "description_ca", :limit => 300
+    t.string   "slug_es",        :limit => 50
+    t.string   "slug_ca",        :limit => 50
     t.integer  "position"
-    t.datetime "created_at",               :null => false
-    t.datetime "updated_at",               :null => false
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
   end
 
-  add_index "phases", ["slug"], :name => "index_phases_on_slug"
-
-  create_table "problem_translations", :force => true do |t|
-    t.integer  "problem_id"
-    t.string   "locale"
-    t.string   "title"
-    t.string   "slug"
-    t.text     "body_context"
-    t.text     "body_description"
-    t.text     "body_solutions"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
-  end
-
-  add_index "problem_translations", ["locale"], :name => "index_problem_translations_on_locale"
-  add_index "problem_translations", ["problem_id"], :name => "index_problem_translations_on_problem_id"
+  add_index "phases", ["slug_ca"], :name => "index_phases_on_slug_ca"
+  add_index "phases", ["slug_es"], :name => "index_phases_on_slug_es"
 
   create_table "problems", :force => true do |t|
-    t.string   "title",            :limit => 300
-    t.string   "slug",             :limit => 300
+    t.string   "title_es",            :limit => 300
+    t.string   "title_ca",            :limit => 300
+    t.string   "slug_es",             :limit => 300
+    t.string   "slug_ca",             :limit => 300
     t.integer  "user_id"
     t.integer  "phase_id"
     t.integer  "parent_id"
     t.integer  "group_id"
-    t.boolean  "published",                       :default => true
-    t.text     "body_context"
-    t.text     "body_description"
-    t.text     "body_solutions"
-    t.integer  "solutions_count",                 :default => 0
+    t.boolean  "published",                          :default => true
+    t.text     "body_context_es"
+    t.text     "body_context_ca"
+    t.text     "body_description_es"
+    t.text     "body_description_ca"
+    t.text     "body_solutions_es"
+    t.text     "body_solutions_ca"
+    t.integer  "solutions_count",                    :default => 0
     t.text     "settings"
-    t.datetime "created_at",                                        :null => false
-    t.datetime "updated_at",                                        :null => false
+    t.datetime "created_at",                                           :null => false
+    t.datetime "updated_at",                                           :null => false
   end
 
   add_index "problems", ["parent_id"], :name => "index_problems_on_parent_id"
   add_index "problems", ["phase_id"], :name => "index_problems_on_phase_id"
-  add_index "problems", ["slug"], :name => "index_problems_on_slug", :length => {"slug"=>255}
+  add_index "problems", ["slug_ca"], :name => "index_problems_on_slug_ca", :length => {"slug_ca"=>255}
+  add_index "problems", ["slug_es"], :name => "index_problems_on_slug_es", :length => {"slug_es"=>255}
   add_index "problems", ["user_id"], :name => "index_problems_on_user_id"
 
   create_table "proposed_names", :force => true do |t|
@@ -194,28 +169,18 @@ ActiveRecord::Schema.define(:version => 20120311233256) do
   add_index "solution_examples", ["solution_id"], :name => "index_solution_examples_on_solution_id"
   add_index "solution_examples", ["user_id"], :name => "index_solution_examples_on_user_id"
 
-  create_table "solution_translations", :force => true do |t|
-    t.integer  "solution_id"
-    t.string   "locale"
-    t.string   "title"
-    t.string   "slug"
-    t.text     "body"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
-  end
-
-  add_index "solution_translations", ["locale"], :name => "index_solution_translations_on_locale"
-  add_index "solution_translations", ["solution_id"], :name => "index_solution_translations_on_solution_id"
-
   create_table "solutions", :force => true do |t|
-    t.string   "title",          :limit => 200
-    t.string   "slug",           :limit => 200
+    t.string   "title_es",       :limit => 200
+    t.string   "title_ca",       :limit => 200
+    t.string   "slug_es",        :limit => 200
+    t.string   "slug_ca",        :limit => 200
     t.integer  "user_id"
     t.integer  "phase_id"
     t.integer  "problem_id"
     t.integer  "group_id"
     t.boolean  "published",                     :default => true
-    t.text     "body"
+    t.text     "body_es"
+    t.text     "body_ca"
     t.integer  "examples_count",                :default => 0
     t.text     "settings"
     t.datetime "created_at",                                      :null => false
@@ -224,7 +189,8 @@ ActiveRecord::Schema.define(:version => 20120311233256) do
 
   add_index "solutions", ["phase_id"], :name => "index_solutions_on_phase_id"
   add_index "solutions", ["problem_id"], :name => "index_solutions_on_problem_id"
-  add_index "solutions", ["slug"], :name => "index_solutions_on_slug"
+  add_index "solutions", ["slug_ca"], :name => "index_solutions_on_slug_ca"
+  add_index "solutions", ["slug_es"], :name => "index_solutions_on_slug_es"
   add_index "solutions", ["user_id"], :name => "index_solutions_on_user_id"
 
   create_table "users", :force => true do |t|
