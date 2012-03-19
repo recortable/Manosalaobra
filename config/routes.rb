@@ -1,6 +1,5 @@
 Manosalaobra::Application.routes.draw do
-  root to: 'dashboards#show'
-
+  root to: 'dashboards#problems'
 
   resources :posts do
     resources :comments, only: :create
@@ -18,10 +17,13 @@ Manosalaobra::Application.routes.draw do
     resources :problems, path: 'preguntas', only: [:new]
   end
   resources :groups, path: 'colectivos'
-  resources :problems, parh: 'preguntas', except: [:new]
+  resources :problems, path: 'preguntas', except: [:new]
   resources :solutions
 
   resources :user_sessions, only: :create
+
+  # Dashboards
+  match '/como' => 'dashboards#problems', as: :problems_dashboard
 
   # Utilizamos match para que las rutas sean más bonitas
   match '/entrar' => 'user_sessions#new', as: :login
