@@ -9,6 +9,14 @@ describe Phase do
     Phase.all.last.must_equal last
   end
 
+  it 'should have position automagically' do
+    I18n.locale = :es
+    phase = create(:phase)
+    phase.position.must_equal 1
+    phase = create(:phase)
+    phase.position.must_equal 2
+  end
+
   it 'finds by trasnlated slug' do
     I18n.locale = :ca
     p = create(:phase, name: 'Un nom')

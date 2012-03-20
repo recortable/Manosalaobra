@@ -28,7 +28,6 @@ describe 'Phases integration' do
     login_user(create(:user, role: :admin))
     visit new_phase_path
     fill_in 'phase_name', with: 'Fase Uno'
-    fill_in 'phase_position', with: '1'
     click_submit
     Phase.count.must_equal 1
     phase = Phase.first

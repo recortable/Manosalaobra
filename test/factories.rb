@@ -10,7 +10,6 @@ FactoryGirl.define do
   factory :phase do
     sequence(:name_es) {|n| "Fase #{n}" }
     sequence(:name) {|n| "Phase #{n}" }
-    sequence(:position)
   end
 
   factory :problem do

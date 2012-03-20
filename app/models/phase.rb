@@ -10,6 +10,7 @@ class Phase < ActiveRecord::Base
   extend FriendlyId
   friendly_id :name, use: :simple_i18n
   has_paper_trail
+  acts_as_list
 
   # RELATIONS
   has_many :problems
@@ -20,6 +21,4 @@ class Phase < ActiveRecord::Base
   # VALIDATIONS
   validates :name_es, presence: true, uniqueness: true
   validates :name_ca, uniqueness: true
-  validates :position, presence: true
-
 end
