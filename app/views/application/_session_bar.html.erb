@@ -1,25 +1,26 @@
 <div id="session-bar" class="container">
-  <div id="user" class="row">
-    <div class="span3">
-      <% if current_user %>
-          <%= link_to t('.current_user', name: current_user.name), current_user %> >
-          <%= link_to t('.logout'), logout_path %>
-      <% else %>
-          &nbsp;
-      <% end %>
+  <% if current_user %>
+    <div id="user" class="row">
+      <div class="span12">
+        <%= link_to t('.current_user', name: current_user.name), current_user %> >
+        <%= link_to t('.logout'), logout_path %> | 
+        <%= link_to t('.posts'), posts_path if can? :manage, Post %> | 
+        <%= link_to t('.media_items'), media_items_path if can? :manage, MediaItem %> |
+        <%= link_to t('.proposed_names'), proposed_names_path if can? :manage, ProposedName %> |
+        <%= link_to t('.pages'), pages_path if can? :manage, Page %> |
+        <%= link_to t('.users'), users_path if can? :manage, User %> |
+        <%= link_to t('.comments'), comments_path if can? :manage, Comment %>
+        &nbsp;
+      </div>
     </div>
-    <div class="span7">
-      <%= link_to t('.posts'), posts_path if can? :manage, Post %>
-      <%= link_to t('.media_items'), media_items_path if can? :manage, MediaItem %>
-      <%= link_to t('.proposed_names'), proposed_names_path if can? :manage, ProposedName %>
-      <%= link_to t('.pages'), pages_path if can? :manage, Page %>
-      <%= link_to t('.users'), users_path if can? :manage, User %>
-      <%= link_to t('.comments'), comments_path if can? :manage, Comment %>
-      &nbsp;
+  <% end %>
+  <div id="appcontrols" class="row">
+    <div class="welcome_page span3">
+      <%= link_to welcome_page.title, welcome_page %>
     </div>
-    <div class="span2 languages">
-      <%= link_to 'es', url_for(locale: 'es') %>
-      <%= link_to 'cat', url_for(locale: 'ca') %>
+    <div class="locale span1 offset8">
+      <%= link_to 'ES', url_for(locale: 'es') %> |
+      <%= link_to 'CA', url_for(locale: 'ca') %>
     </div>
   </div>
 </div>

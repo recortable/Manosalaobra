@@ -33,7 +33,7 @@ es:
       title: "Editar '%{title}'"
 
     summary:
-      title: 'Blog'
+      title: 'Archivo'
 
   proposed_names:
     index:

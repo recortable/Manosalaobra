@@ -1,6 +1,6 @@
 <div class="block post-summary">
   <h2>
-    <%= link_to t('.title'), posts_path %>
+    <%= link_to_unless_current t('.title'), posts_path %>
   </h2>
   <ul class="post-summary-list">
     <%= content_tag_for :li, posts do |post| %>

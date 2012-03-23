@@ -84,22 +84,20 @@ div#session-bar {
   font-size: 12px;
 }
 
+#header { margin-bottom: 20px; }
+#appcontrols {
+  margin-top: 10px;
+  div {
+    background-color: $foreground;
+    color: $background;
+    text-align: center;
+  }
 
-/* content-top | 8 nombres más votados */
+  div.locale { font-size: 14px;}
+  div.welcome_page {font-size: 16px; }
 
-#content-top {
-  position: relative;
-
-  margin-top: 6px;
-  margin-bottom: 40px;
-
-  .proposed-names-block {
-    font-size: 18px;
-    font-weight: 600;
-
-    ul.proposed-names{
-      margin-top: 30px;
-    }
+  a {
+    color: $background;
   }
 }
 
@@ -137,7 +135,7 @@ form#subscribe {
   } 
 
   input[type=text] {
-    width: 210px;
+    width: 130px;
   }
   input[type=submit] {
     width: 70px;

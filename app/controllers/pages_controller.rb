@@ -1,6 +1,6 @@
 # encoding: utf-8
 class PagesController < ContentsController
-  before_filter :require_user
+  before_filter :require_user, except: [:show]
   expose(:pages) { Page.all }
   expose(:page)
   expose(:content) { page }

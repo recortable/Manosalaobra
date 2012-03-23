@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   before_filter :set_locale
 
   expose(:posts) { Post.limit(4) }
+  expose(:welcome_page) { Page.find(1) }
 
   # Esto hace que 'current_user' pueda ser usado desde las vistas
   helper_method :current_user
