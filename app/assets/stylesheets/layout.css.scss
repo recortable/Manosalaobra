@@ -30,6 +30,11 @@ div#session-bar {
 
 .sidebar-right {
 
+  h2:after {
+    content: "_";
+    display: block;
+  }
+
   .recent-posts-block {
 
     ul {
@@ -94,7 +99,15 @@ div#session-bar {
   }
 
   div.locale { font-size: 14px;}
-  div.welcome_page {font-size: 16px; }
+
+  div.welcome_page {
+    font-size: 16px;
+    text-align: left;
+
+    a {
+      padding-left: 2px;
+    }
+  }
 
   a {
     color: $background;

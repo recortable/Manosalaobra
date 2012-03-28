@@ -4,12 +4,26 @@
 
 @import 'variables';
 
-.posts-index {
-  h1 {font-size: 18px;}
-  h2 {font-size: 24px;}
-  .post {
-    margin: 0px 0 60px 0;
+body.posts.index {
+  .main {
+
+    .admin-links {margin-left: 160px}
+
+    h1 {font-size: 18px;}
+    h2 {font-size: 24px;}
+
+    .post-title:after {
+      content: "_";
+      display: block;
+    }
+
+    .post {
+      margin-bottom: 60px;
+    }
   }
+}
+
+.main {
 }
 
 .post-info {
