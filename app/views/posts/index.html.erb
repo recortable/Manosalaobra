@@ -1,26 +1,35 @@
 <%= render 'proposed_names/summary' %>
 <div id="content-region" class="row">
-  <div class="span6 posts-index offset2">
+  <div class="main span8">
     <% title t('.title') %>
 
     <% if current_user %>
-      <div class="btn-group">
+      <div class="btn-group admin-links">
         <%= link_to icon(:plus, t('.add')), new_post_path,
           class: 'btn' if can? :create, Post %>
       </div>
     <% end %>
-    <%= div_for posts do |post| %>
-      <h2><%= link_to loc(post, :title), post %></h2>
-      <%= render_body post %>
-      <div class="post-info">
-        <span class="post-date"><%= l post.created_at %></span>
-        <%= content_tag :span, ", por: " + post.user.name, class: "post-author" if post.user.present? %>
-        - <%= link_to pluralize(post.comments.count, 'comentario', 'comentarios'), post_path(post, anchor: "comments") %>
-    </div>
-  <% end %>
-</div>
-<div class="sidebar sidebar-right span3 offset1">
-  <%= render 'posts/summary' %>
-  <%= render 'contact_social_info' %>
-</div>
+    <%= div_for(posts, class: "row") do |post| %>
+      <div class="span2 post-info">
+        <div class="post-date">
+          <%= l post.created_at %>
+        </div>
+        <%= content_tag :div, t('.author', name: post.user.name), class: "post-author" if post.user.present? %>
+        <div>
+          <%= link_to pluralize(content.comments.count, Comment.model_name.human), 
+                      post_path(post, anchor: 'comments') %>
+        </div>
+      </div>
+      <div class="span6">
+        <h2 class="post-title"><%= link_to loc(post, :title), post %></h2>
+        <div>
+          <%= render_body post %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <div class="sidebar sidebar-right span3 offset1">
+    <%= render 'posts/summary' %>
+    <%= render 'contact_social_info' %>
+  </div>
 </div>
